@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load statico %}
+{% load thumbnail %}
+
+{% block precontainer %}<div id="wrap-home">{% endblock %}
+{% block postcontainer %}</div>{% endblock %}
+
+{% block content %}
+<div id="main" class="page index">
+
+	<div class="row">
+		<div class="col-md-12">
+			<div id="offerta_spedizione" class="text-center">
+				<strong>{% trans "Offerta Shopping Online! Spedizione gratuita per ordini sopra i 70€!" %}</strong>
+			</div>
+
+			<div id="slides" class="owl-carousel well-carousel">
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/donna.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/uomo.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/bambine.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/donna_sport_01.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/trekking.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/borse.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/bambini.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/donna_sport_02.jpg'|urlstatico:'core' }}" alt=""></div>
+				<div class="item"><img class="lazyOwl" data-src="{{ 'im/slide-home/sicurezza.jpg'|urlstatico:'core' }}" alt=""></div>
+			</div><!-- #slides -->
+		</div> <!-- .col-md-12 -->
+	</div> <!-- .row -->
+
+	{% comment %}
+	<div class="row">
+		{% for ch in categorie %}
+			<div class="col-md-3">
+				<div class="panel panel-default single-box">
+					<div class="panel-heading">
+						<h3 class="panel-title"><a href="{{ ch.get_absolute_url }}" >{{ ch.nome }}</a></h3>
+					</div>
+					<div class="panel-body">
+						<div class="owl-carousel carosello">
+							<div class="macrocat">
+								{% thumbnail ch.image "400x400" as im %}
+									<img class="img-responsive" src="{{im.url}}" alt="{{ ch.nome }}">
+								{% endthumbnail %}
+								<a href="#" class="btn btn-primary">{% trans "Scopri" %}</a>
+							</div>
+							{% for i in "xxxx" %}
+								{% include 'box-prodotto-test.html' %}
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		<div class="col-md-3">
+			<div class="panel panel-default single-box">
+				<div class="panel-body text-center {# alto #}" id="freeshipping">
+					<div class="riga1">{% trans "Spedizione" %}</div>
+					<div class="riga2">{% trans "Gratuita" %}</div>
+					<div class="riga3">{% trans "per ordini sopra 70€" %}</div>
+					<img src="{{ 'im/truck.jpg'|urlstatico:'core' }}" alt="{% trans "camioncino spedizione gratuita" %}" class="img-responsive">
+					<div class="riga4">{% trans "Offerta shopping online!" %}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h2 class="titolo corsivo">{% trans 'I più popolari' %}<span></span></h2>
+
+	<div id="carousel" class="owl-carousel carousel-lista well-carousel">
+		{% with 1 as lazyOwl %}
+		{% for articolo in piu_scontati %}
+		<div class="item">
+			<div class="panel panel-default item-{{ forloop.counter }}">
+				<div class="panel-body">
+					{% include 'articoli/articolo-box.html' %}				
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		{% endwith %}
+	</div> <!-- .carousel -->
+	{% endcomment %}
+
+	<h2 class="titolo corsivo">{% trans 'Marchi' %}<span></span></h2>
+	
+	<div id="marchi" class="clearfix well-carousel">
+		{% for m in marchi|slice:":12" %}
+		{{ m.nome }}
+		{% comment %}
+			{% thumbnail m.image "80x80" as im %}
+			<a href="{{ m.get_absolute_url }}" title="{{ m.nome }}">
+				<span class="helper"></span>
+				<img
+					src="{{ 'im/trans.gif'|urlstatico:'core' }}"
+					alt="{{ m.nome }}"
+					data-original="{{ im.url }}"
+					data-w="{{ im.width }}"
+					data-h="{{ im.height }}"
+					class="lazy"
+				/>
+			</a>
+			{% endthumbnail %}
+			{% endcomment %}
+		{% endfor %}
+	</div>
+
+</div> <!-- #main -->
+{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.transitions.min.css">
+<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
+<style> #slides { max-width: 1140px } </style>
+<![endif]-->
+{% endblock %}
+
+{% block extraprescripts %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.min.js"></script>
+<script src="{{ 'lib/jquery.dotdotdot.min.js'|urlstatico:'core' }}"></script>
+<script src="{{ 'js/home.min.js'|urlstatico:'core' }}"></script>
+<script src="{{ 'lib/jquery.lazyload.min.js'|urlstatico:'core' }}"></script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&appId=207755119287262&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endblock extraprescripts %}
