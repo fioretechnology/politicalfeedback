@@ -42,8 +42,6 @@ LOCALE_PATHS = (
 )
 
 
-DOMAIN = 'www.fioretechnology.com'
-
 SITE_ID = 1
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -196,7 +194,7 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST = 'smtp.domain.com'
 EMAIL_PORT = '25'
 EMAIL_HOST_USER = 'tt'
 EMAIL_HOST_PASSWORD = 'ff'
@@ -268,7 +266,7 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-GRAPPELLI_ADMIN_TITLE = "EPLATFORM ADMIN"
+GRAPPELLI_ADMIN_TITLE = "POLITICALFEEDBACK ADMIN"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
