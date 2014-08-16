@@ -1,0 +1,11 @@
+django-haystack
+whoosh
+django-simple-captcha
+django-pipeline
+django-jsmin
+yuicompressor
+python3-memcached
+django-grappelli
+south
+django-modeltranslation
+django-imagekit

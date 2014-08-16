@@ -1,7 +1,6 @@
 {% load compressed %}
-{% load statico %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,38 +10,25 @@
 		<meta name="author" content="Copyright (c) {% now "Y" %} FioreTechnology.com">
 		<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 
-		<title>{% block title %}{{ seo_end }} Home Page{% endblock %} - Shopping Online</title>
+		<title>{% block title %}{% endblock %}</title>
 
 		<!-- Custom styles for this template -->
-		<link href="{{ 'css/style.css'|urlstatico }}" rel="stylesheet">
+		<link href="{{ 'css/style.css' }}" rel="stylesheet">
 
 		<!-- Load Font Awesome Icons -->
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
 		<!-- Load Roboto Slab Font -->
-		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'> -->
-		<!-- <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'> -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
 
 		{% block extrahead %}{% endblock %}
 
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="/ie8/public/static/js/respond.min.js"></script>
-			{# caricare respond-proxy.html dallo stesso dominio del CSS principale! #}
-			<link href="{{ 'lib/respond-js/respond-proxy.html'|urlstatico:'core' }}" id="respond-proxy" rel="respond-proxy" />
-			<link href="/ie8/public/static/css/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-			<script src="/ie8/public/static/css/respond.proxy.js"></script>
-		<![endif]-->
 	</head>
 
 	<body>
 		{% block testata %}
-			{% include "_/top-nav.html" %}
 			{% include "_/testata.html" %}
-			{% include "_/top-menu.html" %}
 		{% endblock testata %}
 
 		{% block precontainer %}{% endblock %}
@@ -59,17 +45,12 @@
 		================================================== -->
         {# jQuery #}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ 'lib/jquery-1.11.0.min.js'|urlstatico:'core' }}"><\/script>')</script>
         {# Bootstrap #}
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<script>typeof $.fn.emulateTransitionEnd == 'function' || document.write('<script src="{{ 'lib/bootstrap.min.js'|urlstatico:'core' }}"><\/script>')</script>
 
 		{% block extraprescripts %}{% endblock %}
 
-		<script src="{{ 'js/scripts.min.js'|urlstatico:'core' }}"></script>
-
 		{% block extrapostscripts %}{% endblock %}
 
-		{% include "_/analytics.html" %}
 	</body>
 </html>

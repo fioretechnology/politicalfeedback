@@ -1,4 +1,4 @@
-# Django settings for eplatform project.
+# Django settings for politicalfeedback project.
 import os
 
 
@@ -137,7 +137,6 @@ MIDDLEWARE_CLASSES = (
 
     'django.contrib.messages.middleware.MessageMiddleware',
     'pipeline.middleware.MinifyHTMLMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',    
 )
 
@@ -160,7 +159,6 @@ WSGI_APPLICATION = 'wsgi.application'
 
 TEMPLATE_DIRS = (
     '/home/fiore/webapps/politicalfeedback/myproject/templates',
-    '/home/fiore/webapps/politicalfeedback/myproject/eplatform/templates',
 )
 
 INSTALLED_APPS = (
@@ -172,7 +170,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'sorl.thumbnail',
     'imagekit',
     'pipeline',
     'django.contrib.humanize',
