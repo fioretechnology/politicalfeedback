@@ -9,3 +9,4 @@ django-grappelli
 south
 django-modeltranslation
 django-imagekit
+django-facebook
