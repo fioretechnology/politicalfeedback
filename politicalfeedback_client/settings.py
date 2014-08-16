@@ -35,7 +35,7 @@ TIME_ZONE = 'Europe/Rome'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'it-IT'
 
 LOCALE_PATHS = (
     '/home/fiore/webapps/politicalfeedback/myproject/locale',
@@ -97,7 +97,7 @@ STATICFILES_FINDERS = (
 
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '$)a7n&o80u!6y5t-+jrd3)3!%vh&shg$wqpjpxc!ar&p#!)n1a'
+SECRET_KEY = '$)a7n&o80u!6y5tdhs546!!shfdghpjpxc!ar&p#!)n1a'
 
 
 # List of callables that know how to import templates from various sources.
@@ -122,9 +122,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
     "django.core.context_processors.request",
-    "eplatform.context_processors.menu",
-    "eplatform.context_processors.carrello",
-    "eplatform.context_processors.settings2tpl",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -151,10 +148,6 @@ USE_ETAGS = True
 ugettext = lambda s: s
 LANGUAGES = (
              ('it', ugettext(u'Italiano')),
-             ('en', ugettext('Inglese')),
-             ('es', ugettext('Spagnolo')),
-             ('de', ugettext('Tedesco')),
-             ('ru', ugettext('Russo')),
 )
 
 DEFAULT_LANGUAGE = 'it'
@@ -194,13 +187,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     # debug dell'applicazione:
-    'debug_toolbar',
 )
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
-
-INTERNAL_IPS = ('95.226.231.187','127.0.0.1')
-
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
@@ -209,31 +198,11 @@ AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.webfaction.com'
 EMAIL_PORT = '25'
-EMAIL_HOST_USER = 'carlotechnology'
-EMAIL_HOST_PASSWORD = '7qjcchs1he'
+EMAIL_HOST_USER = 'tt'
+EMAIL_HOST_PASSWORD = 'ff'
 
 EMAIL_CLIENTE = 'carlo@fioretechnology.com'
 EMAIL_MITT_CONTATTI = 'contatti@fioretechnology.com'
-
-DATI_BONIFICO = {
-    'BENEFICIARIO': 'Nome Beneficiario',
-    'IBAN': 'testIBAN',
-    'BIC': 'ABCDEFG',
-    'BANCA': 'Nome Banca',
-}
-
-TEL_CLIENTE = '0000000'
-SEO_END = 'E-Platform'
-
-
-# Carlo & Dario money
-COMPENSATION = 0  #percentuale che rimane a noi
-
-# Metodo per la spedizione
-METODO_SPEDIZIONE = 1
-
-# XML path
-PATHXML = '/home/fiore/webapps/politicalfeedback/myproject/xml-load/Prodottixml.xml'
 
 
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
@@ -299,26 +268,6 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-#filter settings
-N_PERPAGINA = 24
-
-
-#paypal
-HOSTNAME = "http://eplatformcore.fioretechnology.com"
-
-SANDBOX = True
-
-PAYPAL_USERNAME = "carlo_api1.fioretechnology.com"
-PAYPAL_PASSWORD = 1401453850
-PAYPAL_SIGNATURE = "AWpMmw4SzKWCksvqWc8RgwJEvKblAb-g8KUTUnKpV.earhI4WxtKm0Z5"
-PAYPAL_CURRENCY = "EUR"
-PAYMENT_TYPE = "Sale"
-PAYPAL_VERSION = "104.0"
-PAYPAL_SBNCODE = "PP-ECWizard"
-PAYPAL_RETURN_URL = "http://eplatformcore.fioretechnology.com/cart/ritorno"
-PAYPAL_CANCEL_URL = "http://eplatformcore.fioretechnology.com/cart/cancel"
-
-
 GRAPPELLI_ADMIN_TITLE = "EPLATFORM ADMIN"
 
 # A sample logging configuration. The only tangible logging
@@ -350,5 +299,3 @@ LOGGING = {
     }
 }
 
-ANALYTICS_ID = 'aa'
-SITO_SLUG = 'core' # Nome del sito per i file del dominio statico
