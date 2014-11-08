@@ -1,5 +1,6 @@
 django-haystack
 whoosh
+Pillow
 django-simple-captcha
 django-pipeline
 django-jsmin
@@ -10,3 +11,4 @@ south
 django-modeltranslation
 django-imagekit
 django-facebook
+unidecode

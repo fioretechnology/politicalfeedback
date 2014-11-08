@@ -1,1 +1,13 @@
-Politicalfeedback titolo
+<div class="row">
+    <div class="large-6 columns">
+        <h1>PoliticalFeedback</h1>
+    </div>
+    <div class="large-6">
+    {% if user.is_authenticated %}
+    	benvenuto :{{ user.email }} <a href="/logout" class="button">Log out</a>
+    {% else %}
+		<a href="/login/facebook/" class="button">Accedi con facebook</a>
+		<a href="/login/twitter/" class="button">Accedi con Twitter</a>
+	{% endif %}
+	</div>
+</div>

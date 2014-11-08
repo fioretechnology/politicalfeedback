@@ -12,8 +12,9 @@ from django.conf import settings
 urlpatterns = patterns('',
 
     url(r'^$', 'views.home', name='home'),
-    (r'^facebook/', include('django_facebook.urls')),
-    (r'^accounts/', include('django_facebook.auth_urls')),
+    url(r'logout', 'views.logout', name='logout'),
+    url(r'dashboard', 'views.dashboard', name='dashboard'),
+    url(r'', include('social_auth.urls')),
 
 )
 

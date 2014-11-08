@@ -64,7 +64,7 @@ MEDIA_ROOT = '/home/fiore/webapps/politicalfeedback/myproject/public/media'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = 'http://www.fioretechnology.com/politicalfeedback/media/'
+MEDIA_URL = 'http://politicalfeedback.fioretechnology.com/public/cli/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -74,7 +74,7 @@ STATIC_ROOT = '/home/fiore/webapps/politicalfeedback/myproject/public/static'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = 'http://corestatic.fioretechnology.com/public/static/'
+STATIC_URL = 'http://politicalfeedback.fioretechnology.com/public/cli/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -112,15 +112,18 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django_facebook.context_processors.facebook',
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages",
-    "django.core.context_processors.request",
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'social_auth.context_processors.social_auth_by_name_backends',
+    'social_auth.context_processors.social_auth_backends',
+    'social_auth.context_processors.social_auth_by_type_backends',
+    'social_auth.context_processors.social_auth_login_redirect',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -168,35 +171,38 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'imagekit',
     'pipeline',
     'django.contrib.humanize',
     'haystack',
     'modeltranslation',
-    'south',
     # Uncomment the next line to enable the admin:
     'grappelli',
     'django.contrib.admin',
-    'django_facebook',
+    'social_auth',
+    #'accounts',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     # debug dell'applicazione:
 )
 
 #facebook application
-FACEBOOK_APP_ID = ''
-FACEBOOK_APP_SECRET = ''
+FACEBOOK_APP_ID = '759969377379292'
+FACEBOOK_API_SECRET = 'd3f361b40ffa7b554155dfcd93575961'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGIN_ERROR_URL    = '/login-error/'
+
 
 AUTHENTICATION_BACKENDS = (
-    'django_facebook.auth_backends.FacebookBackend',
+    'social_auth.backends.facebook.FacebookBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
-AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.domain.com'
