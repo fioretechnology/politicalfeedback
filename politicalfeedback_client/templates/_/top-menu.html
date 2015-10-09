@@ -1,0 +1,164 @@
+{% load i18n %}
+{% load humanize %}
+
+<div id="top-menu">
+	<div class="navbar yamm" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topmenu-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+				<button type="button" class="navbar-toggle search" data-toggle="collapse" data-target="#search-collapse">
+					<i class="fa fa-search"></i>
+				</button>
+				<button type="button" class="btn btn-primary navbar-btn visible-xs cart">
+					<i class="fa fa-shopping-cart fa-lg"></i> &nbsp;
+					<span class="badge">{{ cart.count }}</span> 
+					<span class="label">€ {{ cart.totale|floatformat:2 }}</span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse" id="search-collapse">
+				<form class="navbar-form visible-xs" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="{% trans 'Cerca...' %}">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+						</span>
+					</div><!-- /input-group -->
+				</form>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="topmenu-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/"><i class="fa fa-home"></i></a></li>
+					{% for c in categorie_menu %}
+						<li class="dropdown">
+							<a href="{{ c.get_absolute_url }}" class="dropdown-toggle" data-toggle="dropdown">{{ c.nome }} <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								{% for s in c.sottocategoria_set.all %}
+								<li><a href="{{ s.get_absolute_url }}">{{ s.nome }}</a></li>
+								{% endfor %}
+							</ul>
+						</li>
+					{% endfor %}
+					{% comment %}
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Donna <b class="caret"></b></a>
+              <ul class="dropdown-menu" style="text-transform:none">
+                <li>
+                  <!-- Content container to add padding -->
+                  <div class="yamm-content">
+                    <div class="row">
+                      <ul class="col-sm-3 list-unstyled" style="min-width:120px">
+                        <li>
+                          <p><strong>Section Title</strong></p>
+                        </li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                      </ul>
+                      <ul class="col-sm-3 list-unstyled" style="min-width:120px">
+                        <li>
+                          <p><strong>Links Title</strong></p>
+                        </li>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                        <li><a href="#"> Link Item </a></li>
+                      </ul>
+                      <ul class="col-sm-3 list-unstyled" style="min-width:120px">
+                        <li>
+                          <p><strong>Section Title</strong></p>
+                        </li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                      </ul>
+                      <ul class="col-sm-3 list-unstyled" style="min-width:120px">
+                        <li>
+                          <p><strong>Section Title</strong></p>
+                        </li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                        <li>List Item</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+ 					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Uomo <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Bimbi <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Scarpe e accessori <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</li>
+					{% endcomment %}
+					<li><a href="/articoli/best_price">{% trans "I più scontati" %}</a></li>
+					<li><a href="/articoli/new">{% trans "Novità" %}</a></li>
+					<li><a href="/contact">{% trans 'Contatti' %}</a></li>
+					{% if user.is_staff %}
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboard <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/dashboard/ordini">ordini</a></li>
+							<li><a href="/dashboard/lista_articoli">Lista Articoli</a></li>
+							<li><a href="/dashboard/nuovo_articolo">Nuovo Articolo</a></li>
+							<li><a href="/dashboard/uploadxml">Carica il tuo xml</a></li>
+						</ul>
+					</li>
+					{% endif %}
+				</ul>
+				{% comment %}
+				<div class="apertura col-md-2 navbar-right text-right" title="{% trans "Per qualsiasi problema contatta il nostro servizio clienti all’indirizzo outlet@fpsport.it, o al numero 0423.23218 (dal lunedì al sabato dalle 8 alle 12 e dalle 13.30 alle 18)." %}">
+					<span>
+						<i class="fa fa-phone"></i>
+						<span>(+39) 0423 23218</span>
+						<br class="hidden-xs">
+						<i class="fa fa-clock-o"></i>
+						Lun-Sab: <br class="visible-md"> 8-12 / 13.30-18
+					</span>
+				</div>
+				{% endcomment %}
+			</div><!-- /.navbar-collapse -->
+
+		</div><!-- /.container -->
+	</div>
+</div><!-- /#top-menu -->

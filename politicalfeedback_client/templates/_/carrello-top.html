@@ -1,0 +1,52 @@
+{% load i18n %}
+{% load humanize %}
+
+<div id="carrello-top" class="hidden-xs">
+	<div class="btn-group pull-right">
+		<a class="btn btn-primary" href="/cart">
+			<i class="fa fa-shopping-cart fa-lg"></i> &nbsp;
+			{{ cart.count }} {% trans "articoli" %} - € {{ cart.totale|floatformat:2 }}
+			<!-- &nbsp; <span class="caret"></span> -->
+		</a>
+		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+			<span class="caret"></span>
+		</button>
+		<div class="dropdown-menu panel panel-default pull-right">
+			<div class="panel-body">
+				<table class="table">
+
+					{% for v in cart.vociattive %}
+					<tr>
+						<td>
+							{% thumbnail v.variante.get_image "70x70" as im %}
+        					<img src="{{ im.url }}" alt="{{ v.descrizione }}">
+   							{% endthumbnail %}
+						</td>
+						<td class="middle">
+							<h6 class="media-heading">{{ v.variante.articolo.nome }}</h6>
+							<div class="taglia">
+								<small>{{ v.variante.valoreattributo.attributo.descrizione }}:</small>
+								<span>{{ v.variante.valoreattributo }}</span>											
+							</div>
+							<span class="qty">{{ v.qt }}x</span>
+							<span class="prezzo">€ {{ v.get_prezzo_scontato|floatformat:2 }}</span>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+				<table class="table">
+					<tr>
+						<td class="totale">
+							<span>{% trans "Totale" %}:</span> <br>
+							<strong class="prezzo">€  {{ cart.totale|floatformat:2 }}</strong>
+						</td>
+						<td>
+							<a href="/cart" class="btn btn-default btn-block">Carrello</a>
+							<button type="button" class="btn btn-primary btn-block">Vai alla cassa</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div> <!-- #carrello-top -->

@@ -1,0 +1,260 @@
+{% extends "baseapp.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li><a href="/accounts/dashboard"><span class="entypo-home"></span></a>
+  <li class="unavailable"><a href="#">Account</a></li>
+  <li class="current">Profilo</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<!-- Container Begin -->
+<div class="row" style="margin-top:-20px">
+
+    <div class="large-12 columns">
+        <div class="box">
+            <div class="box-header bg-transparent">
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+
+                    <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
+                    </span>
+                    <span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
+                    </span>
+                </div>
+                <h3 class="box-title"><i class="icon-graph-pie"></i>
+                    <span>PROFILO {{ request.user.email|upper }}</span>
+                </h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body " style="display: block;">
+
+
+
+
+<form action="/accounts/profile/" method="post" enctype="multipart/form-data" data-abide>
+<div class="row">
+	<div class="large-8 small-12 columns" >
+
+		    {% csrf_token %}
+		    
+					<div class="row">
+
+						<div class="large-12 columns">
+
+							<div class="large-8 columns">
+					  			<label>{% trans "Ragione sociale" %} <small>richiesto</small>
+					       		{{ formutente.ragione_sociale }}
+					   			</label>
+					   			<small class="error">{% trans "Devi compilare la ragione sociale" %}</small>
+							</div>
+
+							<div class="large-4 columns">
+								<label>{% trans "Logo" %}
+							    	{{ formutente.logo }}
+							  	</label>
+							  	<small class="error">{% trans "Inserisci il logo della Tua azienda" %}</small>
+							</div>
+
+							<div class="large-6 columns">
+					  			<label>{% trans "Nome" %} <small>richiesto</small>
+					       		{{ formutente.first_name }}
+					   			</label>
+					   			<small class="error">{% trans "Devi compilare il nome" %}</small>
+							</div>
+
+							<div class="large-6 columns">
+					  			<label>{% trans "Cognome" %} <small>richiesto</small>
+					       		{{ formutente.last_name }}
+					   			</label>
+					   			<small class="error">{% trans "Devi compilare il cognome" %}</small>
+							</div>
+
+							<div class="large-6 columns">
+							    <label>{% trans "Partita IVA" %} <small>richiesto</small>
+							    	{{ formutente.partita_iva }}
+							    </label>
+							    <small class="error">{% trans "La partita IVA non può essere vuota" %}</small>
+							</div>
+
+							<div class="large-6 columns">
+							    <label>{% trans "Codice Fiscale" %}
+							    	{{ formutente.cf }}
+							    </label>
+							    <small class="error">{% trans "Il codice fiscale va inserito correttamente" %}</small>
+							</div>
+
+							<div class="large-6 columns">
+							    <label>{% trans "Telefono" %} <small>richiesto</small>
+							    	{{ formutente.telefono }}
+							    </label>
+							    <small class="error">{% trans "Il telefono è obbligatorio" %}</small>
+							</div>
+
+							<div class="large-6 columns">
+							    <label>{% trans "Fax" %}
+							    	{{ formutente.fax }}
+							    </label>
+							    <small class="error">{% trans "Il telefono è obbligatorio" %}</small>
+							</div>
+
+							<div class="large-8 columns">
+								<label>{% trans "indirizzo" %} <small>richiesto</small>
+							    	{{ formutente.indirizzo }}
+							    </label>
+							  	<small class="error">{{ form.indirizzo.errors }}</small>
+							</div>
+
+							<div class="large-4 columns">
+								<label>{% trans "civico/civici" %} <small>richiesto</small>
+							    	{{ formutente.civico }}
+							  	</label>
+							  	<small class="error">{{ form.civico.errors }}</small>
+							</div>
+
+							<div class="large-3 columns">
+								<label>{% trans "provincia" %} <small>richiesto</small>
+									{{ formutente.provincia }}
+							  	</label>
+							  	<small class="error">{{ form.provincia.errors }}</small>
+							</div>
+							<div class="large-3 columns">
+								<label>{% trans "città" %} <small>richiesto</small>
+									{{ formutente.citta }}
+							  	</label>
+							  	<small class="error">{{ form.citta.errors }}</small>
+							</div>
+							 <div class="large-3 columns">
+								<label>{% trans "CAP" %}
+									{{ formutente.cap }}
+							  	</label>
+							  	<small class="error">{{ form.cap.errors }}</small>
+							</div>
+
+						</div>
+
+						
+
+					</div>
+
+					<div class="row">
+
+						<div class="large-12 columns">
+							<div class="large-4 columns">
+								<label>{% trans "Anno corrente" %} <small>richiesto</small>
+							    {{ formutente.anno_corrente }}
+							   	</label>
+							   	<small class="error">{% trans "Devi inserire l'anno corrente di esercizio" %}</small>
+							</div>
+							<div class="large-6 columns">
+								<label>{% trans "Scadenza fatture default (giorni)" %} <small>richiesto</small>
+							    {{ formutente.scadenza_fatture }}
+							   	</label>
+							   	<small class="error">{% trans "Devi inserire la scadenza" %}</small>
+							</div>
+							<div class="large-2 columns">
+								<label>{% trans "IVA default" %}
+							    {{ formutente.default_iva }}
+							   	</label>
+							   	<small class="error">{% trans "Devi inserire l'iva di default" %}</small>
+							</div>
+						</div>
+
+						<div class="large-12 columns">
+							<div class="large-8 columns">
+								<label>{% trans "Banca di riferimento" %} 
+							    {{ formutente.banca }}
+							   	</label>
+							   	<small class="error">{% trans "Devi inserire il nome della banca" %}</small>
+							</div>
+						</div>
+
+						<div class="large-12 columns">
+							<div class="large-8 columns">
+								<label>{% trans "IBAN" %} 
+							    {{ formutente.iban }}
+							   	</label>
+							   	<small class="error">{% trans "Devi inserire l'IBAN della banca" %}</small>
+							</div>
+						</div>
+
+						<div class="large-12 columns">
+							<div class="large-8 columns">
+								<label>{% trans "BIC" %} 
+							    {{ formutente.bic }}
+							   	</label>
+							   	<small class="error">{% trans "Devi inserire il bic della banca" %}</small>
+							</div>
+						</div>
+					</div>
+	</div>
+
+	<div class="large-4 columns">
+		
+			{% if mod %}
+		    <div data-alert class="alert-box success radius">
+		    	<strong>{% trans "Dati modificati con successo" %}</strong>
+		    <a href="#" class="close">&times;</a>
+			</div>
+		    {% endif %}
+
+			<button  class="right expand" type="submit"><strong>{% trans "Registra modifiche" %}</strong></button>
+
+			<button type="button" class="btn btn-default expand" data-reveal-id="cambiaPsw">
+				<strong>{% trans "Cambia password" %}</strong>
+			</button>
+
+			{{ formutente.errors }}
+
+	</div>
+	
+</div>
+</form>
+
+
+            </div>
+            <!-- end .timeline -->
+
+
+        </div>
+        <!-- box -->
+    </div>
+</div>
+<!-- End of Container Begin -->
+
+<!-- CAMBIA PASSWORD -->
+
+	<div id="cambiaPsw"  class="reveal-modal" data-reveal>
+
+		<form role="form" action="/accounts/cambiapassword/" method="post" data-abide>{% csrf_token %}
+		<div class="row">
+			<div class="large-12 columns password-field">
+			  	<label>{% trans "Password (almeno 6 caratteri)" %} <small>richiesto</small>
+			       	{{ formpwd.password }}
+			   	</label>
+			   	<small class="error">{% trans "Devi compilare la password" %}</small>
+			</div>
+			<div class="large-12 columns password-confirmation-field">
+			   	<label>{% trans "Conferma Password" %} <small>required</small>
+			     	{{ formpwd.confermapassword }}
+			   	</label>
+			   	<small class="error">{% trans "La password non combacia" %}</small>
+			</div>
+		</div>
+
+		<button type="submit" ><strong>{% trans "Invia" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+{% endblock %}
+
+{% block extrahead %}
+{% endblock extrahead %}
+
+{% block extraprescripts %}
+{% endblock %}

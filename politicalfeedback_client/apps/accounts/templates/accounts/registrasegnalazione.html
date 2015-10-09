@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load url from future %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li><a href="/">Home</a></li>
+  <li class="unavailable"><a href="#">Accounts</a></li>
+  <li class="current">Registra Segnalazione</li>
+</ul>
+{% endblock %}
+
+
+{% block content %}
+<div id="main" class="row">
+<div class="small-11 small-centered columns" >
+
+	{% if form.non_field_errors %}
+	    <div data-alert="" class="alert-box alert">
+	        {% for non_field_error in form.non_field_errors %}
+	             {{ non_field_error }}
+	        {% endfor %}
+	    </div>
+	{% endif %}
+
+	<form action="/accounts/registrasegnalazione/{% if id %}{{ id }}/{% endif %}" method="post" data-abide>
+	<fieldset>
+	    <legend>Segnalazione allo staff di PulizieFacile.com</legend>
+		{% csrf_token %}
+		{% for hidden in form.hidden_fields %}
+		    {{ hidden }}
+		{% endfor %}
+
+		{{ form.errors }}
+		{{ form.segnalazione.as_hidden }}
+
+
+		<div class="row">
+		    <div class="large-8 columns">
+
+	    		<div class="row">
+		    	   
+		    	    <div class="large-4 columns">
+		    	    	<label>{% trans "Priorità" %}
+		    	    		{{ form.priorita }}
+		    	      	</label>
+		    	      	<small class="error">{% trans "La priorità del messaggio." %}</small>
+		    	    </div>
+		    	    <div class="large-4 columns">
+		    	    	<label>{% trans "Tipo" %}
+		    	    		{{ form.tipo }}
+		    	      	</label>
+		    	      	<small class="error">{% trans "Il tipo di richiesta." %}</small>
+		    	    </div>
+		    	     <div class="large-4 columns">
+		    	    	<label>{% trans "Modulo" %}
+		    	    		{{ form.modulo }}
+		    	      	</label>
+		    	      	<small class="error">{% trans "Inserisci il modulo di riferimento." %}</small>
+		    	    </div>
+		    	</div>
+
+		    	{% if request.user.is_staff %}
+		    	<div class="row">
+		    	   
+		    	    <div class="large-4 columns">
+		    	    	<label>{% trans "Stato" %}
+		    	    		{{ form.stato }}
+		    	      	</label>
+		    	    </div>
+		    	    <div class="large-4 columns">
+		    	    	FAQ
+				    	<div class="switch">
+				    		{{ form.faq }}
+				    	<label for="id_ritenuta">{% trans "faq" %}</label>
+				      	</div>
+		    	    </div>
+		    	    <div class="large-4 columns">
+		    	    	
+		    	    </div>
+		    	</div>
+		    	{% endif %}
+
+
+		    	<div class="row">
+		    	    <div class="large-12 columns">
+		    	    	<label>{% trans "Oggetto" %}
+		    	        	{{ form.oggetto }}
+		    	      	</label>
+		    	      	<small class="error">Devi inserire l'oggetto del messaggio</small>
+		    	    </div>
+		    	</div>
+
+		    	<div class="row">
+		    	    <div class="large-12 columns">
+		    	    	<label>{% trans "messaggio" %}
+		    	        	{{ form.messaggio }}
+		    	      	</label>
+		    	      	<small class="error">Devi inserire il messaggio</small>
+		    	    </div>
+		    	</div>
+
+		    	<div class="row">
+		    	    <div class="large-8 columns">
+		    	    	<label>{% trans "URL della pagina" %}
+		    	        	{{ form.link }}
+		    	      	</label>
+		    	      	<small class="error">{% trans "L'URL esatto dove riscontri il problema" %}</small>
+		    	    </div>
+
+		    	    <div class="large-4 columns">
+		    	    	<label>{% trans "Screenshot (immagine dello schermo)" %}
+		    	        	{{ form.screenshot }}
+		    	      	</label>
+		    	      	<small class="error">{% trans "Devi l'immagine dello schermo." %}</small>
+		    	    </div>
+		    	</div>
+
+		    </div>
+
+		    <div class="large-4 columns">
+		    	<p>Questo form Ti permette di inviarci segnalazioni, suggerimenti, errori del software ed eventuali miglioramenti che faresti per facilitare il Tuo lavoro.</p>
+		    	<p>Cercheremo di risponderti nel più breve tempo possibile.</p>
+
+		    	<p>Il Tuo aiuto è indispensabile per lo sviluppo di questo progetto e ti permetterà di avere un programma il più vicino possibile alle tue esigenze.</p>
+		    </div>
+		</div>
+
+		
+		<div class="row">
+			<div class="large-12 columns"><button  class="right" type="submit">Invia</button></div>
+		</div>
+		</fieldset>
+	</form>
+
+
+	
+
+</div>
+</div> <!-- #main -->
+{% endblock %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block extraprescripts %}
+{% endblock %}

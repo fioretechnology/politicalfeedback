@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block testata %}
+	{% include "_/testata_sito.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="small-12 columns panel" >
+		<h4>{% trans "Il link per attivare il suo account è stato inviato via mail." %}</h4>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "email/struttura.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block contenuto %}
+{% blocktrans %}
+    
+<h2>Il tuo nome utente</h2>
+
+<p>
+	Ciao {{ nome }} {{ cognome }},<br /><br />
+	hai richiesto il nome del tuo utente nel sito <em>{{domain}}</em>. 
+</p>
+<p>
+	Il tuo nome utente è:<br /><br />
+	<span style="display:block;border:1px solid #2284a1;text-align:center;font-weight:bold;color:#ffffff;background:#2ba6cb;padding:10px;">
+		{{utente.username}}
+	</span>
+</p>
+<p>
+	Grazie,<br />
+	Lo Staff di <em>{{domain}}</em>
+</p>
+<p><br />
+	___<br />
+	Nel caso avessi effettuato la richiesta per errore o non fossi stato tu ad effettuarla, non considerare questo messaggio.
+</p>
+<p>
+	<small style="color:#999999">Nota: questa è un'e-mail generata automaticamente e non avremo la possibilità di leggere eventuali e-mail di risposta. Non rispondere a questo messaggio.</small>
+</p>
+
+{% endblocktrans %}
+{% endblock %}

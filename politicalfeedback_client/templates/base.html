@@ -1,60 +1,128 @@
-{% load compressed %}
 {% load static %}
+{% load compress %}
+
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="no-js">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="{% block description %}Political Feedback{% endblock %}">
+		<meta name="description" content="{% block description %}{% endblock %}">
 		<meta name="keywords" content="{% block keywords %}{% endblock %}">
-		<meta name="author" content="{% now "Y" %} Carlo Zanatto">
-		<meta name="robots" content="INDEX,FOLLOW" />
-    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    	<meta name="distribution" content="global" />
-    	<link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css" />
-    	<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css" />
-    	<script src="{{ STATIC_URL }}js/vendor/modernizr.js"></script>
-
+		<meta name="author" content="Copyright (c) {% now "Y" %} FioreTechnology.com">
 		<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 
-		<title>{% block title %}{% endblock %}</title>
+		<title>{% block title %}{{ seo_end }} PoliticalFeedback{% endblock %} - Solo uno strumento, non una gerarchia!</title>
+		
+		{% compress css %}
+		<link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style/app.css' %}">
+		<link rel="stylesheet" href="{% static 'css/dripicon.css' %}">
+		<link rel="stylesheet" href="{% static 'css/typicons.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/slicknav.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/theme-yellow.css' %}" />
 
-		<!-- Load Font Awesome Icons -->
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+		
+		<link href="{% static 'js/pace/themes/orange/pace-theme-flash.css' %}" rel="stylesheet" />
+		{% endcompress %}
+
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+		{% compress js %}
+		<script type="text/javascript" src='{% static 'modernizr/modernizr.js' %}'></script>
+		<script src="{% static 'js/pace/pace.js' %}"></script>
+		<script src="{% static 'modernizr/modernizr.js' %}"></script>
+		{% endcompress %}
+    	
 
 		{% block extrahead %}{% endblock %}
+
 
 	</head>
 
 	<body>
-		{% block testata %}
-			{% include "_/testata.html" %}
-		{% endblock testata %}
 
-		{% block precontainer %}{% endblock %}
-		<div class="container" >
-			{% block content %}{% endblock %}
+		<!-- preloader -->
+		<div id="preloader">
+		    <div id="status">&nbsp;</div>
 		</div>
-		{% block postcontainer %}{% endblock %}
+		<!-- End of preloader -->
 
-		{% block footer %}
-			{% include "_/footer.html" %}
-		{% endblock footer %}
+		<div class="off-canvas-wrap" data-offcanvas>
+		    <!-- right sidebar wrapper -->
+		    <div class="inner-wrap">
 
-		<!-- Scripts
-		================================================== -->
-		<script src="{{ STATIC_URL }}js/vendor/jquery.js"></script>
-    	<script src="{{ STATIC_URL }}js/foundation.min.js"></script>
-    	<script>
+
+		    	{% block leftmenu %}
+		    		{% include "_/leftmenu.html" %}
+		    	{% endblock leftmenu %}
+
+
+		        <div class="wrap-fluid" id="paper-bg">
+		            
+		        	{% block topnav %}
+		    			{% include "_/topnav.html" %}
+		    		{% endblock topnav %}
+
+
+		            <!-- Container Begin -->
+					{% block breadcrumbs %}
+		    			{% include "_/breadcrumbs.html" %}
+		    		{% endblock breadcrumbs %}
+
+					{% block content %}{% endblock %}
+
+					<footer>
+					    <div id="footer">Progetto sotto licenza GNU GPLv2 - by Carlo Zanatto</div>
+					</footer>
+
+
+		            <!-- End of Container Begin -->
+
+
+		        </div>
+		        <!-- End wrap-fluid -->
+
+
+
+		        {% block rightmenu %}
+		    		{% include "_/rightmenu.html" %}
+		    	{% endblock rightmenu %}
+
+		        
+		    </div>
+		    <!-- end paper bg -->
+
+		</div>
+		<!-- end of off-canvas-wrap -->
+
+		<!-- end of inner-wrap -->
+
+
+
+        <script type="text/javascript" src='{% static 'jquery/dist/jquery.min.js' %}'></script>
+        <script type="text/javascript" src="{% static 'js/waypoints.min.js' %}"></script>
+	    <script type='text/javascript' src='{% static 'js/preloader-script.js' %}'></script>
+        <script type="text/javascript" src='{% static 'foundation/js/foundation.min.js' %}'></script>
+        <script type='text/javascript' src="{% static 'foundation/js/foundation/foundation.dropdown.js' %}"></script>
+	    
+	    <script type='text/javascript' src='{% static 'js/slimscroll/jquery.slimscroll.js' %}'></script>
+	    <script type='text/javascript' src='{% static 'slicknav/jquery.slicknav.js' %}'></script>
+	    <script type='text/javascript' src='{% static 'js/sliding-menu.js' %}'></script>
+	    <script type='text/javascript' src='{% static 'js/scriptbreaker-multiple-accordion-1.js' %}'></script>
+	    <script type="text/javascript" src="{% static 'js/number/jquery.counterup.min.js' %}"></script>
+	    <script type="text/javascript" src="{% static 'js/circle-progress/jquery.circliful.js' %}"></script>
+	    <script type='text/javascript' src='{% static 'js/app.js' %}'></script>
+	    
+		{% block extraprescripts %}{% endblock %}
+
+
+		<script>
       		$(document).foundation();
     	</script>
 
-		{% block extraprescripts %}{% endblock %}
-
 		{% block extrapostscripts %}{% endblock %}
 
-
-	
 	</body>
 </html>

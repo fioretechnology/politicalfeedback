@@ -1,0 +1,16 @@
+{% load i18n %}
+<li class="has-dropdown">
+        <a href="#"><i class="fa fa-user"></i></a>
+		<ul class="dropdown">
+				{% if user.is_authenticated %}
+					<li><a href="/accounts/dashboard"><strong>{% trans "Dashboard" %}</strong></a></li>
+					<li><a href="/accounts/profile"><strong>{% trans "Il Tuo profilo" %}</strong></a></li>
+					<li><a href="/accounts/logout"><strong>{% trans "Esci" %}</strong></a></li>
+				{% else %}
+					<li><a href="/accounts/accedi"><strong>{% trans "Accedi" %}</strong></a></li>
+					<li><a href="/accounts/registra"><strong>{% trans "Registrati" %}</strong></a></li>
+				{% endif %}
+		</ul>
+</li>
+
+			

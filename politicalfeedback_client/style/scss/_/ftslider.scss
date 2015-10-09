@@ -1,0 +1,164 @@
+$altezza: 400px;
+$mezza-slide: $altezza / 2;
+$mezza-freccia: $mezza-slide - 16;
+
+$font-titolo: 'Roboto';
+$colore-titolo: #FFFFFF;
+
+$font-descrizione: $font-titolo;
+$colore-descrizione: $colore-titolo;
+
+
+.ftslider{
+	position: relative;
+	background-color: #2669C1;
+	max-height: $altezza + 4;
+	border-top: 2px solid #757575;
+	border-bottom: 2px solid #757575;
+	padding-top: 2px;
+	margin-bottom: 40px;
+	ul{
+		list-style: none;
+		margin: 0;
+	}
+	li {
+		margin: 0;
+		padding: 0;
+		float: left;
+		color: #FFFFFF;
+		width: 100%;
+		height: $altezza;
+	}
+	.contenitore{
+		padding-top: 30px;
+	}
+	.opacity-color{
+		background-color: #404040;
+		opacity: 0.2;
+		height: 100%;
+	}
+	h1,h2,h3,h4,h5,h6{
+		color: $colore-titolo;
+		font-weight: bold;
+		font-size: 2.5rem;
+	}
+	.titolo{
+		font-family: $font-titolo;
+		text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.6);
+	}
+	.desc{
+		font-family: $font-descrizione;
+		color: $colore-descrizione;
+		text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.6);
+		font-size: 1.2rem;
+	}
+	.freccia-dx{
+		position: absolute;
+		right: 10px;
+		top: $mezza-freccia;
+		opacity: 0.5;
+		cursor:default
+	}
+	.freccia-sx{
+		position: absolute;
+		left: 10px;
+		top: $mezza-freccia;
+		opacity: 0.5;
+		cursor:default
+	}
+	.freccia-dx:hover{
+		opacity: 1;
+		color: #000000;
+		cursor:default
+	}
+	.freccia-sx:hover{
+		opacity: 1;
+		color: #000000;
+		cursor:default
+	}
+}
+
+
+
+
+
+/*
+###  PER ANIMARE I TESTI METTI LA CLASSE "ANIMATED"
+###  SEGUITA DA UNA DI QUESTE QUA SOTTO:
+
+bounce
+flash
+pulse
+rubberBand
+shake
+swing
+tada
+wobble
+jello
+bounceIn
+bounceInDown
+bounceInLeft
+bounceInRight
+bounceInUp
+bounceOut
+bounceOutDown
+bounceOutLeft
+bounceOutRight
+bounceOutUp
+fadeIn
+fadeInDown
+fadeInDownBig
+fadeInLeft
+fadeInLeftBig
+fadeInRight
+fadeInRightBig
+fadeInUp
+fadeInUpBig
+fadeOut
+fadeOutDown
+fadeOutDownBig
+fadeOutLeft
+fadeOutLeftBig
+fadeOutRight
+fadeOutRightBig
+fadeOutUp
+fadeOutUpBig
+flipInX
+flipInY
+flipOutX
+flipOutY
+lightSpeedIn
+lightSpeedOut
+rotateIn
+rotateInDownLeft
+rotateInDownRight
+rotateInUpLeft
+rotateInUpRight
+rotateOut
+rotateOutDownLeft
+rotateOutDownRight
+rotateOutUpLeft
+rotateOutUpRight
+hinge
+rollIn
+rollOut
+zoomIn
+zoomInDown
+zoomInLeft
+zoomInRight
+zoomInUp
+zoomOut
+zoomOutDown
+zoomOutLeft
+zoomOutRight
+zoomOutUp
+slideInDown
+slideInLeft
+slideInRight
+slideInUp
+slideOutDown
+slideOutLeft
+slideOutRight
+slideOutUp
+
+*/

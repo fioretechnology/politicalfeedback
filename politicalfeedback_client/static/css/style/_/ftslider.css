@@ -1,0 +1,161 @@
+/* line 12, ../../../../style/scss/_/ftslider.scss */
+.ftslider {
+  position: relative;
+  background-color: #2669C1;
+  max-height: 404px;
+  border-top: 2px solid #757575;
+  border-bottom: 2px solid #757575;
+  padding-top: 2px;
+  margin-bottom: 40px;
+}
+/* line 20, ../../../../style/scss/_/ftslider.scss */
+.ftslider ul {
+  list-style: none;
+  margin: 0;
+}
+/* line 24, ../../../../style/scss/_/ftslider.scss */
+.ftslider li {
+  margin: 0;
+  padding: 0;
+  float: left;
+  color: #FFFFFF;
+  width: 100%;
+  height: 400px;
+}
+/* line 32, ../../../../style/scss/_/ftslider.scss */
+.ftslider .contenitore {
+  padding-top: 30px;
+}
+/* line 35, ../../../../style/scss/_/ftslider.scss */
+.ftslider .opacity-color {
+  background-color: #404040;
+  opacity: 0.2;
+  height: 100%;
+}
+/* line 40, ../../../../style/scss/_/ftslider.scss */
+.ftslider h1, .ftslider h2, .ftslider h3, .ftslider h4, .ftslider h5, .ftslider h6 {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+/* line 45, ../../../../style/scss/_/ftslider.scss */
+.ftslider .titolo {
+  font-family: "Roboto";
+  text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.6);
+}
+/* line 49, ../../../../style/scss/_/ftslider.scss */
+.ftslider .desc {
+  font-family: "Roboto";
+  color: #FFFFFF;
+  text-shadow: 1px 1px 1px rgba(20, 20, 20, 0.6);
+  font-size: 1.2rem;
+}
+/* line 55, ../../../../style/scss/_/ftslider.scss */
+.ftslider .freccia-dx {
+  position: absolute;
+  right: 10px;
+  top: 184px;
+  opacity: 0.5;
+  cursor: default;
+}
+/* line 62, ../../../../style/scss/_/ftslider.scss */
+.ftslider .freccia-sx {
+  position: absolute;
+  left: 10px;
+  top: 184px;
+  opacity: 0.5;
+  cursor: default;
+}
+/* line 69, ../../../../style/scss/_/ftslider.scss */
+.ftslider .freccia-dx:hover {
+  opacity: 1;
+  color: #000000;
+  cursor: default;
+}
+/* line 74, ../../../../style/scss/_/ftslider.scss */
+.ftslider .freccia-sx:hover {
+  opacity: 1;
+  color: #000000;
+  cursor: default;
+}
+
+/*
+###  PER ANIMARE I TESTI METTI LA CLASSE "ANIMATED"
+###  SEGUITA DA UNA DI QUESTE QUA SOTTO:
+
+bounce
+flash
+pulse
+rubberBand
+shake
+swing
+tada
+wobble
+jello
+bounceIn
+bounceInDown
+bounceInLeft
+bounceInRight
+bounceInUp
+bounceOut
+bounceOutDown
+bounceOutLeft
+bounceOutRight
+bounceOutUp
+fadeIn
+fadeInDown
+fadeInDownBig
+fadeInLeft
+fadeInLeftBig
+fadeInRight
+fadeInRightBig
+fadeInUp
+fadeInUpBig
+fadeOut
+fadeOutDown
+fadeOutDownBig
+fadeOutLeft
+fadeOutLeftBig
+fadeOutRight
+fadeOutRightBig
+fadeOutUp
+fadeOutUpBig
+flipInX
+flipInY
+flipOutX
+flipOutY
+lightSpeedIn
+lightSpeedOut
+rotateIn
+rotateInDownLeft
+rotateInDownRight
+rotateInUpLeft
+rotateInUpRight
+rotateOut
+rotateOutDownLeft
+rotateOutDownRight
+rotateOutUpLeft
+rotateOutUpRight
+hinge
+rollIn
+rollOut
+zoomIn
+zoomInDown
+zoomInLeft
+zoomInRight
+zoomInUp
+zoomOut
+zoomOutDown
+zoomOutLeft
+zoomOutRight
+zoomOutUp
+slideInDown
+slideInLeft
+slideInRight
+slideInUp
+slideOutDown
+slideOutLeft
+slideOutRight
+slideOutUp
+
+*/

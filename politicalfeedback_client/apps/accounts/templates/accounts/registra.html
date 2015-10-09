@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load url from future %}
+
+{% block testata %}
+	{% include "_/testata_sito.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<br />
+<div class="row">
+	<div class="small-7 columns panel" >
+		<h2>{% trans "Registrazione" %}</h2>
+		{% if form.non_field_errors %}
+			<div class="alert-box alert">{{ form.non_field_errors }}</div>
+		{% endif %}
+		<form  action="/accounts/registra/" method="post" enctype="multipart/form-data" data-abide>
+		{% csrf_token %}
+		{{ form.errors }}
+
+			<div class="row">
+				
+
+			    <div class="large-4 columns">
+			    	<label>{% trans "Logo" %}
+			        	{{ form.logo }}
+			      	</label>
+			      	<small class="error">{% trans "Inserisci il logo della Tua azienda" %}</small>
+			    </div>
+
+			</div>
+			<div class="row">
+				<div class="large-6 columns">
+			    	<label>{% trans "Nome" %} <small>richiesto</small>
+			        	{{ form.first_name }}
+			      	</label>
+			      	<small class="error">{% trans "Inserisci il tuo nome" %}</small>
+			    </div>
+				<div class="large-6 columns">
+			    	<label>{% trans "Cognome" %} <small>richiesto</small>
+			        	{{ form.last_name }}
+			      	</label>
+			      	<small class="error">{% trans "Inserisci il tuo cognome" %}</small>
+			    </div>
+			</div>
+			
+
+			<div class="row">
+			    <div class="large-8 columns">
+			    	<label>{% trans "Email" %} <small>richiesto</small> <span data-tooltip aria-haspopup="true" class="has-tip right" title="Se utilizzavi il vecchio software usa la stessa mail per riuscire ad importare i dati"> <i class="fa fa-info-circle"></i> Avevi il vecchio software?</span>
+			        	{{ form.email }}
+			      	</label>
+			      	<small class="error">{% trans "Il nome utente è obbligatorio e deve essere un indirizzo email" %}</small>
+			    </div>
+			    <div class="large-4 columns">
+			    	<label>{% trans "Telefono" %} <small>richiesto</small>
+			        	{{ form.telefono }}
+			      	</label>
+			      	<small class="error">{% trans "Devi inserire un recapito telefonico" %}</small>
+			    </div>
+			</div>
+
+			<div class="row">
+			    <div class="large-8 columns">
+			    	<label>{% trans "indirizzo" %} <small>richiesto</small>
+			        	{{ form.indirizzo }}
+			      	<small class="error">{{ form.indirizzo.errors }}</small>
+			    </div>
+
+			    <div class="large-4 columns">
+			    	<label>{% trans "civico/civici" %} <small>richiesto</small>
+			        	{{ form.civico }}
+			      	</label>
+			      	<small class="error">{{ form.civico.errors }}</small>
+			    </div>
+			</div>
+			<div class="row">
+			   
+			    <div class="large-3 columns">
+			    	<label>{% trans "provincia" %} <small>richiesto</small>
+			    		{{ form.provincia }}
+			      	</label>
+			      	<small class="error">{{ form.provincia.errors }}</small>
+			    </div>
+			    <div class="large-3 columns">
+			    	<label>{% trans "città" %} <small>richiesto</small>
+			    		{{ form.citta }}
+			      	</label>
+			      	<small class="error">{{ form.citta.errors }}</small>
+			    </div>
+			     <div class="large-3 columns">
+			    	<label>{% trans "CAP" %}
+			    		{{ form.cap }}
+			      	</label>
+			      	<small class="error">{{ form.cap.errors }}</small>
+			    </div>
+			</div>
+
+			<div class="row">
+			    <div class="large-12 columns password-field">
+			    	<label>{% trans "Password (almeno 6 caratteri)" %} <small>richiesto</small>
+			        	{{ form.password }}
+			      	</label>
+			      	<small class="error">{% trans "Devi compilare la password" %}</small>
+			    </div>
+				<div class="large-12 columns password-confirmation-field">
+				   	<label>{% trans "Conferma Password" %} <small>required</small>
+				     	<input type="password" required data-equalto="id_password">
+				   	</label>
+				   	<small class="error">{% trans "La password non combacia" %}</small>
+				</div>
+			</div>
+
+
+
+			<p class="form-control-static grigioscuro"><small>
+				{% url 'django.contrib.auth.views.login' as anchor_url %}
+				{% blocktrans with anchor='<a href="'|add:anchor_url|add:'">'|safe %}
+					Registrandomi, dichiaro di aver preso visione dell'{{ anchor }}informativa sulla privacy</a> di questo sito e di prestare il consenso al trattamento dei miei dati personali.
+				{% endblocktrans %}
+			</small></p>
+
+			<button type="submit" class="btn btn-primary"><strong>{% trans "Crea il tuo account" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i>
+
+
+		</form>
+	</div>
+	<div class="small-4 columns">
+		<div class="panel">
+		<h4>{% trans "Attiva subito un account" %}</h4>
+		<p class="grigioscuro">{% trans "Registrati per iniziare ad usare il software:" %}</p>
+		<ul class="fa-ul grigioscuro">
+			<li><i class="fa-li fa fa-check text-success"></i>{% trans "Strumenti collaborazivi." %}</li>
+		</ul>
+		</div>
+
+		<h4>Se ti sei già registrato e non ti è arrivata la mail di attivazione, clicca qui sotto per reinviarla.</h4>
+		<a href="#" data-reveal-id="attivazione" class="button extend">Reinvia attivazione</a>
+	</div>
+</div>
+
+
+<!-- Reinvia attivazione -->
+	
+
+		<div id="attivazione" class="reveal-modal" data-reveal>
+		  	<h4>{% trans "Reinviamo il codice di attivazione" %}</h4>
+		  	<p class="grigioscuro">{% trans "Inserisci l'indirizzo e-mail con cui ti sei registrato e ti invieremo le istruzioni per attivare il Tuo account." %}</p>
+			<hr>
+
+			<form role="form" action="/accounts/rimandaattivazione/" method="post" data-abide>
+			{% csrf_token %}
+			<div class="row">
+			    <div class="large-10 columns">
+			    	<label>{% trans "Email" %} <small>richiesto</small>
+			        	<input name="email" id="email_reset" type="email" placeholder="{% trans "email" %}" aria-describedby="emailHelp" required/>
+			      	</label>
+			      	<small class="error">{% trans "Inserisci una email valida." %}</small>
+			    </div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+				<button  class="right" type="submit"><strong>{% trans "Reinvia" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
+				</div>
+			</div>
+
+		  	<a class="close-reveal-modal">&#215;</a>
+		  	</form>
+		</div>
+
+
+{% endblock %}
+
+{% block extraprescripts %}
+<script type="text/javascript" src='{% static 'foundation/js/foundation/foundation.abide.js' %}'></script>
+<script type="text/javascript">
+$('#id_provincia').change(function(){
+	$("#id_citta").load("/anagrafiche/elencocitta/"+$('#id_provincia').val()+"/");
+	$("#id_citta").removeClass('hide');
+});
+</script>
+{% endblock %}

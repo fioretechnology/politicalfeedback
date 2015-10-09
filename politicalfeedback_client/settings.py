@@ -1,6 +1,8 @@
-# Django settings for politicalfeedback project.
 import os
+import sys
 
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.abspath(__file__ + '/..'))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -35,12 +37,14 @@ TIME_ZONE = 'Europe/Rome'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'it-IT'
+LANGUAGE_CODE = 'it_IT'
 
 LOCALE_PATHS = (
-    '/home/fiore/webapps/politicalfeedback/myproject/locale',
+    APP_ROOT +'/locale',
 )
 
+
+DOMAIN = 'politicalfeedback.fioretechnology.com'
 
 SITE_ID = 1
 
@@ -59,29 +63,30 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = '/home/fiore/webapps/politicalfeedback/myproject/public/media'
+MEDIA_ROOT = APP_ROOT + '/public/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = 'http://politicalfeedback.fioretechnology.com/public/cli/media/'
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = '/home/fiore/webapps/politicalfeedback/myproject/public/static'
+STATIC_ROOT = APP_ROOT + '/public/static'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = 'http://politicalfeedback.fioretechnology.com/public/cli/static/'
+STATIC_URL = '/static/'
+
+BOWERPATH = APP_ROOT + '/components/bower_components'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/home/fiore/webapps/politicalfeedback/myproject/static',
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    APP_ROOT + "/static",
+    APP_ROOT + "/components/bower_components",
+    BOWERPATH,
 )
 
 # List of finder classes that know how to find static files in
@@ -89,13 +94,15 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+    'compressor.finders.CompressorFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '$)a7n&o80u!6y5tdhs546!!shfdghpjpxc!ar&p#!)n1a'
+SECRET_KEY = '$)a7n&o80u!6y5t-+jrdgeshhrtjrwjhwwdsfjpxc!ar&p#!)n1a'
 
 
 # List of callables that know how to import templates from various sources.
@@ -108,37 +115,36 @@ TEMPLATE_LOADERS = (
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.core.context_processors.request',
-    'django.contrib.messages.context_processors.messages',
-    'social_auth.context_processors.social_auth_by_name_backends',
-    'social_auth.context_processors.social_auth_backends',
-    'social_auth.context_processors.social_auth_by_type_backends',
-    'social_auth.context_processors.social_auth_login_redirect',
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.request",
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = ( 
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.gzip.GZipMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', 
+    'django.middleware.locale.LocaleMiddleware',
+    
     'django.middleware.common.CommonMiddleware',
+
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+
     'django.contrib.messages.middleware.MessageMiddleware',
-    'pipeline.middleware.MinifyHTMLMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',    
+    'django.middleware.cache.FetchFromCacheMiddleware',
+
 )
 
 USE_ETAGS = True
@@ -151,6 +157,7 @@ LANGUAGES = (
 DEFAULT_LANGUAGE = 'it'
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'it'
+MODELTRANSLATION_DEBUG = False
 
 
 ROOT_URLCONF = 'urls'
@@ -158,12 +165,33 @@ ROOT_URLCONF = 'urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'wsgi.application'
 
+BOWER_COMPONENTS_ROOT = APP_ROOT + '/components'
+BOWER_PATH = '/home/fiore/webapps/puliziefacile2/bin/bower'
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'foundation',
+    'foundation-datepicker',
+    'datatables',
+    'datatables-tabletools',
+    'd3',
+    'd3pie',
+    'animate.css',
+    'Hover',
+    'slicknav',
+    'footable',
+    'firepad'
+)
+
+CKEDITOR_UPLOAD_PATH = "pagine/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+
 TEMPLATE_DIRS = (
-    '/home/fiore/webapps/politicalfeedback/myproject/templates',
+    APP_ROOT + '/templates',
 )
 
 INSTALLED_APPS = (
-
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -171,84 +199,56 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
-    'pipeline',
+    'imagekit',
+    'compressor',
     'django.contrib.humanize',
     'haystack',
-    'modeltranslation',
-    # Uncomment the next line to enable the admin:
-    'grappelli',
     'django.contrib.admin',
-    'social_auth',
-    #'accounts',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-    # debug dell'applicazione:
+    'djangobower',
+
+    'apps.accounts',
+    'apps.pf',
+    'ckeditor',
+
 )
-
-#facebook application
-FACEBOOK_APP_ID = '759969377379292'
-FACEBOOK_API_SECRET = 'd3f361b40ffa7b554155dfcd93575961'
-FACEBOOK_EXTENDED_PERMISSIONS = ['email']
-LOGIN_URL          = '/login-form/'
-LOGIN_REDIRECT_URL = '/dashboard/'
-LOGIN_ERROR_URL    = '/login-error/'
-
-
-AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.facebook.FacebookBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
-
 
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.domain.com'
+EMAIL_HOST = 'smtp.webfaction.com'
 EMAIL_PORT = '25'
-EMAIL_HOST_USER = 'tt'
-EMAIL_HOST_PASSWORD = 'ff'
+EMAIL_HOST_USER = 'carlotechnology'
+EMAIL_HOST_PASSWORD = 'phoebe200196'
 
 EMAIL_CLIENTE = 'carlo@fioretechnology.com'
 EMAIL_MITT_CONTATTI = 'contatti@fioretechnology.com'
+
+DATI_BONIFICO = {
+    'BENEFICIARIO': 'Nome Beneficiario',
+    'IBAN': 'testIBAN',
+    'BIC': 'ABCDEFG',
+    'BANCA': 'Nome Banca',
+}
+
+TEL_CLIENTE = '0000000'
+SEO_END = 'PulizieFacile'
+
+
+# Metodo per la spedizione
+METODO_SPEDIZIONE = 1
 
 
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
 CAPTCHA_FONT_SIZE = 26
 CAPTCHA_LETTER_ROTATION = (-10,10)
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+COMPRESS_ENABLED = False
+COMPRESS_PRECOMPILERS = (
+    ("text/x-scss", 'sass --scss'),
+)
 
-PIPELINE = False
-PIPELINE_AUTO = False
-PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
-PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yui.YUICompressor'
-PIPELINE_YUI_BINARY = '/home/fiore/webapps/politicalfeedback/bin/yuicompressor'
-PIPELINE_YUI_CSS_ARGUMENTS = ''
-PIPELINE_YUI_JS_ARGUMENTS = ''
-PIPELINE_STORAGE = 'pipeline.storage.PipelineStorage'
-
-PIPELINE_JS = {
-    'base': {
-        'source_filenames': (
-          'js/base.js',
-        ),
-        'output_filename': 'js/base.min.js',
-    }
-}
-
-PIPELINE_CSS = {
-    'generic': {
-        'source_filenames': (
-          'css/screen.css',
-        ),
-        'output_filename': 'css/generic.min.css',
-        'extra_context': {
-            'media': 'screen,projection',
-        },
-    },
-}
 
 THUMBNAIL_DEBUG = True
 
@@ -277,13 +277,24 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-GRAPPELLI_ADMIN_TITLE = "POLITICALFEEDBACK ADMIN"
+#filter settings
+N_PERPAGINA = 24
+
+
+#paypal
+HOSTNAME = "http://www.fioretechnology.com"
+
+
+
+GRAPPELLI_ADMIN_TITLE = "PULIZIEFACILE ADMIN"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
+SERVER_EMAIL ='carlo@fioretechnology.com'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -308,3 +319,15 @@ LOGGING = {
     }
 }
 
+ANALYTICS_ID = 'aa'
+SITO_SLUG = 'core' # Nome del sito per i file del dominio statico
+
+# servizi a pagamento
+DDT_TRIAL = True #documenti di trasporto
+ACQ_TRIAL = True #acquisti
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

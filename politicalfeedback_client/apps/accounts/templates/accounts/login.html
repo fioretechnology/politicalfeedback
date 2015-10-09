@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% load url from future %}
+
+{% block testata %}
+	{% include "_/testata_sito.html" %}
+{% endblock %}
+
+{% block content %}
+
+<br />
+<div class="row">
+	<div class="small-6 columns panel" >
+	<h2>Accedi</h2>
+	{% block alert %}{% endblock %}
+	<form  method="post" action="/accounts/accedi/" data-abide>
+	{% csrf_token %}
+
+	{{ form.errors }}
+
+	{% if errore %}
+	<div data-alert class="alert-box">
+	  {% trans "Il tuo nome utente o la password non sono corretti. Riprova." %}
+	  <a href="#" class="close">&times;</a>
+	</div>
+	{% endif %}
+
+		<div class="row">
+		    <div class="large-10 columns">
+		    	<label>{% trans "Email" %} <small>richiesto</small>
+		        	{{ form.username }}
+		      	</label>
+		      	<small class="error">{% trans "Il nome utente è obbligatorio e deve essere un indirizzo email" %}</small>
+		    </div>
+		</div>
+
+		<div class="row">
+		    <div class="large-10 columns">
+		    	<label>{% trans "Password" %} <small>richiesto</small>
+		        	{{ form.password }}
+		      	</label>
+		      	<small class="error">{% trans "L'inserimento della password è necessario" %}</small>
+		    </div>
+		</div>
+
+		<div class="row">
+			<div class="large-12 columns">
+			<a href="#" data-reveal-id="dimenticata">{% trans "Password dimenticata?" %}</a><button  class="right" type="submit"><strong>{% trans "Accedi" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
+			</div>
+		</div>
+
+	</form>
+	</div>
+	<div class="small-4 columns panel">
+		<h4>{% trans "Non sei ancora registrato/a ?" %}</h4>
+		<p class="grigioscuro">{% trans "Registrati per usufruire dei seguenti vantaggi:" %}</p>
+		<ul class="fa-ul grigioscuro">
+			<li><i class="fa-li fa fa-check text-success"></i>{% trans "Procedura di acquisto più veloce (i tuoi dati personali sono già memorizzati)." %}</li>
+			<li><i class="fa-li fa fa-check text-success"></i>{% trans "Controllo rapido dello stato dei tuoi ordini." %}</li>
+			<li><i class="fa-li fa fa-check text-success"></i>{% trans "Gestione di più indirizzi di spedizione." %}</li>
+		</ul>
+		<p class="text-right"><br><a href="/accounts/registra" class="btn btn-primary"><strong>{% trans "Registrazione rapida" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></a></p>
+	</div>
+
+
+</div>
+
+
+	<!-- PASSWORD DIMENTICATA -->
+	
+
+		<div id="dimenticata" class="reveal-modal" data-reveal>
+		  	<h4>{% trans "Reimposta password" %}</h4>
+		  	<p class="grigioscuro">{% trans "Inserisci l'indirizzo e-mail con cui ti sei registrato e ti invieremo le istruzioni per reimpostare la password." %}</p>
+			<hr>
+
+			<form role="form" action="/accounts/recuperapassword/" method="post" data-abide>
+			{% csrf_token %}
+			<div class="row">
+			    <div class="large-10 columns">
+			    	<label>{% trans "Email" %} <small>richiesto</small>
+			        	<input name="email" id="email_reset" type="email" placeholder="{% trans "email" %}" aria-describedby="emailHelp" required/>
+			      	</label>
+			      	<small class="error">{% trans "Inserisci una email valida." %}</small>
+			    </div>
+			</div>
+
+			<div class="row">
+				<div class="large-12 columns">
+				<button  class="right" type="submit"><strong>{% trans "Chiedi il ripristino" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
+				</div>
+			</div>
+
+		  	<a class="close-reveal-modal">&#215;</a>
+		  	</form>
+		</div>
+
+{% endblock %}
+
+{% block extraprescripts %}
+<script type="text/javascript" src='{% static 'foundation/js/foundation/foundation.abide.js' %}'></script>
+{% endblock %}

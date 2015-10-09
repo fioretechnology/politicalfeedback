@@ -1,0 +1,118 @@
+@import "settings";
+@import "compass/css3";
+
+$topbar-bg-color: #404040;
+$topbar-link-bg-hover: #FFFFFF;
+
+$topbar-link-color: #FFFFFF;
+$topbar-link-color-hover: #00416C;
+
+$topbar-link-color-active: #A5A5A5;
+$topbar-link-bg-active: #404040;
+$topbar-link-color-active-hover: #00416C;
+$topbar-link-bg-active-hover: #FFFFFF;
+
+$topbar-dropdown-bg: #404040;
+$topbar-dropdown-link-color: #FFFFFF;
+$topbar-dropdown-link-bg: #585656;
+$topbar-dropdown-link-bg-hover: #FFFFFF;
+
+$topbar-menu-link-color: #FFFFFF;
+$topbar-menu-icon-color: #FFFFFF;
+
+$topbar-dropdown-toggle-color: #FFFFFF;
+$topbar-dropdown-toggle-alpha: 1;
+
+$topbar-link-font-size: 0.8em;
+$topbar-link-font-family: 'Open Sans';
+$topbar-link-weight: 700;
+
+
+
+@import "foundation/scss/normalize";
+@import "foundation/scss/foundation";
+@import "hover/scss/hover";
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
+@import "_/callout-card";
+@import "_/ftslider";
+@import "_/footer";
+
+$font-color : #2A3333;
+$link-color : #f3973a;
+$link-color-hover : #ff6600;
+$arancio : #f3973a;
+$blu : #365a9f;
+$grigio : #f4f4f4;
+
+
+$main-color: #00416C;
+
+
+#logo {
+	margin-top: 30px;
+}
+
+#spot {
+    font-family: arial;
+    font-size: 22px;
+    color: $main-color;
+    margin-bottom: 30px;
+}
+
+.box{
+	width: 100%;
+	border-radius: 20px;
+	border: solid 1px #AAAAAA;
+	color: #808080;
+	overflow: hidden;
+	.card-label {	
+	  border-style: solid; 
+	  border-width: 0 70px 40px 0;  
+	  float:right; 
+	  height: 0px; 
+	  width: 0px;
+	  transform:rotate(360deg);
+	}
+	.label-text {
+	  color: #fff; 
+	  font-size: 0.75rem; 
+	  font-weight: bold; 
+	  position: relative; 
+	  right: -40px; 
+	  top: 2px; 
+	  white-space: nowrap;
+	  transform: rotate(30deg);
+	}	
+	.content{
+		padding: 20px;
+	}
+	.titolo{
+		font-family: 'Open Sans';
+		font-weight: 700;
+		margin-bottom: 10px;
+		color: #404040;
+	}
+	ul{
+		.fa{
+			color: #2D98E2;
+			margin-right: 10px;
+		}
+	}
+}
+.box .alert{
+	border-color: $alert;
+	.card-label{
+		border-color: $alert;
+	}
+}
+
+
+.titolo_fascia {
+	font-family: 'Nothing You Could Do', cursive, 'Lucida Grande',Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 10px;
+}
