@@ -1,0 +1,35 @@
+{% extends "email/struttura.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block contenuto %}
+{% blocktrans %}
+    
+<h2>Ripristino della password</h2>
+
+<p>
+	Ciao {{ nome }} {{ cognome }},<br /><br />
+	è stato richiesto il ripristino della password per il tuo utente nel sito <em>{{domain}}</em>.
+</p>
+<p>
+	Per procedere clicca sul seguente collegamento:<br /><br />
+	<a href="http://{{domain}}/accounts/resetpassword/{{ confirmation_code }}/{{ id }}/" style="display:block;border:1px solid #2284a1;text-align:center;font-weight:bold;color:#ffffff;background:#2ba6cb;padding:10px;text-decoration:none;">
+		Ripristino password
+	</a>
+</p>
+<p>
+	Grazie,<br />
+	Lo Staff di <em>{{domain}}</em>
+</p>
+<p><br />
+	___<br />
+	Nel caso avessi effettuato la richiesta per errore o non fossi stato tu ad effettuarla, non considerare questo messaggio.
+</p>
+<p>
+	<small style="color:#999999">Nota: questa è un'e-mail generata automaticamente e non avremo la possibilità di leggere eventuali e-mail di risposta. Non rispondere a questo messaggio.</small>
+</p>
+
+{% endblocktrans %}
+{% endblock %}
+

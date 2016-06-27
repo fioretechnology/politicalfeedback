@@ -1,0 +1,154 @@
+{% extends "email/struttura.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block contenuto %}
+    
+<h2>Configurazione Build</h2>
+
+<p>
+	Ciao,<br />
+	questa build ti è stata inviata da {{domain}}/pcbuild/.<br>
+</p>
+<hr>
+
+<table width="100%">
+	
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ cpu_url }}" target="_blank"><img src="{{ cpu_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ cpu_nome }}</strong><br>
+			Clock: {{ cpu_clock }} GHz<br>
+			Socket: {{ cpu_socket }}
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ cpu_cooler_url }}" target="_blank"><img src="{{ cpu_cooler_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ cpu_cooler_nome }}</strong><br>
+			Ventole: {{ cpu_cooler_ventole }}<br>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ motherboard_url }}" target="_blank"><img src="{{ motherboard_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ motherboard_nome }}</strong><br>
+			Socket: {{ motherboard_socket }}<br>
+			RAM: {{ motherboard_ram }}<br>
+			Formato: {{ motherboard_formato }}<br>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ gpu_url }}" target="_blank"><img src="{{ gpu_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ gpu_nome }}</strong><br>
+			Memoria: {{ gpu_ram }} GB<br>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ ram_url }}" target="_blank"><img src="{{ ram_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ ram_nome }}</strong><br>
+			Memoria: {{ ram_memoria }} GB<br>
+			Interfaccia: {{ ram_interfaccia }}<br>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ hdd_url }}" target="_blank"><img src="{{ hdd_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ hdd_nome }}</strong><br>
+			Memoria: {{ hdd_memoria }} GB<br>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ ssd_url }}" target="_blank"><img src="{{ ssd_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ ssd_nome }}</strong><br>
+			Memoria: {{ ssd_memoria }} GB<br>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ psu_url }}" target="_blank"><img src="{{ psu_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ psu_nome }}</strong><br>
+			Watt: {{ psu_watt }} W<br>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td style="width:30%;">
+			<a href="{{ case_url }}" target="_blank"><img src="{{ case_img }}" width="150px"></a>
+		</td>
+		<td>
+			<strong>{{ case_nome }}</strong><br>
+			Formato: {{ case_formato }}<br>
+		</td>
+	</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+	<tr>
+		<td style="width:30%;">
+			
+		</td>
+		<td>
+			<h4 style="text-align: right;">Totale: <span style="font-weight:normal;">{{ totale }} €</span></h4>
+		</td>
+	</tr>
+
+</table>
+
+<hr>
+<p><br />
+	Lo Staff di <b>{{domain}}</b>
+</p>
+<p>
+	___<br />
+	Nel caso tu non abbia eseguito alcuna operazione o non fossi informato dell'arrivo di questa mail, non considerare questo messaggio.
+</p>
+<p>
+	<small style="color:#999999">Nota: questa è un'e-mail generata automaticamente e non avremo la possibilità di leggere eventuali e-mail di risposta. Non rispondere a questo messaggio.</small>
+</p>
+
+{% endblock %}

@@ -1,12 +1,19 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('apps.pf.views',
-     url(r'^registramozione/$', 'registramozione'),
-     url(r'^listamozioni/$', 'listamozioni'),
-     url(r'^registramozione/(?P<mozione_id>\d+)/$','registramozione'),
-     url(r'^eliminamozione/(?P<id>\d+)/$','eliminamozione'),
-)
+from . import views
+
+urlpatterns = [
+	url(r'^registradocumento/$', views.registradocumento),
+	url(r'^listadocumenti/$', views.listadocumenti),
+	url(r'^registradocumento/(?P<documento_id>\d+)/$', views.registradocumento ),
+	url(r'^eliminadocumento/(?P<id>\d+)/$', views.eliminadocumento ),
+
+	url(r'^registracategoria/$', views.registracategoria),
+	url(r'^listacategorie/$', views.listacategorie),
+	url(r'^registracategoria/(?P<documento_id>\d+)/$', views.registracategoria ),
+	url(r'^eliminacategoria/(?P<id>\d+)/$', views.eliminacategoria ),
+]

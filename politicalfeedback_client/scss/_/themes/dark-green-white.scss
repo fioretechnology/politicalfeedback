@@ -1,0 +1,127 @@
+
+@import "compass";
+@import "../colori";
+
+/**** VARIABILI ****/
+
+// App
+$app-background: #DAE4DF;
+
+
+// Login/Register Page //
+$login-box-background: white;
+$login-box-background-image: url(../../../img/bg.jpg) no-repeat center center fixed;
+$login-title-color: black;
+$login-paragraph-color: $black;
+$forgot-password-link-color: white;
+
+
+// Impostazione degli Input Normali
+$input-background: white;
+$input-background-focus: white;
+$input-group-field-border: #cacaca;
+$input-group-label-border: #cacaca; // input group label
+$input-group-label-color: $dark-gray; // input group label
+$input-group-label-background: white; // input group label
+$input-placeholder-color: #6B6B6B;
+
+
+// Impostazione degli Input Dark (.input-dark sul form)
+$input-dark-background: #474444;
+$input-dark-background-focus: #474444;
+$input-dark-group-field-border: #3D3B3B;
+$input-dark-group-label-border: #3D3B3B; // input group label
+$input-dark-group-label-color: white; // input group label
+$input-dark-group-label-background: #474444; // input group label
+$input-dark-placeholder-color: white;
+
+
+// Material Navbar //
+$mn-height: 50px;
+$mn-image-height: 50px;
+$mn-image-margin: (($mn-height - $mn-image-height) / 2);
+$mn-font-color: black;
+$mn-font-family: "Open Sans";
+$mn-link-color: $mn-font-color;
+$mn-background: #FFFFFF;
+$mn-dropdown-border-color: #DBDBDB;
+// Notification
+$mn-notification-color: #81867F;
+$mn-notification-color-new: #FFFFFF;
+$mn-notification-border-color: $green;
+
+
+// Left Menu //
+$left-menu-title-font: "Lobster";
+$leftmenu-background: #262729; // Default $dark-gray
+$leftmenu-color: white;
+$leftmenu-li-1-link-color: $leftmenu-color;
+$leftmenu-li-2-link-color: $leftmenu-color;
+$leftmenu-li-1-icon-color: $leftmenu-li-1-link-color;
+$leftmenu-li-2-icon-color: $leftmenu-li-2-link-color;
+$leftmenu-li-1-active-background: darken($leftmenu-background, 2%);
+$leftmenu-li-2-active-background: darken($leftmenu-background, 2%);
+
+
+// Dashboard Box //
+$dashboard-title-background: $leftmenu-background;
+$dashboard-title-color: white;
+
+
+// Menu Opzioni Profilo
+$dashboard-box-opzioni-background: white;
+$dashboard-box-opzioni-color: $dark-gray;
+
+
+// Datatables
+// Table //
+$table-border: 1px solid #AFBBB5;
+// Header //
+$table-header-border-bottom: 1px solid #AFBBB5;
+$table-header-td-padding: 10px 15px;
+$table-header-font-size: 0.7em;
+$table-header-font-color: #7B807E;
+$table-header-td-background: #ffffff;
+
+// Body //
+$table-body-tr-background: #ffffff;
+$table-body-tr-selected-background: #ffffff;
+$table-body-td-padding: 8px 15px;
+$table-body-td-font-size: 0.9em;
+$table-body-td-font-color: black;
+$table-body-no-footer-border-bottom: 1px solid #AFBBB5;
+    // Info (vista da X a X elementi)
+    $table-body-info-font-size: 0.8em;
+    $table-body-info-font-color: black;
+    // Sorting
+    $table-body-sorting-background: #ffffff;
+    $table-body-sorting-hover: #eaeaea;
+    $table-body-sorting2-hover: #ececec;
+    $table-body-sorting3-hover: #efefef;
+    //.stripe
+    $table-body-stripe-background: #ffffff;
+    $table-body-stripe-hover-background: #f6f6f6;
+    $table-body-stripe-selected-background: #ffffff;
+    // Paginate button
+    $table-body-paginate-font-size: 0.8em;
+    $table-body-paginate-font-color: black;
+    $table-body-paginate-button-padding: 0.5em 1em;
+    $table-body-paginate-button-color: #333;
+    $table-body-paginate-button-border: 0;
+    $table-body-paginate-button-border-hover: 0;
+    $table-body-paginate-button-current-color: white; // Current
+    $table-body-paginate-button-current-border: 0; // Current
+    $table-body-paginate-button-border-radius: 2px;
+    $table-body-paginate-button-current-gradient-color-top: $main; // Current
+    $table-body-paginate-button-current-gradient-color-bottom: $main; // Current
+    $table-body-paginate-button-gradient-color-top-hover: $main-lighter; // Hover
+    $table-body-paginate-button-gradient-color-bottom-hover: $main-lighter; // Hover
+    $table-body-paginate-button-gradient-color-top-active: $main-dark; // On pression
+    $table-body-paginate-button-gradient-color-bottom-active: $main-dark; // On pression
+// Footer //
+$table-footer-border-top: 1px solid #111;
+$table-footer-td-padding: 10px 18px 6px 18px;
+
+@import "../datatables/datatables";
+@import "theme-base";
+@import "../material-navbar";

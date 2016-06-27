@@ -22,40 +22,75 @@ from django.db import transaction
 
 @login_required
 @never_cache
-def registramozione(request,mozione_id=None):
+def registradocumento(request,documento_id=None):
 
-	if  mozione_id == None:
-		mozione = Mozione()
-		mozione.user = request.user
+	if  documento_id == None:
+		documento = Documento()
+		documento.user = request.user
 	else:
-		mozione = Mozione.objects.get(id = mozione_id)
-		
+		documento = Documento.objects.get(id = documento_id)
+
 	if request.method == 'POST':
-		form = MozioneForm(request.user, request.POST, instance=mozione)
+		form = DocumentoForm(request.user, request.POST, instance=documento)
 
 
 		if form.is_valid():
 			form.save()
 
-			return HttpResponseRedirect('/pf/listamozioni')
+			return HttpResponseRedirect('/pf/lista')
 	else:
-		form = MozioneForm(request.user, instance=mozione)
+		form = DocumentoForm(request.user, instance=documento)
 
-
-	return render_to_response('pf/registramozione.html',{'form': form, 'id' : mozione_id, 'mozione': mozione}, context_instance=RequestContext(request))
+	return render(request, 'pf/registradocumento.html', {'form': form, 'id' : documento_id, 'documento': documento})
 
 @login_required
 @never_cache
-def listamozioni(request):
-	lista = Mozione.objects.all()
-	return render(request, 'pf/listamozioni.html',{'lista': lista,})
+def listadocumenti(request):
+	lista = Documento.objects.all()
+	return render(request, 'pf/listadocumenti.html',{'lista': lista,})
 
 
 @login_required
-def eliminamozione(request, id):
-	mozione = get_object_or_404(Mozione, pk=id)
-	if mozione.user == request.user:
-		mozione.delete()
-		return HttpResponseRedirect('/pf/listamozioni/')
+def eliminadocumento(request, id):
+	documento = get_object_or_404(Documento, pk=id)
+	if documento.user == request.user:
+		documento.delete()
+		return HttpResponseRedirect('/pf/listadocumenti/')
 
 
+@login_required
+@never_cache
+def registracategoria(request,categoria_id=None):
+
+	if  categoria_id == None:
+		categoria = Categoria()
+		categoria.comune = request.user.profilo.citta
+	else:
+		categoria = Categoria.objects.get(id = categoria_id)
+
+	if request.method == 'POST':
+		form = CategoriaForm(request.user, request.POST, instance=categoria)
+
+
+		if form.is_valid():
+			form.save()
+
+			return HttpResponseRedirect('/pf/listacategorie')
+	else:
+		form = CategoriaForm(request.user, instance=categoria)
+
+	return render(request, 'pf/registracategoria.html', {'form': form, 'id' : categoria_id, 'categoria': categoria})
+
+@login_required
+@never_cache
+def listacategorie(request):
+	lista = Categoria.objects.all()
+	return render(request, 'pf/listacategorie.html',{'lista': lista,})
+
+
+@login_required
+def eliminacategoria(request, id):
+	categoria = get_object_or_404(Categoria, pk=id)
+	if categoria.comune == request.user.profilo.citta:
+		categoria.delete()
+		return HttpResponseRedirect('/pf/listacategorie/')

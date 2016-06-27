@@ -1,186 +1,202 @@
-{% extends "base.html" %}
+{% extends "base_pre_app.html" %}
 {% load i18n %}
+{% load require %}
 {% load staticfiles %}
-{% load url from future %}
 
-{% block testata %}
-	{% include "_/testata_sito.html" %}
-{% endblock %}
+{% block require %}{% require_module 'accounts_registra' %}{% endblock %}
+
+{% block page_title %}Registrati{% endblock %}
+
 
 {% block content %}
+<div class="large-8 medium-8 small-centered text-center columns">
 
 
-<br />
-<div class="row">
-	<div class="small-7 columns panel" >
-		<h2>{% trans "Registrazione" %}</h2>
-		{% if form.non_field_errors %}
-			<div class="alert-box alert">{{ form.non_field_errors }}</div>
-		{% endif %}
-		<form  action="/accounts/registra/" method="post" enctype="multipart/form-data" data-abide>
-		{% csrf_token %}
-		{{ form.errors }}
+<form action="/accounts/registra/" method="post" class="" enctype="multipart/form-data" data-abide novalidate>
+	{% csrf_token %}
 
-			<div class="row">
-				
+	{{ form.errors }}
 
-			    <div class="large-4 columns">
-			    	<label>{% trans "Logo" %}
-			        	{{ form.logo }}
-			      	</label>
-			      	<small class="error">{% trans "Inserisci il logo della Tua azienda" %}</small>
-			    </div>
-
-			</div>
-			<div class="row">
-				<div class="large-6 columns">
-			    	<label>{% trans "Nome" %} <small>richiesto</small>
-			        	{{ form.first_name }}
-			      	</label>
-			      	<small class="error">{% trans "Inserisci il tuo nome" %}</small>
-			    </div>
-				<div class="large-6 columns">
-			    	<label>{% trans "Cognome" %} <small>richiesto</small>
-			        	{{ form.last_name }}
-			      	</label>
-			      	<small class="error">{% trans "Inserisci il tuo cognome" %}</small>
-			    </div>
-			</div>
-			
-
-			<div class="row">
-			    <div class="large-8 columns">
-			    	<label>{% trans "Email" %} <small>richiesto</small> <span data-tooltip aria-haspopup="true" class="has-tip right" title="Se utilizzavi il vecchio software usa la stessa mail per riuscire ad importare i dati"> <i class="fa fa-info-circle"></i> Avevi il vecchio software?</span>
-			        	{{ form.email }}
-			      	</label>
-			      	<small class="error">{% trans "Il nome utente è obbligatorio e deve essere un indirizzo email" %}</small>
-			    </div>
-			    <div class="large-4 columns">
-			    	<label>{% trans "Telefono" %} <small>richiesto</small>
-			        	{{ form.telefono }}
-			      	</label>
-			      	<small class="error">{% trans "Devi inserire un recapito telefonico" %}</small>
-			    </div>
-			</div>
-
-			<div class="row">
-			    <div class="large-8 columns">
-			    	<label>{% trans "indirizzo" %} <small>richiesto</small>
-			        	{{ form.indirizzo }}
-			      	<small class="error">{{ form.indirizzo.errors }}</small>
-			    </div>
-
-			    <div class="large-4 columns">
-			    	<label>{% trans "civico/civici" %} <small>richiesto</small>
-			        	{{ form.civico }}
-			      	</label>
-			      	<small class="error">{{ form.civico.errors }}</small>
-			    </div>
-			</div>
-			<div class="row">
-			   
-			    <div class="large-3 columns">
-			    	<label>{% trans "provincia" %} <small>richiesto</small>
-			    		{{ form.provincia }}
-			      	</label>
-			      	<small class="error">{{ form.provincia.errors }}</small>
-			    </div>
-			    <div class="large-3 columns">
-			    	<label>{% trans "città" %} <small>richiesto</small>
-			    		{{ form.citta }}
-			      	</label>
-			      	<small class="error">{{ form.citta.errors }}</small>
-			    </div>
-			     <div class="large-3 columns">
-			    	<label>{% trans "CAP" %}
-			    		{{ form.cap }}
-			      	</label>
-			      	<small class="error">{{ form.cap.errors }}</small>
-			    </div>
-			</div>
-
-			<div class="row">
-			    <div class="large-12 columns password-field">
-			    	<label>{% trans "Password (almeno 6 caratteri)" %} <small>richiesto</small>
-			        	{{ form.password }}
-			      	</label>
-			      	<small class="error">{% trans "Devi compilare la password" %}</small>
-			    </div>
-				<div class="large-12 columns password-confirmation-field">
-				   	<label>{% trans "Conferma Password" %} <small>required</small>
-				     	<input type="password" required data-equalto="id_password">
-				   	</label>
-				   	<small class="error">{% trans "La password non combacia" %}</small>
-				</div>
-			</div>
-
-
-
-			<p class="form-control-static grigioscuro"><small>
-				{% url 'django.contrib.auth.views.login' as anchor_url %}
-				{% blocktrans with anchor='<a href="'|add:anchor_url|add:'">'|safe %}
-					Registrandomi, dichiaro di aver preso visione dell'{{ anchor }}informativa sulla privacy</a> di questo sito e di prestare il consenso al trattamento dei miei dati personali.
-				{% endblocktrans %}
-			</small></p>
-
-			<button type="submit" class="btn btn-primary"><strong>{% trans "Crea il tuo account" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i>
-
-
-		</form>
+	{% if form.non_field_errors %}
+	<div class="bg-red-orange callout" data-closable>
+	  <h5><strong>Errore</strong></h5>
+	  <p>{{ form.non_field_errors }}</p>
+	  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+		<span aria-hidden="true">&times;</span>
+	  </button>
 	</div>
-	<div class="small-4 columns">
-		<div class="panel">
-		<h4>{% trans "Attiva subito un account" %}</h4>
-		<p class="grigioscuro">{% trans "Registrati per iniziare ad usare il software:" %}</p>
-		<ul class="fa-ul grigioscuro">
-			<li><i class="fa-li fa fa-check text-success"></i>{% trans "Strumenti collaborazivi." %}</li>
-		</ul>
+	{% endif %}
+
+	<div class="row login-box">
+
+		<div class="small-12 small-centered columns">
+			<br>
+			<h1 class="text-center login-title"><b>Registrati</b></h1>
+			<br>
+		</div>
+		<div class="large-6 small-12 columns">
+			<label>
+				{{ form.first_name }}
+			</label>
+		</div>
+		<div class="large-6 small-12 columns">
+			<label>
+				{{ form.last_name }}
+			</label>
+		</div>
+		<div class="small-12 columns">
+			{{ form.avatar }}
+			<label class="button small bg-main" for="id_avatar"><b>Scegli immagine di profilo</b></label>
+		</div>
+		<div class="small-12 columns password-field">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-mail fa-lg"></span></span>
+			  		{{ form.email }}
+				</div>
+			</label>
 		</div>
 
-		<h4>Se ti sei già registrato e non ti è arrivata la mail di attivazione, clicca qui sotto per reinviarla.</h4>
-		<a href="#" data-reveal-id="attivazione" class="button extend">Reinvia attivazione</a>
+		<div class="large-6 small-12 columns password-field">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-lock fa-lg"></span></span>
+			  		{{ form.password }}
+				</div>
+			</label>
+		</div>
+		<div class="large-6 small-12 columns password-confirmation-field">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-lock fa-lg"></span></span>
+			  		<input type="password" required data-equalto="id_password" placeholder="Conferma Password" class="input-group-field">
+				</div>
+			</label>
+		</div>
+
+		<div class="small-12 columns">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-phone fa-lg"></span></span>
+			  		{{ form.telefono }}
+				</div>
+			</label>
+		</div>
+
+		<div class="large-6 small-12 columns">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-location fa-lg"></span></span>
+			  		{{ form.indirizzo }}
+				</div>
+			</label>
+		</div>
+		<div class="large-6 small-12 columns">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-location fa-lg"></span></span>
+			  		{{ form.civico }}
+				</div>
+			</label>
+		</div>
+
+		<div class="large-4 small-12 columns">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-map fa-lg"></span></span>
+			  		{{ form.provincia }}
+				</div>
+			</label>
+		</div>
+
+		<div class="large-4 small-12 columns row_citta hide">
+			<label>
+				<div class="input-group  ">
+			  		<span class="input-group-label"><span class="icon icon-map fa-lg"></span></span>
+			  		{{ form.citta }}
+				</div>
+			</label>
+		</div>
+
+		<div class="large-4 small-12 columns">
+			<label>
+				<div class="input-group">
+			  		<span class="input-group-label"><span class="icon icon-map fa-lg"></span></span>
+			  		{{ form.cap }}
+				</div>
+			</label>
+		</div>
+
+		<div class="small-6 columns no-pad">
+			<a class="button expanded large bg-main no-margin" href="/accounts/accedi/"><strong>Accedi</strong></a>
+		</div>
+		<div class="small-6 columns no-pad">
+			<button class="button expanded large bg-main-dark after-icon no-margin"type="submit"><strong>Crea <i class="fa-fw icon icon-arrow-thin-right"></i></strong></button>
+		</div>
+	</div>
+</form>
+
+<br>
+
+<div class="row login-box">
+	<div class="small-12 columns">
+		<br>
+		<h4 class="login-title"><b>Già registrato?</b></h4>
+	</div>
+	<div class="small-12 small-centered columns text-center">
+		<p class="text-center">Se ti sei già registrato e non hai ricevuto la mail di attivazione, clicca sul bottone sottostante per reinviarla</p>
+	</div>
+	<div class="small-12 columns no-pad">
+		<a href="#" class="button bg-light-green expanded no-margin" data-open="attivazione"><strong>Reinvia attivazione</strong></a>
 	</div>
 </div>
 
 
+
+
+
 <!-- Reinvia attivazione -->
-	
-
-		<div id="attivazione" class="reveal-modal" data-reveal>
-		  	<h4>{% trans "Reinviamo il codice di attivazione" %}</h4>
-		  	<p class="grigioscuro">{% trans "Inserisci l'indirizzo e-mail con cui ti sei registrato e ti invieremo le istruzioni per attivare il Tuo account." %}</p>
-			<hr>
-
-			<form role="form" action="/accounts/rimandaattivazione/" method="post" data-abide>
-			{% csrf_token %}
-			<div class="row">
-			    <div class="large-10 columns">
-			    	<label>{% trans "Email" %} <small>richiesto</small>
-			        	<input name="email" id="email_reset" type="email" placeholder="{% trans "email" %}" aria-describedby="emailHelp" required/>
-			      	</label>
-			      	<small class="error">{% trans "Inserisci una email valida." %}</small>
-			    </div>
-			</div>
-
-			<div class="row">
-				<div class="large-12 columns">
-				<button  class="right" type="submit"><strong>{% trans "Reinvia" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
-				</div>
-			</div>
-
-		  	<a class="close-reveal-modal">&#215;</a>
+<div class="reveal text-center text-black no-pad" style="border:0;" id="attivazione" data-reveal>
+	<div class="row">
+		<div class="large-12 columns">
+		  	<h4><br>
+				<i class="icon fa-lg icon-mail"></i><br>
+			  	<b>Reinvia attivazione</b>
+		  	</h4>
+		  	<p class="lead">Inserisci l'indirizzo e-mail con cui ti sei registrato <br>per ricevere le istruzioni di attivazione.</p>
+		  	<br>
+		  	<form role="form" action="/accounts/rimandaattivazione/" method="post" data-abide novalidate>
+				{% csrf_token %}
+			  	<div class="row">
+				  	<div class="large-12 small-centered columns">
+					  	<label>
+						  	<input name="email" id="email_reset" type="email" placeholder="{% trans "email" %}" aria-describedby="emailHelp" required/>
+					  	</label>
+				  	</div>
+			  	</div>
+			  	<br>
+			  	<div class="row">
+				  	<div class="large-12 text-center columns no-pad">
+					  	<button  class="button bg-dark-blue radius expanded no-margin" type="submit"><strong>Reinvia</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
+				  	</div>
+			  	</div>
 		  	</form>
 		</div>
+	</div>
+
+	<button class="close-button" data-close aria-label="Close modal" type="button">
+    	<span aria-hidden="true">&times;</span>
+  	</button>
+</div>
 
 
-{% endblock %}
 
-{% block extraprescripts %}
-<script type="text/javascript" src='{% static 'foundation/js/foundation/foundation.abide.js' %}'></script>
-<script type="text/javascript">
-$('#id_provincia').change(function(){
-	$("#id_citta").load("/anagrafiche/elencocitta/"+$('#id_provincia').val()+"/");
-	$("#id_citta").removeClass('hide');
-});
-</script>
+</div>
+
+
+
+
+
+
+
 {% endblock %}

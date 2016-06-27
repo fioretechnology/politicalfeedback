@@ -1,0 +1,319 @@
+
+// Sfondo pagina di Login //
+.login-background {
+    background: $login-box-background-image;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+// Colore di sfondo dell'app //
+.bg-app{
+    background-color: $app-background;
+}
+
+// Box di Login //
+.login-box{
+    background-color: $login-box-background;
+    .login-title{
+        color: $login-title-color;
+        text-align: center;
+    }
+    p{
+        color: $login-paragraph-color;
+    }
+    .input-group-label{
+        background-color: white;
+        span{
+            color: $dark-gray;
+        }
+    }
+}
+
+.password-dimenticata{
+    color: $forgot-password-link-color;
+}
+
+// Leftmenu //
+.leftmenu{
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {
+        min-height: auto;
+        width:100%;
+    }
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        min-height: auto;
+        width:100%;
+    }
+    /* Large and up */
+    @media screen and (min-width: 64em) {
+        width:250px;
+    }
+    min-height: 100%;
+    background-color: $leftmenu-background;
+    .vertical.menu{
+        margin:0;
+        .li-accordion-item-1{
+            background-color: lighten($leftmenu-background, 10%);
+            a.accordion-item{
+                color: $leftmenu-li-1-link-color;
+                font-size: 0.9em;
+                font-weight: 600;
+                margin-top: -3px;
+                padding-left:30px;
+                padding:14px 0 18px 30px;
+                i.icona-menu{
+                    margin-left: -5px;
+                    margin-right: 8px;
+                    margin-top: -2px;
+                    color: $leftmenu-li-1-icon-color;
+                }
+                &:active, &:focus{
+                    background-color: $leftmenu-li-1-active-background;
+                }
+            }
+            .li-accordion-item-2{
+                padding-left: 20px;
+                a{
+                    color: $leftmenu-li-2-link-color;
+                    font-size: 0.7em;
+                    i.icona-menu{
+                        margin-left: -10px;
+                        margin-right: 12px;
+                        color: $leftmenu-li-2-icon-color;
+                    }
+                }
+                &:hover{
+                    background-color: lighten($leftmenu-background, 15%);
+                }
+                &:active, &:focus{
+                    background-color:  $leftmenu-li-2-active-background;
+                }
+            }
+        }
+        .accordion-item{
+            padding:20px;
+            color: $leftmenu-color;
+            font-weight: bold;
+            background-color: $leftmenu-background;
+            &:hover{
+                background-color: lighten($leftmenu-background, 5%);
+            }
+            &::after{
+                border-top-color: $leftmenu-color
+            }
+        }
+        .nested{
+                background-color: lighten($leftmenu-background, 5%);
+        }
+    }
+    .title-bar{
+        background-color: $leftmenu-background;
+        color: $leftmenu-color;
+    	.title-bar-title{
+    		line-height: 10px;
+    		padding-bottom: 3px;
+    	}
+    }
+}
+.leftmenu-toggle{
+    $coloresfondo: #f78c1c;
+    background-color: $coloresfondo;
+    color: white;
+    &:hover{background-color: $coloresfondo;}
+    &:active{background-color: $coloresfondo;}
+    &:focus{background-color: lighten($coloresfondo, 10%);}
+}
+
+.leftmenu-title-container{
+    padding:0 10px 0 10px;
+}
+
+.leftmenu-title{
+    margin-top:10px;
+    color: $leftmenu-color;
+	font-family: $left-menu-title-font;
+}
+
+
+// Dashboard box //
+.dashboard-box{
+    margin-top: 20px;
+    .dashboard-box-content{
+        background: white;
+
+        padding: 20px;
+    }
+    .dashboard-title{
+        background: $dashboard-title-background;
+        padding: 5px 20px 5px 20px;
+        font-weight: bold;
+        color: $dashboard-title-color;
+        margin:0;
+        h1,h2,h3,h4,h5,h6{
+            font-weight: bold;
+            color: $dashboard-title-color;
+            margin:0;
+        }
+    }
+}
+
+// Menu Opzioni Profilo //
+.dashboard-box-opzioni{
+    /* Small only */
+    @media screen and (max-width: 39.9375em) {
+        min-height: auto;
+    }
+    /* Medium only */
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        min-height: auto;
+    }
+    background-color: $dashboard-box-opzioni-background;
+    .vertical.menu{
+        margin:0;
+        .li-accordion-item-1{
+            background-color: lighten($dashboard-box-opzioni-background, 10%);
+            a.accordion-item{
+                color: $dashboard-box-opzioni-color;
+                font-size: 0.9em;
+                i.icona-menu{
+                    margin-left: -5px;
+                    margin-right: 8px;
+                    margin-top: -3px;
+                }
+                &:active, &:focus{
+                    background-color: darken($dashboard-box-opzioni-background, 2%);
+                }
+            }
+            .li-accordion-item-2{
+                padding-left: 10px;
+                a{
+                    color: $dashboard-box-opzioni-color;
+                    font-size: 0.8em;
+                    i.icona-menu{
+                        margin-left: -10px;
+                        margin-right: 12px;
+                    }
+                }
+                &:hover{
+                    background-color: lighten($dashboard-box-opzioni-background, 15%);
+                }
+                &:active, &:focus{
+                    background-color: $dashboard-box-opzioni-background;
+                }
+            }
+        }
+
+        .accordion-item{
+            padding:15px;
+            color:  $dashboard-box-opzioni-color;
+            background-color: $dashboard-box-opzioni-background;
+            &:hover{
+                background-color: lighten($dashboard-box-opzioni-background, 5%);
+            }
+            &::after{
+                border-top-color: $dashboard-box-opzioni-color;
+            }
+        }
+        .nested{
+                background-color: lighten($dashboard-box-opzioni-background, 5%);
+        }
+    }
+}
+
+// Input
+
+input[type=text]{
+    background: $input-background;
+    border-color: $input-group-label-border;
+}
+input[type=text]:focus{
+    background: $input-background-focus;
+}
+input[type=file], input[type=number]{
+    color: $input-placeholder-color;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.input-group-field{
+    background: $input-background;
+    border-color: $input-group-field-border;
+    &:focus{
+        background: $input-background-focus;
+    }
+}
+.input-group-label{
+    width:auto;
+    height:auto;
+    background: $input-group-label-background;
+    color: $input-group-label-color;
+    border-color: $input-group-label-border;
+    i,span{
+        color: $input-group-label-color;
+    }
+}
+input::-webkit-input-placeholder {color: $input-placeholder-color;}
+input:-moz-placeholder {color: $input-placeholder-color;}
+input::-moz-placeholder {color: $input-placeholder-color;}
+input:-ms-input-placeholder {color: $input-placeholder-color;}
+
+textarea::-webkit-input-placeholder {color: $input-placeholder-color;}
+textarea:-moz-placeholder {color: $input-placeholder-color;}
+textarea::-moz-placeholder {color: $input-placeholder-color;}
+textarea:-ms-input-placeholder {color: $input-placeholder-color;}
+
+.input-dark{
+    input[type=text]{
+        background: $input-dark-background;
+        border-color: $input-dark-group-label-border;
+    }
+    input
+    [type=text]:focus{
+        background: $input-dark-background-focus;
+    }
+    input[type=file]{
+        color: $input-placeholder-color;
+    }
+    .inputfile {
+    	width: 0.1px;
+    	height: 0.1px;
+    	opacity: 0;
+    	overflow: hidden;
+    	position: absolute;
+    	z-index: -1;
+    }
+    .input-group-field{
+        background: $input-dark-background;
+        border-color: $input-dark-group-field-border;
+        &:focus{
+            background: $input-dark-background-focus;
+        }
+    }
+    .input-group-label{
+        background: $input-dark-group-label-background;
+        color: $input-dark-group-label-color;
+        border-color: $input-dark-group-label-border;
+        i,span{
+            color: $input-dark-group-label-color;
+        }
+    }
+    input::-webkit-input-placeholder {color: $input-dark-placeholder-color;}
+    input:-moz-placeholder {color: $input-dark-placeholder-color;}
+    input::-moz-placeholder {color: $input-dark-placeholder-color;}
+    input:-ms-input-placeholder {color: $input-dark-placeholder-color;}
+}
+
+
+// Footer
+
+.bg-footer{
+    background: $leftmenu-background;
+}

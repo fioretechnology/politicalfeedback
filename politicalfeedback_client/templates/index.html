@@ -6,11 +6,11 @@
 {% block postcontainer %}</div>{% endblock %}
 
 {% block testata %}
-	{% include "_/testata_sito.html" %}
+
 {% endblock %}
 
 {% block content %}
-   
+
     <div class="row">
       <div class="large-12 columns">
         <div class="panel">
@@ -31,6 +31,11 @@
         </div>
       </div>
     </div>
+
+    <h2>Gruppi attivi</h2>
+    {% for c in comuni %}
+      <a href="/gruppo/{{ c.id }}/" class="button small">{{ c.comune }}</a>
+    {% endfor %}
 {% endblock %}
 
 {% block extrahead %}

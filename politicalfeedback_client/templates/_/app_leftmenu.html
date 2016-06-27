@@ -1,0 +1,141 @@
+{% load static %}
+
+
+
+
+<div class="leftmenu-title-container" id="logo">
+    <h2 class="text-center leftmenu-title">{{ comune.comune }}</h2>
+    <span class="show-for-large"><hr style="border-color:black;"/></span>
+</div>
+
+
+
+
+<div class="title-bar" data-responsive-toggle="leftnav" data-hide-for="large">
+    <button class="" type="button" data-toggle>
+        <i class="fa fa-circle-o fa-fw icona-menu"></i>
+        <div class="title-bar-title">Menu</div>
+    </button>
+</div>
+
+<div class="no-pad" id="leftnav">
+    <ul class="vertical menu" data-accordion-menu>
+
+		<li class="li-accordion-item-1"><a href="/" class="accordion-item"><i class="fa fa-th-large fa-fw icona-menu"></i> Home</a></li>
+
+		<li class="li-accordion-item-1"><a href="/accounts/dashboard" class="accordion-item"><i class="fa fa-th-large fa-fw icona-menu"></i> Rassegna Stampa</a></li>
+
+		<li class="li-accordion-item-1"><a href="/accounts/dashboard" class="accordion-item"><i class="fa fa-th-large fa-fw icona-menu"></i> Gazebo Informativo</a></li>
+
+		<li class="li-accordion-item-1"><a href="/accounts/dashboard" class="accordion-item"><i class="fa fa-th-large fa-fw icona-menu"></i> Forum</a></li>
+
+		<li class="li-accordion-item-1">
+            <a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> LAV. GR. CONSILIARE</a>
+            <ul class="menu vertical nested">
+
+                <li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Presentate</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/pf/listamozioni"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/pf/registramozione"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+
+				<li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Approvate</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/anagrafiche/listafornitori"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/anagrafiche/registrafornitore"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+
+				<li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> In Sviluppo</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/anagrafiche/listamezzi"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/anagrafiche/registramezzo"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+			</ul>
+        </li>
+
+		<li class="li-accordion-item-1">
+            <a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> INTERPELLANZE</a>
+            <ul class="menu vertical nested">
+
+                <li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Presentate</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/pf/listamozioni"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/pf/registramozione"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+
+				<li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Approvate</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/anagrafiche/listafornitori"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/anagrafiche/registrafornitore"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+
+				<li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> In Sviluppo</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/anagrafiche/listamezzi"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/anagrafiche/registramezzo"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+			</ul>
+        </li>
+
+		<li class="li-accordion-item-1"><a href="/accounts/dashboard" class="accordion-item"><i class="fa fa-th-large fa-fw icona-menu"></i> Commissioni</a></li>
+
+
+		<li class="li-accordion-item-1">
+            <a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> CONSIGLI COMUNALI</a>
+            <ul class="menu vertical nested">
+
+                <li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Il Prossimo</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/pf/listamozioni"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/pf/registramozione"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+
+				<li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Precedenti</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/anagrafiche/listafornitori"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/anagrafiche/registrafornitore"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+
+				<li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> In Sviluppo</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/anagrafiche/listamezzi"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/anagrafiche/registramezzo"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+			</ul>
+        </li>
+
+		<li class="li-accordion-item-1">
+            <a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Altre Azioni</a>
+            <ul class="menu vertical nested">
+
+                <li class="li-accordion-item-2">
+					<a href="#" class="accordion-item"><i class="fa fa-shopping-bag fa-fw icona-menu"></i> Elenco</a>
+		            <ul class="menu vertical nested">
+						<li class="li-accordion-item-2"><a href="/pf/listamozioni"><i class="fa fa-bars fa-fw icona-menu"></i> Lista</a></li>
+                		<li class="li-accordion-item-2"><a href="/pf/registramozione"><i class="fa fa-plus fa-fw icona-menu"></i> Aggiungi</a></li>
+					</ul>
+				</li>
+
+			</ul>
+        </li>
+
+    </ul>
+</div>

@@ -13,7 +13,7 @@
 		<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 
 		<title>{% block title %}{{ seo_end }} PoliticalFeedback{% endblock %} - Solo uno strumento, non una gerarchia!</title>
-		
+
 		{% compress css %}
 		<link rel="stylesheet" href="{% static 'css/foundation.css' %}">
 		<link rel="stylesheet" href="{% static 'css/style/app.css' %}">
@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="{% static 'css/slicknav.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/theme-yellow.css' %}" />
 
-		
+
 		<link href="{% static 'js/pace/themes/orange/pace-theme-flash.css' %}" rel="stylesheet" />
 		{% endcompress %}
 
@@ -34,7 +34,7 @@
 		<script src="{% static 'js/pace/pace.js' %}"></script>
 		<script src="{% static 'modernizr/modernizr.js' %}"></script>
 		{% endcompress %}
-    	
+
 
 		{% block extrahead %}{% endblock %}
 
@@ -60,7 +60,7 @@
 
 
 		        <div class="wrap-fluid" id="paper-bg">
-		            
+
 		        	{% block topnav %}
 		    			{% include "_/topnav.html" %}
 		    		{% endblock topnav %}
@@ -90,7 +90,7 @@
 		    		{% include "_/rightmenu.html" %}
 		    	{% endblock rightmenu %}
 
-		        
+
 		    </div>
 		    <!-- end paper bg -->
 
@@ -106,7 +106,7 @@
 	    <script type='text/javascript' src='{% static 'js/preloader-script.js' %}'></script>
         <script type="text/javascript" src='{% static 'foundation/js/foundation.min.js' %}'></script>
         <script type='text/javascript' src="{% static 'foundation/js/foundation/foundation.dropdown.js' %}"></script>
-	    
+
 	    <script type='text/javascript' src='{% static 'js/slimscroll/jquery.slimscroll.js' %}'></script>
 	    <script type='text/javascript' src='{% static 'slicknav/jquery.slicknav.js' %}'></script>
 	    <script type='text/javascript' src='{% static 'js/sliding-menu.js' %}'></script>
@@ -114,7 +114,7 @@
 	    <script type="text/javascript" src="{% static 'js/number/jquery.counterup.min.js' %}"></script>
 	    <script type="text/javascript" src="{% static 'js/circle-progress/jquery.circliful.js' %}"></script>
 	    <script type='text/javascript' src='{% static 'js/app.js' %}'></script>
-	    
+
 		{% block extraprescripts %}{% endblock %}
 
 

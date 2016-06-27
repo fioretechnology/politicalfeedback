@@ -1,25 +1,21 @@
-{% extends "base.html" %}
+{% extends "base_pre_app.html" %}
 {% load i18n %}
-{% load url from future %}
-
-{% block testata %}
-	{% include "_/testata_sito.html" %}
-{% endblock %}
+ 
 
 {% block content %}
 
-<div class="row">
-	<div class="small-12 columns panel" >
-		<h2>{% trans "Conferma Inviata" %}</h2>
-		{% blocktrans %}				    
-		<p>Ti è stata inviata una mail con il link necessario per attivare il tuo account ed accedere al sito.</p>
+<div class="row bg-opacity">
+	<div class="small-12 columns text-center" >
+		<h2>Conferma Inviata</h2>
+		{% blocktrans %}
+		<p>Ti è stata inviata una mail con il link necessario per attivare il tuo account.</p>
 		<p>Se la mail non arriva a breve, controlla nella tua cartella spam o utilizza il pulsante qui sotto per fartela inviare nuovamente.</p>
 		{% endblocktrans %}
 		<hr>
 		<form  action="/accounts/rimandaattivazione/" method="post" data-abide>
 		{% csrf_token %}
 		<input type="hidden" name="email" value="{{ email }}" />
-		<button type="submit" href="#" class="button">{% trans "Invia di nuovo" %}</button>
+		<button type="submit" href="#" class="button bg-light-green">{% trans "Invia di nuovo" %}</button>
 		</form>
 	</div>
 </div>

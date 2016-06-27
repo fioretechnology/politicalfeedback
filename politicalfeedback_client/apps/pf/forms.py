@@ -7,14 +7,21 @@ from apps.pf.models import *
 import datetime
 
 
+class DocumentoForm(ModelForm):
+
+	def __init__(self, user, *args, **kwargs):
+		super(DocumentoForm, self).__init__(*args, **kwargs)
+
+	class Meta:
+		model = Documento
+		fields = ['data_documento','tipo', 'lettura', 'scrittura','oggetto', 'descrizione']
 
 
-class MozioneForm(ModelForm):
+class CategoriaForm(ModelForm):
 
-    def __init__(self, user, *args, **kwargs):
-        super(MozioneForm, self).__init__(*args, **kwargs)
+	def __init__(self, user, *args, **kwargs):
+		super(CategoriaForm, self).__init__(*args, **kwargs)
 
-    class Meta:
-        model = Mozione
-        fields = ['oggetto', 'descrizione']
-
+	class Meta:
+		model = Categoria
+		fields = ['parent','titolo', 'descrizione', 'globale','provincia', 'gruppo']

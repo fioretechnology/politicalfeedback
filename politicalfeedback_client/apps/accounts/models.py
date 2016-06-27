@@ -27,27 +27,34 @@ class Comune(models.Model):
     def __str__(self):
         return self.comune
 
+
+
+TIPO_UTENTE = (
+        (0, 'Simpatizzante'),
+        (1, 'Attivista'),
+        (2, 'Consigliere o incarico amministrativo'),
+    )
+
+
 class Profilo(models.Model):
     # This field is required.
     user = models.OneToOneField(User)
 
     # Other fields here
     attiva_accesso_sito = models.BooleanField(default=False)
-    cf = models.CharField(max_length=20,blank=True,null=True)
     confirmation_code = models.CharField(max_length=50,null=True)
     sitoweb = models.CharField(max_length=120,blank=True,null=True)
     telefono = models.CharField(max_length=120)
     cellulare = models.CharField(max_length=120,blank=True,null=True)
     fax = models.CharField(max_length=120,blank=True,null=True)
-    tipo_utente = models.IntegerField(null=True)
-    logo = models.ImageField(upload_to = 'loghi/',null=True)
+    tipo_utente = models.IntegerField(choices = TIPO_UTENTE, default = 0)
+    avatar = models.ImageField(upload_to = 'loghi/',null=True)
 
     indirizzo = models.CharField(max_length=220)
     civico = models.CharField(max_length=15,null=True)
     cap = models.CharField(max_length=10,blank=True,null=True)
     citta = models.ForeignKey(Comune)
     provincia = models.ForeignKey(Provincia)
-
     
     
     def __unicode__(self):

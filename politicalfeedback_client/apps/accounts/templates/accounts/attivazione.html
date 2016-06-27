@@ -2,91 +2,244 @@
 {% load i18n %}
 
 {% block testata %}
-	{% include "_/testata.html" %}
+{% include "_/testata.html" %}
 {% endblock %}
 
 {% block breadcrumbs %}
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
-  <li><a href="/accounts/attivazione">Attivazione</a></li>
+	<li><a href="/accounts/dashboard"><span class="entypo-home"></span></a></li>
+	<li><a href="/accounts/attivazione">Attivazione</a></li>
 </ul>
 {% endblock %}
 
 {% block content %}
-<div class="row">
-	<div class="small-12 columns panel" >
-		<h4>{% trans "Qui potrai attivare le funzionalità a pagamento." %}</h4>
+
+
+<!-- Container Begin -->
+<div class="row" style="margin-top:-20px">
+
+	<div class="large-12 columns">
+		<div class="box">
+			<div class="box-header bg-transparent">
+				<!-- tools box -->
+				<div class="pull-right box-tools">
+
+					<span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
+					</span>
+					<span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
+					</span>
+				</div>
+				<h3 class="box-title"><i class="icon-graph-pie"></i>
+					<span>Attivazione</span>
+				</h3>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body " style="display: block;">
+
+
+
+
+
+
+
+				<div class="row">
+					<div class="large-12 columns">
+
+
+						<h2 class="c-dark-blue">Qui potrai attivare le funzionalità a pagamento.</h2>
+
+						<br>
+
+
+						<p><strong>PulizieFacile</strong> nelle sue funzionalità di base è <strong>completamente gratuito</strong> e rimarrà tale.</p>
+
+						<p>Abbiamo deciso di mettere a pagamento delle funzionalità aggiuntive rispetto al vecchio software in modo da poter mantenere in vita la piattaforma e aumentare lo sviluppo anche attraverso la Vostra collaborazione con il nuovo sistema di suggerimenti e segnalazioni.</p>
+
+						<p><em>Ogni account ha una data di scadenza e il costo di ogni servizio verrà calcolato da oggi alla data di scadenza. Se non si è mai attivato nulla alla prima attivazione la scadenza viene fissata ad un'anno da oggi. La scadenza è SOLO per i servizi a pagamento.</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<p><strong>PulizieFacile</strong> nelle sue funzionalità di base è <strong>completamente gratuito</strong> e rimarrà tale.</p>
-
-	<p>Abbiamo deciso di mettere a pagamento delle funzionalità aggiuntive rispetto al vecchio software in modo da poter mantenere in vita la piattaforma e aumentare lo sviluppo anche attraverso la Vostra collaborazione con il nuovo sistema di suggerimenti e segnalazioni.</p>
-
-	<p><em>Ogni account ha una data di scadenza e il costo di ogni servizio verrà calcolato da oggi alla data di scadenza. Se non si è mai attivato nulla alla prima attivazione la scadenza viene fissata ad un'anno da oggi. La scadenza è SOLO per i servizi a pagamento.</em></p>
-
-	<h3 class="panel">Scadenza servizi {{ scadenza|date:"d/m/Y"}}</h3>
-
-	<form>
-	<div class="row">
-		<div class="large-8 columns" >
-		<h4>Documenti Di Trasporto</h4>
-		<p>Questa funzionalità è già presente in modalità gratuita nella fattura. Infatti nella modifica della fattura è possibile attivare l'opzione <em>accompagnatoria</em> e la fattura diventerà anche documento di trasporto.</p>
-
-		<p>Questa funzionalità aggiunge la possibilità di fare DDT indipendenti</p>
-		</div>
-
-		<div class="large-4 columns">
-		<ul class="pricing-table">
-		  <li class="title">Servizio DDT</li>
-		  <li class="price">8,00€</li>
-		  <li class="description">fino a data di scadenza (IVA esclusa)</li>
-		  <li class="bullet-item">creazione documenti di trasporto</li>
-		  
-		  {% if DDT_trial %}
-		  <li class="bullet-item">
-		  	<span class="pagato"><strong>Versione di prova attiva</strong></span>
-		  </li>
-		  <li class="bullet-item"><a href="/accounts/registrasegnalazione/">fai le Tue segnalazioni su questo modulo</a></li>
-		  {% else %}
-		  <li class="cta-button">
-		  <a class="button" href="#"><i class="fa fa-shopping-cart"></i> Aggiungi</a>
-		  </li>
-		  {% endif %}
-		</ul>
-		</div>
-
-	</div>
-
-	<div class="row">
-		<div class="large-8 columns" >
-		<h4>Acquisti e Cespiti</h4>
-		<p>Questa funzionalità permette l'inserimento delle fatture di acquisto e il caricamento nei cespiti aziendali dei materiali acquistati.</p>
-
-		<p>Attivandola sarà possibile avere il bilancio esatto del trimestre e il conteggio IVA.</p>
-		</div>
-
-		<div class="large-4 columns">
-		<ul class="pricing-table">
-		  <li class="title">Servizio Acquisti</li>
-		  <li class="price">12,00€</li>
-		  <li class="description">fino a data di scadenza (IVA esclusa)</li>
-		  <li class="bullet-item">inserimento fatture di acquisto e cespiti</li>
-		  
-		  {% if DDT_trial %}
-		  <li class="bullet-item">
-		  	<span class="pagato"><strong>Versione di prova attiva</strong></span>
-		  </li>
-		  <li class="bullet-item"><a href="/accounts/registrasegnalazione/">fai le Tue segnalazioni su questo modulo</a></li>
-		  {% else %}
-		  <li class="cta-button">
-		  <a class="button" href="#"><i class="fa fa-shopping-cart"></i> Aggiungi</a>
-		  </li>
-		  {% endif %}
-		</ul>
-		</div>
-
-	</div>
-	</form>
-
 </div>
+
+
+
+
+
+<div class="row" style="margin-top:-20px">
+
+	<div class="large-12 columns">
+		<div class="box">
+			<div class="box-header bg-transparent">
+
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body " style="display: block;">
+
+				<h2 class="c-dark-blue">Scadenza servizi {{ scadenza|date:"d/m/Y"}}</h2>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<form>
+	<div class="row" style="margin-top:-20px">
+
+		<div class="large-12 columns">
+			<div class="box">
+				<div class="box-header bg-transparent">
+					<!-- tools box -->
+					<div class="pull-right box-tools">
+
+						<span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
+						</span>
+						<span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
+						</span>
+					</div>
+					<h3 class="box-title"><i class="icon-graph-pie"></i>
+						<span>Servizio DDT</span>
+					</h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body " style="display: block;">
+
+
+
+
+
+
+					<div class="row">
+						<div class="large-9 columns" >
+							<h4>Documenti Di Trasporto</h4>
+							<p>Questa funzionalità è già presente in modalità gratuita nella fattura. Infatti nella modifica della fattura è possibile attivare l'opzione <em>accompagnatoria</em> e la fattura diventerà anche documento di trasporto.</p>
+
+							<p>Questa funzionalità aggiunge la possibilità di fare DDT indipendenti</p>
+						</div>
+
+						<div class="large-3 columns">
+
+
+
+							<ul class="pricing-table">
+								<li class="title bg-blue" >
+									<h6 class="text-white">Servizio DDT</h6>
+								</li>
+								<li class="price">
+								<h2>8,00€</h2>
+								</li>
+								<li class="description">fino a data di scadenza (IVA esclusa)</li>
+
+								{% if DDT_trial %}
+								<li class="bullet-item">
+									<span class="pagato"><strong>Versione di prova attiva</strong></span>
+								</li>
+
+
+								<li class="cta-button"><a class="button small radius bg-blue" href="/accounts/registrasegnalazione/">Fai le Tue segnalazioni su questo modulo</a>
+								</li>
+
+
+								{% else %}
+								<li class="cta-button"><a class="button small radius bg-blue" href="#"><i class="fa fa-shopping-cart"></i> Aggiungi</a>
+								</li>
+								{% endif %}
+
+							</ul>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+	<div class="row" style="margin-top:-20px">
+
+		<div class="large-12 columns">
+			<div class="box">
+				<div class="box-header bg-transparent">
+					<!-- tools box -->
+					<div class="pull-right box-tools">
+
+						<span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
+						</span>
+						<span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
+						</span>
+					</div>
+					<h3 class="box-title"><i class="icon-graph-pie"></i>
+						<span>Servizio Acquisti</span>
+					</h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body " style="display: block;">
+
+
+
+
+
+
+					<div class="row">
+						<div class="large-9 columns" >
+							<h4>Acquisti e Cespiti</h4>
+							<p>Questa funzionalità permette l'inserimento delle fatture di acquisto e il caricamento nei cespiti aziendali dei materiali acquistati.</p>
+
+							<p>Attivandola sarà possibile avere il bilancio esatto del trimestre e il conteggio IVA.</p>
+						</div>
+
+						<div class="large-3 columns">
+
+
+							<ul class="pricing-table">
+								<li class="title bg-blue" >
+									<h6 class="text-white">Servizio Acquisti</h6>
+								</li>
+								<li class="price">
+								<h2>12,00€</h2>
+								</li>
+								<li class="description">fino a data di scadenza (IVA esclusa)</li>
+
+								<li class="bullet-item">inserimento fatture di acquisto e cespiti</li>
+
+								{% if DDT_trial %}
+								<li class="bullet-item">
+									<span class="pagato"><strong>Versione di prova attiva</strong></span>
+								</li>
+								<li class="cta-button"><a class="button small radius bg-blue" href="/accounts/registrasegnalazione/">fai le Tue segnalazioni su questo modulo</a></li>
+								{% else %}
+								<li class="cta-button"><a class="button small radius bg-blue" href="#"><i class="fa fa-shopping-cart"></i> Aggiungi</a>
+								</li>
+								{% endif %}
+
+							</ul>
+
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+
+
+
+
+
 {% endblock %}

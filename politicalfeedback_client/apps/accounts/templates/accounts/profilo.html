@@ -1,260 +1,228 @@
-{% extends "baseapp.html" %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load staticfiles %}
+{% load require %}
+{% load imagekit %}
 
-{% block breadcrumbs %}
-<ul class="breadcrumbs">
-  <li><a href="/accounts/dashboard"><span class="entypo-home"></span></a>
-  <li class="unavailable"><a href="#">Account</a></li>
-  <li class="current">Profilo</li>
-</ul>
-{% endblock %}
+{% block require %}{% require_module 'accounts_profilo' %}{% endblock %}
+
 
 {% block content %}
+<div class="row expanded">
+	<div class="large-3 small-12 columns">
+		<div class="dashboard-box">
+			<div class="dashboard-box-opzioni">
 
-<!-- Container Begin -->
-<div class="row" style="margin-top:-20px">
+				{{ formutente.errors }}
 
-    <div class="large-12 columns">
-        <div class="box">
-            <div class="box-header bg-transparent">
-                <!-- tools box -->
-                <div class="pull-right box-tools">
+				<button  class="button bg-main expanded no-margin salva" type="submit" form=""><strong>Salva</strong></button>
 
-                    <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
-                    </span>
-                    <span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
-                    </span>
-                </div>
-                <h3 class="box-title"><i class="icon-graph-pie"></i>
-                    <span>PROFILO {{ request.user.email|upper }}</span>
-                </h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body " style="display: block;">
+				<button type="button" class="button bg-main-light expanded no-margin" data-open="cambiaPsw">
+					<strong>Cambia password</strong>
+				</button>
 
+				<div class="title-bar bg-dark-gray" data-responsive-toggle="opzioni" data-hide-for="large">
+					<button class="" type="button" data-toggle><i class="fa fa-circle-o fa-fw icona-menu"></i>
+					<div class="title-bar-title">Opzioni</div>
+					</button>
+				</div>
+				<div class="no-pad" id="opzioni">
+					<ul class="vertical menu" data-accordion-menu>
+						<li class="li-accordion-item-1"><a href="javascript:;" data-id="datipersonali" class="accordion-item opzione"><i class="fa fa-user fa-fw icona-menu"></i> Dati Personali</a></li>
+						<li class="li-accordion-item-1"><a href="javascript:;" data-id="spedizioni" class="accordion-item opzione"><i class="fa fa-truck fa-fw icona-menu"></i> Spedizioni</a></li>
+						<li class="li-accordion-item-1"><a href="javascript:;" data-it="pagamento" class="accordion-item opzione"><i class="fa fa-credit-card fa-fw icona-menu"></i> Metodi pagamento</a></li>
+					</ul>
+				</div>
 
-
-
-<form action="/accounts/profile/" method="post" enctype="multipart/form-data" data-abide>
-<div class="row">
-	<div class="large-8 small-12 columns" >
-
-		    {% csrf_token %}
-		    
-					<div class="row">
-
-						<div class="large-12 columns">
-
-							<div class="large-8 columns">
-					  			<label>{% trans "Ragione sociale" %} <small>richiesto</small>
-					       		{{ formutente.ragione_sociale }}
-					   			</label>
-					   			<small class="error">{% trans "Devi compilare la ragione sociale" %}</small>
-							</div>
-
-							<div class="large-4 columns">
-								<label>{% trans "Logo" %}
-							    	{{ formutente.logo }}
-							  	</label>
-							  	<small class="error">{% trans "Inserisci il logo della Tua azienda" %}</small>
-							</div>
-
-							<div class="large-6 columns">
-					  			<label>{% trans "Nome" %} <small>richiesto</small>
-					       		{{ formutente.first_name }}
-					   			</label>
-					   			<small class="error">{% trans "Devi compilare il nome" %}</small>
-							</div>
-
-							<div class="large-6 columns">
-					  			<label>{% trans "Cognome" %} <small>richiesto</small>
-					       		{{ formutente.last_name }}
-					   			</label>
-					   			<small class="error">{% trans "Devi compilare il cognome" %}</small>
-							</div>
-
-							<div class="large-6 columns">
-							    <label>{% trans "Partita IVA" %} <small>richiesto</small>
-							    	{{ formutente.partita_iva }}
-							    </label>
-							    <small class="error">{% trans "La partita IVA non può essere vuota" %}</small>
-							</div>
-
-							<div class="large-6 columns">
-							    <label>{% trans "Codice Fiscale" %}
-							    	{{ formutente.cf }}
-							    </label>
-							    <small class="error">{% trans "Il codice fiscale va inserito correttamente" %}</small>
-							</div>
-
-							<div class="large-6 columns">
-							    <label>{% trans "Telefono" %} <small>richiesto</small>
-							    	{{ formutente.telefono }}
-							    </label>
-							    <small class="error">{% trans "Il telefono è obbligatorio" %}</small>
-							</div>
-
-							<div class="large-6 columns">
-							    <label>{% trans "Fax" %}
-							    	{{ formutente.fax }}
-							    </label>
-							    <small class="error">{% trans "Il telefono è obbligatorio" %}</small>
-							</div>
-
-							<div class="large-8 columns">
-								<label>{% trans "indirizzo" %} <small>richiesto</small>
-							    	{{ formutente.indirizzo }}
-							    </label>
-							  	<small class="error">{{ form.indirizzo.errors }}</small>
-							</div>
-
-							<div class="large-4 columns">
-								<label>{% trans "civico/civici" %} <small>richiesto</small>
-							    	{{ formutente.civico }}
-							  	</label>
-							  	<small class="error">{{ form.civico.errors }}</small>
-							</div>
-
-							<div class="large-3 columns">
-								<label>{% trans "provincia" %} <small>richiesto</small>
-									{{ formutente.provincia }}
-							  	</label>
-							  	<small class="error">{{ form.provincia.errors }}</small>
-							</div>
-							<div class="large-3 columns">
-								<label>{% trans "città" %} <small>richiesto</small>
-									{{ formutente.citta }}
-							  	</label>
-							  	<small class="error">{{ form.citta.errors }}</small>
-							</div>
-							 <div class="large-3 columns">
-								<label>{% trans "CAP" %}
-									{{ formutente.cap }}
-							  	</label>
-							  	<small class="error">{{ form.cap.errors }}</small>
-							</div>
-
-						</div>
-
-						
-
-					</div>
-
-					<div class="row">
-
-						<div class="large-12 columns">
-							<div class="large-4 columns">
-								<label>{% trans "Anno corrente" %} <small>richiesto</small>
-							    {{ formutente.anno_corrente }}
-							   	</label>
-							   	<small class="error">{% trans "Devi inserire l'anno corrente di esercizio" %}</small>
-							</div>
-							<div class="large-6 columns">
-								<label>{% trans "Scadenza fatture default (giorni)" %} <small>richiesto</small>
-							    {{ formutente.scadenza_fatture }}
-							   	</label>
-							   	<small class="error">{% trans "Devi inserire la scadenza" %}</small>
-							</div>
-							<div class="large-2 columns">
-								<label>{% trans "IVA default" %}
-							    {{ formutente.default_iva }}
-							   	</label>
-							   	<small class="error">{% trans "Devi inserire l'iva di default" %}</small>
-							</div>
-						</div>
-
-						<div class="large-12 columns">
-							<div class="large-8 columns">
-								<label>{% trans "Banca di riferimento" %} 
-							    {{ formutente.banca }}
-							   	</label>
-							   	<small class="error">{% trans "Devi inserire il nome della banca" %}</small>
-							</div>
-						</div>
-
-						<div class="large-12 columns">
-							<div class="large-8 columns">
-								<label>{% trans "IBAN" %} 
-							    {{ formutente.iban }}
-							   	</label>
-							   	<small class="error">{% trans "Devi inserire l'IBAN della banca" %}</small>
-							</div>
-						</div>
-
-						<div class="large-12 columns">
-							<div class="large-8 columns">
-								<label>{% trans "BIC" %} 
-							    {{ formutente.bic }}
-							   	</label>
-							   	<small class="error">{% trans "Devi inserire il bic della banca" %}</small>
-							</div>
-						</div>
-					</div>
-	</div>
-
-	<div class="large-4 columns">
-		
-			{% if mod %}
-		    <div data-alert class="alert-box success radius">
-		    	<strong>{% trans "Dati modificati con successo" %}</strong>
-		    <a href="#" class="close">&times;</a>
-			</div>
-		    {% endif %}
-
-			<button  class="right expand" type="submit"><strong>{% trans "Registra modifiche" %}</strong></button>
-
-			<button type="button" class="btn btn-default expand" data-reveal-id="cambiaPsw">
-				<strong>{% trans "Cambia password" %}</strong>
-			</button>
-
-			{{ formutente.errors }}
-
-	</div>
-	
-</div>
-</form>
-
-
-            </div>
-            <!-- end .timeline -->
-
-
-        </div>
-        <!-- box -->
-    </div>
-</div>
-<!-- End of Container Begin -->
-
-<!-- CAMBIA PASSWORD -->
-
-	<div id="cambiaPsw"  class="reveal-modal" data-reveal>
-
-		<form role="form" action="/accounts/cambiapassword/" method="post" data-abide>{% csrf_token %}
-		<div class="row">
-			<div class="large-12 columns password-field">
-			  	<label>{% trans "Password (almeno 6 caratteri)" %} <small>richiesto</small>
-			       	{{ formpwd.password }}
-			   	</label>
-			   	<small class="error">{% trans "Devi compilare la password" %}</small>
-			</div>
-			<div class="large-12 columns password-confirmation-field">
-			   	<label>{% trans "Conferma Password" %} <small>required</small>
-			     	{{ formpwd.confermapassword }}
-			   	</label>
-			   	<small class="error">{% trans "La password non combacia" %}</small>
 			</div>
 		</div>
-
-		<button type="submit" ><strong>{% trans "Invia" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
-		</form>
-		<a class="close-reveal-modal">&#215;</a>
 	</div>
+	<div class="large-9 small-12 columns">
+
+		{% if mod %}
+
+		<div class="success callout" style="margin-top:20px;" data-closable>
+			<h5>Dati modificati con successo</h5>
+			<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		{% endif %}
+
+		<form action="/accounts/profile/" id="form_datipersonali" method="post" enctype="multipart/form-data" data-abide>
+			{% csrf_token %}
+
+			<div class="dashboard-box sezione-opzioni" id="datipersonali">
+				<div class="dashboard-title">
+					<h3>Dati Personali</h3>
+				</div>
+				<div class="dashboard-box-content">
+
+					<div class="row expanded">
+
+						<div class="medium-4 large-centered columns">
+	          				{% if not request.user.profilo.userpic %}
+	          					<div><i>Manca l'immagine di profilo</i></div>
+	          				{% else %}
+								{% generateimage 'accounts:thumbnail300' source=request.user.profilo.userpic as im %}
+	          					<div><img width="100%" src="{{ im.url }}" /></div>
+	          				{% endif %}
+	          				{{ formutente.userpic }}
+	          				<label class="button expanded small bg-main" for="id_userpic"><b><i class="fa fa-upload fa-lg fa-fw pull-left"></i>Modifica</b></label>
+							<br>
+	          			</div>
+						<div class="large-12 medium-8 columns">
+							<div class="large-12 columns">
+								<b>E-Mail:</b>&nbsp; {{ request.user.email }}
+								<br><br>
+							</div>
+							<div class="xlarge-6 large-12 medium-12 columns">
+								<label>Nome <small>richiesto</small>
+									{{ formutente.first_name }}
+								</label>
+							</div>
+							<div class="xlarge-6 large-12 medium-12 columns">
+								<label>Cognome <small>richiesto</small>
+									{{ formutente.last_name }}
+								</label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</form>
+
+		<form action="/accounts/profile/" id="form_spedizioni" method="post" enctype="multipart/form-data" data-abide>
+			{% csrf_token %}
+			<div class="dashboard-box sezione-opzioni" id="spedizioni">
+				<div class="dashboard-title">
+					<h3>Spedizioni</h3>
+				</div>
+				<div class="dashboard-box-content">
+
+					<div class="row">
+						<div class="columns">
+							<table id="datatable" class="display responsive nowrap row-border" width="100%">
+								<thead>
+						            <tr>
+						                <th>Colonna 1</th>
+						                <th>Colonna 2</th>
+						                <th>Colonna 3</th>
+						            </tr>
+						        </thead>
+								<tbody>
+						            <tr>
+						                <td>Colonna 1</td>
+										<td>Colonna 1</td>
+										<td>Colonna 1</td>
+						            </tr>
+									<tr>
+						                <td>Colonna 1</td>
+										<td>Colonna 1</td>
+										<td>Colonna 1</td>
+						            </tr>
+									<tr>
+						                <td>Colonna 1</td>
+										<td>Colonna 1</td>
+										<td>Colonna 1</td>
+						            </tr>
+									<tr>
+						                <td>Colonna 1</td>
+										<td>Colonna 1</td>
+										<td>Colonna 1</td>
+						            </tr>
+
+
+						        </tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+
+<!-- CAMBIA PASSWORD -->
+<div class="reveal text-center text-black no-pad" style="border:0;" id="cambiaPsw" data-reveal>
+	<div class="row">
+		<div class="large-12 columns">
+			<h4><br>
+				<i class="fa fa-lg fa-unlock-alt"></i><br>
+				<b>Cambia Password</b>
+			</h4>
+			<p class="lead">Inserisci due volte la nuova password<br>che desideri utilizzare.</p>
+			<br>
+			<form role="form" action="/accounts/cambiapassword/" method="post" data-abide novalidate>
+				{% csrf_token %}
+				<div class="row">
+					<div class="large-12 small-centered columns">
+						<label>Password (almeno 6 caratteri)
+							{{ formpwd.password }}
+						</label>
+					</div>
+					<div class="large-12 small-centered columns">
+						<label>Conferma Password
+							{{ formpwd.confermapassword }}
+						</label>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="large-12 text-center columns no-pad">
+						<button  class="button bg-main-light radius expanded no-margin" type="submit"><strong>Invia</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
 
 {% endblock %}
 
-{% block extrahead %}
-{% endblock extrahead %}
 
-{% block extraprescripts %}
+{% block postscripts %}
+<script src="{% static 'datatables/datatables.js' %}"></script>
+<script src="{% static 'datatables/Responsive-2.0.2/js/dataTables.responsive.js' %}"></script>
+
+<script>
+$(".sezione-opzioni").hide();
+$(".opzione").click(function(){
+	var $a = $(this);
+	$(".sezione-opzioni").hide();
+	$(".salva").attr("form", "form_" + $a.data("id"));
+	$("div #" + $a.data("id")).toggle();
+});
+
+$(document).ready(function() {
+	$('#datatable').DataTable( {
+        "dom": '<lf<t>ip>',
+
+		responsive: true,
+		stateSave: true,
+		"aLengthMenu": [[10, 25, 50, -1], ["Mostra 10", "Mostra 25", "Mostra 50", "Mostra Tutti"]],
+		"language": {
+            "sLengthMenu": "_MENU_",
+            "zeroRecords": "Nessun risultato trovato",
+            "sInfo": "Vista da _START_ a _END_ di _TOTAL_ elementi",
+			search: "_INPUT_",
+        	searchPlaceholder: "Cerca",
+            "infoEmpty": "Nessun dato disponibile",
+            "infoFiltered": "(filtrato da _MAX_ dati totali)",
+			"paginate": {
+		      "previous": "Precedente",
+			  "next": "Successiva"
+		  }
+        }
+    } );
+} );
+</script>
 {% endblock %}

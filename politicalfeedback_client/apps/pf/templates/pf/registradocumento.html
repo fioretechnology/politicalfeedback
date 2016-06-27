@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li><a href="/accounts/dashboard"><span class="entypo-home"></span></a></li>
+  <li class="unavailable"><a href="#">Programmazione</a></li>
+  <li><a href="/programmazione/listaschede/">Lista Schede</a></li>
+  <li class="current">Registra Scheda</li>
+</ul>
+{% endblock %}
+
+
+{% block content %}
+<div class="row expanded">
+    <div class="large-12 columns">
+        <div class="dashboard-box sezione-opzioni" id="spedizioni">
+            <div class="dashboard-box-content">
+                <h1 class="lobster text-center">Registra nuovo documento</h1><br>
+                <div class="row expanded">
+                    <div class="large-12 columns">
+
+
+						{% if form.non_field_errors %}
+						    <div data-alert="" class="alert-box alert">
+						        {% for non_field_error in form.non_field_errors %}
+						             {{ non_field_error }}
+						        {% endfor %}
+						    </div>
+						{% endif %}
+
+						<form action="/programmazione/registramozione/{% if id %}{{ id }}/{% endif %}" method="post" data-abide novalidate>
+							{% csrf_token %}
+							{% for hidden in form.hidden_fields %}
+							    {{ hidden }}
+							{% endfor %}
+
+
+
+							<div class="row">
+	                            <div class="large-3 columns">
+	                                <label>{% trans "Data del documento" %}
+	                                    {{ form.data_documento }}
+	                                </label>
+	                                <small class="error">Inserisci la data del documento</small>
+	                            </div>
+	                            <div class="large-3 columns">
+	                                <label>{% trans "Tipo" %}
+	                                    {{ form.tipo }}
+	                                </label>
+	                                <small class="error">Inserisci tipo di documento</small>
+	                            </div>
+	                            <div class="large-3 columns">
+	                                <label>{% trans "Chi può leggere?" %}
+	                                    {{ form.lettura }}
+	                                </label>
+	                                <small class="error">Inserisci la protezione in lettura</small>
+	                            </div>
+	                            <div class="large-3 columns">
+	                                <label>{% trans "C?hi può modificare" %}
+	                                    {{ form.scrittura }}
+	                                </label>
+	                                <small class="error">Inserisci la protezione in scrittura</small>
+	                            </div>
+							    <div class="large-12 columns">
+							    	<label>{% trans "Oggetto" %}
+							        	{{ form.oggetto }}
+							      	</label>
+							      	<small class="error">Inserisci oggetto della mozione'</small>
+							    </div>
+							    <div class="large-12 columns">
+							    	<label>{% trans "Testo" %}
+							        	{{ form.descrizione }}
+							      	</label>
+							      	<small class="error">Inserisci descrizione della mozione'</small>
+							    </div>
+
+
+							</div>
+
+
+
+							<div class="row">
+								<div class="large-12 columns"><button  class="right" type="submit">Salva</button></div>
+							</div>
+
+						</form>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block extrahead %}
+<link href="{% static 'foundation-datepicker/stylesheets/foundation-datepicker.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block extraprescripts %}
+<script type="text/javascript" src='{% static 'foundation-datepicker/js/foundation-datepicker.js' %}'></script>
+
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+
+
+{% endblock %}

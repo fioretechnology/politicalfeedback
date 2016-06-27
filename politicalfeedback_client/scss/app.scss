@@ -1,0 +1,100 @@
+// Compass (per filter e mixin)
+@import "compass";
+
+
+// Importazione Foundation
+@import "foundation";
+@include foundation-everything(true);
+
+// Set di Colori
+@import "_/colori";
+
+// Importazione Componenti Aggiuntivi
+//@import "../components/bower_components/hover/scss/hover.scss";
+
+
+
+// Utility Classes ---------------------------------------------
+
+.titolo{
+	font-family: "Josefin Sans";
+}
+
+// Elimina qualsiasi padding (anche ereditato) dall'elemento
+.no-pad{padding:0!important;}
+.no-padding-top{padding-top: 0!important;}
+.no-padding-right{padding-right: 0!important;}
+.no-padding-bottom{padding-bottom: 0!important;}
+.no-padding-left{padding-left: 0!important;}
+// Elimina qualsiasi margin (anche ereditato) dell'elemento
+.no-margin{margin: 0!important;}
+.no-margin-top{margin-top: 0!important;}
+.no-margin-right{margin-right: 0!important;}
+.no-margin-bottom{margin-bottom: 0!important;}
+.no-margin-left{margin-left: 0!important;}
+
+// Adatta larghezza colonna tabella a contenuto
+.nowrap{
+	white-space:nowrap;
+}
+
+// Per i bottoni con un'icona al termine
+.after-icon{
+	position:relative;
+	i.fa, i.icon, span.fa, span.icon{
+		position:absolute;
+		right:5px;
+		top:50%;
+		margin-top:-10px;
+	}
+}
+
+a {outline: 0;}
+
+@media only screen and (min-width: 90.063em) {
+	.xlarge-6 {
+		width: 50%;
+	}
+}
+
+// General Styles -----------------------------------------------
+
+$main-font: "Open Sans";
+$title-font: "Open Sans";
+$standard-text-font: "Open Sans";
+
+body{
+	font-family: $main-font;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: $title-font;
+}
+p,span,small,div{
+	font-family: $standard-text-font;
+}
+
+.menu-tag{
+	border-radius: 3px;
+	padding: 2px 4px 3px 4px;
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+$footer-height: 34px;
+.footer{
+	padding: 5px;
+	height: $footer-height;
+	position: absolute;
+	top: 100vh;
+	width: 100%;
+}
+
+.app-container{
+	min-height: 100vh;
+	.app-content{
+		min-height: 100vh;
+		padding: 0;
+		padding-bottom: 30px;
+	}
+}

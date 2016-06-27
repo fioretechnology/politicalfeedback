@@ -1,0 +1,2504 @@
+/* line 13, ../../../../scss/_/_colori.scss */
+.bg-main {
+  background: #f7aa43;
+}
+/* line 15, ../../../../scss/_/_colori.scss */
+.bg-main:hover {
+  background: #de993c;
+}
+/* line 16, ../../../../scss/_/_colori.scss */
+.bg-main:active, .bg-main:focus {
+  background-color: #de993c;
+}
+
+/* line 18, ../../../../scss/_/_colori.scss */
+.bg-main-dark {
+  background: #c58835;
+}
+/* line 20, ../../../../scss/_/_colori.scss */
+.bg-main-dark:hover {
+  background: #b17a2f;
+}
+/* line 21, ../../../../scss/_/_colori.scss */
+.bg-main-dark:active, .bg-main-dark:focus {
+  background-color: #b17a2f;
+}
+
+/* line 23, ../../../../scss/_/_colori.scss */
+.bg-main-darker {
+  background: #946628;
+}
+/* line 25, ../../../../scss/_/_colori.scss */
+.bg-main-darker:hover {
+  background: #855b24;
+}
+/* line 26, ../../../../scss/_/_colori.scss */
+.bg-main-darker:active, .bg-main-darker:focus {
+  background-color: #855b24;
+}
+
+/* line 28, ../../../../scss/_/_colori.scss */
+.bg-main-light {
+  background: #f8bb68;
+}
+/* line 30, ../../../../scss/_/_colori.scss */
+.bg-main-light:hover {
+  background: #dfa85d;
+}
+/* line 31, ../../../../scss/_/_colori.scss */
+.bg-main-light:active, .bg-main-light:focus {
+  background-color: #dfa85d;
+}
+
+/* line 33, ../../../../scss/_/_colori.scss */
+.bg-main-lighter {
+  background: #facc8e;
+}
+/* line 35, ../../../../scss/_/_colori.scss */
+.bg-main-lighter:hover {
+  background: #e1b77f;
+}
+/* line 36, ../../../../scss/_/_colori.scss */
+.bg-main-lighter:active, .bg-main-lighter:focus {
+  background-color: #e1b77f;
+}
+
+/* line 77, ../../../../scss/_/_colori.scss */
+.bg-light-green, .bg-dark-blue, .bg-red, .bg-yellow, .bg-aqua, .bg-blue, .bg-light-blue, .bg-green, .bg-navy, .bg-teal, .bg-olive, .bg-lime, .bg-red-orange, .bg-orange, .bg-fuchsia, .bg-purple, .bg-maroon, .bg-black {
+  color: #f9f9f9 !important;
+}
+/* line 80, ../../../../scss/_/_colori.scss */
+.bg-light-green.button:hover, .bg-dark-blue.button:hover, .bg-red.button:hover, .bg-yellow.button:hover, .bg-aqua.button:hover, .bg-blue.button:hover, .bg-light-blue.button:hover, .bg-green.button:hover, .bg-navy.button:hover, .bg-teal.button:hover, .bg-olive.button:hover, .bg-lime.button:hover, .bg-red-orange.button:hover, .bg-orange.button:hover, .bg-fuchsia.button:hover, .bg-purple.button:hover, .bg-maroon.button:hover, .bg-black.button:hover {
+  -webkit-filter: brightness(0.9);
+  filter: brightness(0.9);
+}
+/* line 83, ../../../../scss/_/_colori.scss */
+.bg-light-green.button:active, .bg-light-green.button:focus, .bg-dark-blue.button:active, .bg-dark-blue.button:focus, .bg-red.button:active, .bg-red.button:focus, .bg-yellow.button:active, .bg-yellow.button:focus, .bg-aqua.button:active, .bg-aqua.button:focus, .bg-blue.button:active, .bg-blue.button:focus, .bg-light-blue.button:active, .bg-light-blue.button:focus, .bg-green.button:active, .bg-green.button:focus, .bg-navy.button:active, .bg-navy.button:focus, .bg-teal.button:active, .bg-teal.button:focus, .bg-olive.button:active, .bg-olive.button:focus, .bg-lime.button:active, .bg-lime.button:focus, .bg-red-orange.button:active, .bg-red-orange.button:focus, .bg-orange.button:active, .bg-orange.button:focus, .bg-fuchsia.button:active, .bg-fuchsia.button:focus, .bg-purple.button:active, .bg-purple.button:focus, .bg-maroon.button:active, .bg-maroon.button:focus, .bg-black.button:active, .bg-black.button:focus {
+  background-color: inherit;
+}
+
+/* line 88, ../../../../scss/_/_colori.scss */
+.bg-white {
+  background: #fff !important;
+}
+
+/* line 91, ../../../../scss/_/_colori.scss */
+.bg-gray {
+  background: #777 !important;
+}
+
+/* line 94, ../../../../scss/_/_colori.scss */
+.bg-dark-gray {
+  background: #1E1F29 !important;
+}
+
+/* line 97, ../../../../scss/_/_colori.scss */
+.bg-light-gray {
+  background: #CCCCCC !important;
+}
+
+/* line 100, ../../../../scss/_/_colori.scss */
+.bg-gray-blue {
+  background: #EEF1F7 !important;
+}
+
+/* line 103, ../../../../scss/_/_colori.scss */
+.bg-black {
+  background: #38222A !important;
+}
+
+/* line 106, ../../../../scss/_/_colori.scss */
+.bg-black-solid {
+  background: #000000 !important;
+}
+
+/* line 109, ../../../../scss/_/_colori.scss */
+.bg-red {
+  background: #F20505 !important;
+}
+
+/* line 112, ../../../../scss/_/_colori.scss */
+.bg-yellow {
+  background: #f39c12 !important;
+}
+
+/* line 115, ../../../../scss/_/_colori.scss */
+.bg-aqua {
+  background-color: #0ABAEF !important;
+}
+
+/* line 118, ../../../../scss/_/_colori.scss */
+.bg-blue {
+  background-color: #5C9DF5 !important;
+}
+
+/* line 121, ../../../../scss/_/_colori.scss */
+.bg-light-blue {
+  background-color: #3c8dbc !important;
+}
+
+/* line 124, ../../../../scss/_/_colori.scss */
+.bg-dark-blue {
+  background-color: #0F5593 !important;
+}
+
+/* line 127, ../../../../scss/_/_colori.scss */
+.bg-green {
+  background-color: #92CD18 !important;
+}
+
+/* line 130, ../../../../scss/_/_colori.scss */
+.bg-light-green {
+  background-color: #45B6B0 !important;
+}
+
+/* line 133, ../../../../scss/_/_colori.scss */
+.bg-navy {
+  background-color: #001f3f !important;
+}
+
+/* line 136, ../../../../scss/_/_colori.scss */
+.bg-teal {
+  background-color: #B5AB8A !important;
+}
+
+/* line 139, ../../../../scss/_/_colori.scss */
+.bg-olive {
+  background-color: #3d9970 !important;
+}
+
+/* line 142, ../../../../scss/_/_colori.scss */
+.bg-lime {
+  background-color: #01ff70 !important;
+}
+
+/* line 145, ../../../../scss/_/_colori.scss */
+.bg-orange {
+  background-color: #FF884D !important;
+}
+
+/* line 148, ../../../../scss/_/_colori.scss */
+.bg-red-orange {
+  background-color: #e83922 !important;
+}
+
+/* line 151, ../../../../scss/_/_colori.scss */
+.bg-fuchsia {
+  background-color: #f012be !important;
+}
+
+/* line 154, ../../../../scss/_/_colori.scss */
+.bg-purple {
+  background-color: #932ab6 !important;
+}
+
+/* line 157, ../../../../scss/_/_colori.scss */
+.bg-maroon {
+  background-color: #85144b !important;
+}
+
+/* line 160, ../../../../scss/_/_colori.scss */
+.bg-transparent {
+  background: transparent !important;
+}
+
+/* line 163, ../../../../scss/_/_colori.scss */
+.bg-opacity {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* line 166, ../../../../scss/_/_colori.scss */
+.bg-opacity-one {
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* line 169, ../../../../scss/_/_colori.scss */
+.bg-opacity-white {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* line 172, ../../../../scss/_/_colori.scss */
+.bg-opacity-white-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* line 175, ../../../../scss/_/_colori.scss */
+.bg-opacity-white-btn:hover {
+  background: rgba(255, 255, 255, 0.4) !important;
+  color: white !important;
+}
+
+/* line 179, ../../../../scss/_/_colori.scss */
+.border-gray {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+/*
+Master Text Color
+ */
+/* line 186, ../../../../scss/_/_colori.scss */
+.text-opacity {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* line 189, ../../../../scss/_/_colori.scss */
+.text-black {
+  color: #38222A !important;
+}
+
+/* line 192, ../../../../scss/_/_colori.scss */
+.text-red {
+  color: #F20505 !important;
+}
+
+/* line 195, ../../../../scss/_/_colori.scss */
+.text-gray {
+  color: #777 !important;
+}
+
+/* line 198, ../../../../scss/_/_colori.scss */
+.text-dark-gray {
+  color: #1E1F29 !important;
+}
+
+/* line 201, ../../../../scss/_/_colori.scss */
+.text-light-gray {
+  color: #CCCCCC !important;
+}
+
+/* line 204, ../../../../scss/_/_colori.scss */
+.text-amber {
+  color: #ffffff !important;
+}
+
+/* line 207, ../../../../scss/_/_colori.scss */
+.text-yellow {
+  color: #f39c12 !important;
+}
+
+/* line 210, ../../../../scss/_/_colori.scss */
+.text-aqua {
+  color: #0ABAEF !important;
+}
+
+/* line 213, ../../../../scss/_/_colori.scss */
+.text-blue {
+  color: #5C9DF5 !important;
+}
+
+/* line 216, ../../../../scss/_/_colori.scss */
+.text-dark-blue {
+  color: #0F5593 !important;
+}
+
+/* line 219, ../../../../scss/_/_colori.scss */
+.text-light-blue {
+  color: #3c8dbc !important;
+}
+
+/* line 222, ../../../../scss/_/_colori.scss */
+.text-green {
+  color: #92CD18 !important;
+}
+
+/* line 225, ../../../../scss/_/_colori.scss */
+.text-navy {
+  color: #B7C1D3 !important;
+}
+
+/* line 228, ../../../../scss/_/_colori.scss */
+.text-teal {
+  color: #39cccc !important;
+}
+
+/* line 231, ../../../../scss/_/_colori.scss */
+.text-olive {
+  color: #3d9970 !important;
+}
+
+/* line 234, ../../../../scss/_/_colori.scss */
+.text-lime {
+  color: #01ff70 !important;
+}
+
+/* line 237, ../../../../scss/_/_colori.scss */
+.text-orange {
+  color: #FF884D !important;
+}
+
+/* line 240, ../../../../scss/_/_colori.scss */
+.text-fuchsia {
+  color: #f012be !important;
+}
+
+/* line 243, ../../../../scss/_/_colori.scss */
+.text-purple {
+  color: #932ab6 !important;
+}
+
+/* line 246, ../../../../scss/_/_colori.scss */
+.text-maroon {
+  color: #85144b !important;
+}
+
+/* line 249, ../../../../scss/_/_colori.scss */
+.text-white {
+  color: #ffffff !important;
+}
+
+/* line 252, ../../../../scss/_/_colori.scss */
+.border-green {
+  border-color: #37A8AF !important;
+}
+
+/* line 255, ../../../../scss/_/_colori.scss */
+.border-blue {
+  border-color: #3E739D !important;
+}
+
+/* line 258, ../../../../scss/_/_colori.scss */
+.border-aqua {
+  border-color: #0090D9 !important;
+}
+
+/* line 261, ../../../../scss/_/_colori.scss */
+.text-opacity {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/**** VARIABILI ****/
+/*
+ * Included libraries:
+ *   JSZip 2.5.0, pdfmake 0.1.18, DataTables 1.10.11, AutoFill 2.1.1, Buttons 1.1.2, Column visibility 1.1.2, HTML5 export 1.1.2, Print view 1.1.2, FixedColumns 3.2.1,
+ *   FixedHeader 3.1.1, KeyTable 2.1.1, Responsive 2.0.2, RowReorder 1.1.1, Scroller 1.4.1, Select 1.1.2
+ */
+/*
+ * Table styles
+ */
+/* line 13, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #AFBBB5;
+  /*
+   * Header and footer styles
+   */
+  /*
+   * Body styles
+   */
+}
+
+/* line 27, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th,
+table.dataTable tfoot th {
+  font-weight: bold;
+  font-size: 0.7em;
+  color: #7B807E;
+  background: #ffffff;
+}
+
+/* line 34, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th,
+table.dataTable thead td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #AFBBB5;
+}
+
+/* line 39, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th:active,
+table.dataTable thead td:active {
+  outline: none;
+}
+
+/* line 43, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tfoot th,
+table.dataTable tfoot td {
+  padding: 10px 18px 6px 18px;
+  border-top: 1px solid #111;
+}
+
+/* line 48, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+  cursor: pointer;
+  *cursor: hand;
+}
+
+/* line 54, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+/* line 62, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead .sorting {
+  background-image: url("/static/img/datatables/sort_both.png");
+}
+
+/* line 65, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead .sorting_asc {
+  background-image: url("/static/img/datatables/sort_asc.png");
+}
+
+/* line 68, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead .sorting_desc {
+  background-image: url("/static/img/datatables/sort_desc.png");
+}
+
+/* line 71, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead .sorting_asc_disabled {
+  background-image: url("/static/img/datatables/sort_asc_disabled.png");
+}
+
+/* line 74, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead .sorting_desc_disabled {
+  background-image: url("/static/img/datatables/sort_desc_disabled.png");
+}
+
+/* line 77, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody tr {
+  background-color: #ffffff;
+}
+
+/* line 80, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody tr.selected {
+  background-color: #ffffff;
+}
+
+/* line 83, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody th,
+table.dataTable tbody td {
+  padding: 8px 15px;
+  font-size: 0.9em;
+  color: black;
+}
+
+/* line 89, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+  border-top: 1px solid #ddd;
+}
+
+/* line 92, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.row-border tbody tr:first-child th,
+table.dataTable.row-border tbody tr:first-child td, table.dataTable.display tbody tr:first-child th,
+table.dataTable.display tbody tr:first-child td {
+  border-top: none;
+}
+
+/* line 97, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.cell-border tbody th, table.dataTable.cell-border tbody td {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+/* line 101, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.cell-border tbody tr th:first-child,
+table.dataTable.cell-border tbody tr td:first-child {
+  border-left: 1px solid #ddd;
+}
+
+/* line 105, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.cell-border tbody tr:first-child th,
+table.dataTable.cell-border tbody tr:first-child td {
+  border-top: none;
+}
+
+/* line 109, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+  background-color: #ffffff;
+}
+
+/* line 112, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.stripe tbody tr.odd.selected, table.dataTable.display tbody tr.odd.selected {
+  background-color: #ffffff;
+}
+
+/* line 115, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+  background-color: #f6f6f6;
+}
+
+/* line 118, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.hover tbody tr:hover.selected, table.dataTable.display tbody tr:hover.selected {
+  background-color: #ffffff;
+}
+
+/* line 121, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.order-column tbody tr > .sorting_1,
+table.dataTable.order-column tbody tr > .sorting_2,
+table.dataTable.order-column tbody tr > .sorting_3, table.dataTable.display tbody tr > .sorting_1,
+table.dataTable.display tbody tr > .sorting_2,
+table.dataTable.display tbody tr > .sorting_3 {
+  background-color: #fafafa;
+}
+
+/* line 128, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.order-column tbody tr.selected > .sorting_1,
+table.dataTable.order-column tbody tr.selected > .sorting_2,
+table.dataTable.order-column tbody tr.selected > .sorting_3, table.dataTable.display tbody tr.selected > .sorting_1,
+table.dataTable.display tbody tr.selected > .sorting_2,
+table.dataTable.display tbody tr.selected > .sorting_3 {
+  background-color: #ffffff;
+}
+
+/* line 135, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+  background-color: #ffffff;
+}
+
+/* line 138, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.odd > .sorting_2, table.dataTable.order-column.stripe tbody tr.odd > .sorting_2 {
+  background-color: #ffffff;
+}
+
+/* line 141, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.odd > .sorting_3, table.dataTable.order-column.stripe tbody tr.odd > .sorting_3 {
+  background-color: #ffffff;
+}
+
+/* line 144, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.odd.selected > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_1 {
+  background-color: #ffffff;
+}
+
+/* line 147, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.odd.selected > .sorting_2, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_2 {
+  background-color: #ffffff;
+}
+
+/* line 150, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.odd.selected > .sorting_3, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_3 {
+  background-color: #ffffff;
+}
+
+/* line 153, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+  background-color: #fafafa;
+}
+
+/* line 156, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.even > .sorting_2, table.dataTable.order-column.stripe tbody tr.even > .sorting_2 {
+  background-color: #fcfcfc;
+}
+
+/* line 159, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.even > .sorting_3, table.dataTable.order-column.stripe tbody tr.even > .sorting_3 {
+  background-color: #fefefe;
+}
+
+/* line 162, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.even.selected > .sorting_1, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_1 {
+  background-color: #ffffff;
+}
+
+/* line 165, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.even.selected > .sorting_2, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_2 {
+  background-color: #ffffff;
+}
+
+/* line 168, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr.even.selected > .sorting_3, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_3 {
+  background-color: #ffffff;
+}
+
+/* line 173, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr:hover > .sorting_1, table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
+  background-color: #eaeaea;
+}
+
+/* line 176, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr:hover > .sorting_2, table.dataTable.order-column.hover tbody tr:hover > .sorting_2 {
+  background-color: #ececec;
+}
+
+/* line 179, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr:hover > .sorting_3, table.dataTable.order-column.hover tbody tr:hover > .sorting_3 {
+  background-color: #efefef;
+}
+
+/* line 182, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr:hover.selected > .sorting_1, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_1 {
+  background-color: #ffffff;
+}
+
+/* line 185, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr:hover.selected > .sorting_2, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_2 {
+  background-color: #ffffff;
+}
+
+/* line 188, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody tr:hover.selected > .sorting_3, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_3 {
+  background-color: #ffffff;
+}
+
+/* line 191, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.no-footer {
+  border-bottom: 1px solid #AFBBB5;
+}
+
+/* line 194, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.nowrap th, table.dataTable.nowrap td {
+  white-space: nowrap;
+}
+
+/* line 197, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.compact thead th,
+table.dataTable.compact thead td {
+  padding: 4px 17px 4px 4px;
+}
+
+/* line 201, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.compact tfoot th,
+table.dataTable.compact tfoot td {
+  padding: 4px;
+}
+
+/* line 205, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.compact tbody th,
+table.dataTable.compact tbody td {
+  padding: 4px;
+}
+
+/* line 209, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable th.dt-left,
+table.dataTable td.dt-left {
+  text-align: left;
+}
+
+/* line 213, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable th.dt-center,
+table.dataTable td.dt-center,
+table.dataTable td.dataTables_empty {
+  text-align: center;
+}
+
+/* line 218, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable th.dt-right,
+table.dataTable td.dt-right {
+  text-align: right;
+}
+
+/* line 222, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable th.dt-justify,
+table.dataTable td.dt-justify {
+  text-align: justify;
+}
+
+/* line 226, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable th.dt-nowrap,
+table.dataTable td.dt-nowrap {
+  white-space: nowrap;
+}
+
+/* line 230, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th.dt-head-left,
+table.dataTable thead td.dt-head-left,
+table.dataTable tfoot th.dt-head-left,
+table.dataTable tfoot td.dt-head-left {
+  text-align: left;
+}
+
+/* line 236, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th.dt-head-center,
+table.dataTable thead td.dt-head-center,
+table.dataTable tfoot th.dt-head-center,
+table.dataTable tfoot td.dt-head-center {
+  text-align: center;
+}
+
+/* line 242, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th.dt-head-right,
+table.dataTable thead td.dt-head-right,
+table.dataTable tfoot th.dt-head-right,
+table.dataTable tfoot td.dt-head-right {
+  text-align: right;
+}
+
+/* line 248, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th.dt-head-justify,
+table.dataTable thead td.dt-head-justify,
+table.dataTable tfoot th.dt-head-justify,
+table.dataTable tfoot td.dt-head-justify {
+  text-align: justify;
+}
+
+/* line 254, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable thead th.dt-head-nowrap,
+table.dataTable thead td.dt-head-nowrap,
+table.dataTable tfoot th.dt-head-nowrap,
+table.dataTable tfoot td.dt-head-nowrap {
+  white-space: nowrap;
+}
+
+/* line 260, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody th.dt-body-left,
+table.dataTable tbody td.dt-body-left {
+  text-align: left;
+}
+
+/* line 264, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody th.dt-body-center,
+table.dataTable tbody td.dt-body-center {
+  text-align: center;
+}
+
+/* line 268, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody th.dt-body-right,
+table.dataTable tbody td.dt-body-right {
+  text-align: right;
+}
+
+/* line 272, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody th.dt-body-justify,
+table.dataTable tbody td.dt-body-justify {
+  text-align: justify;
+}
+
+/* line 276, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody th.dt-body-nowrap,
+table.dataTable tbody td.dt-body-nowrap {
+  white-space: nowrap;
+}
+
+/* line 281, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable,
+table.dataTable th,
+table.dataTable td {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/*
+ * Control feature layout
+ */
+/* line 292, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper {
+  position: relative;
+  clear: both;
+  *zoom: 1;
+  zoom: 1;
+}
+
+/* line 298, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_length {
+  float: left;
+}
+
+/* line 301, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_filter {
+  float: right;
+  text-align: right;
+}
+
+/* line 305, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_filter input {
+  margin-left: 0em;
+}
+
+/* line 308, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_info {
+  clear: both;
+  float: left;
+  padding-top: 0.755em;
+  font-size: 0.8em;
+  color: 0.8em;
+}
+
+/* line 315, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_paginate {
+  float: right;
+  text-align: right;
+  padding-top: 0.25em;
+  font-size: 0.8em;
+  color: 0.8em;
+}
+
+/* line 322, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0.5em 1em;
+  margin-left: 2px;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  *cursor: hand;
+  color: #333 !important;
+  border: 0;
+  border-radius: 2px;
+}
+
+/* line 336, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  color: white !important;
+  border: 0;
+  background-color: #f7aa43;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7aa43), color-stop(100%, #f7aa43));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f7aa43 0%, #f7aa43 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, #f7aa43 0%, #f7aa43 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, #f7aa43 0%, #f7aa43 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, #f7aa43 0%, #f7aa43 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(to bottom, #f7aa43 0%, #f7aa43 100%);
+  /* W3C */
+}
+
+/* line 353, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+  cursor: default;
+  color: #333 !important;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* line 360, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: white !important;
+  border: 0;
+  background-color: #facc8e;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #facc8e), color-stop(100%, #facc8e));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #facc8e 0%, #facc8e 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, #facc8e 0%, #facc8e 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, #facc8e 0%, #facc8e 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, #facc8e 0%, #facc8e 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(to bottom, #facc8e 0%, #facc8e 100%);
+  /* W3C */
+}
+
+/* line 378, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+  outline: none;
+  background-color: #c58835;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c58835), color-stop(100%, #c58835));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #c58835 0%, #c58835 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(top, #c58835 0%, #c58835 100%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(top, #c58835 0%, #c58835 100%);
+  /* IE10+ */
+  background: -o-linear-gradient(top, #c58835 0%, #c58835 100%);
+  /* Opera 11.10+ */
+  background: linear-gradient(to bottom, #c58835 0%, #c58835 100%);
+  /* W3C */
+  box-shadow: inset 0 0 3px #111;
+}
+
+/* line 396, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+  padding: 0 1em;
+}
+
+/* line 399, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 40px;
+  margin-left: -50%;
+  margin-top: -25px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: white;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(25%, rgba(255, 255, 255, 0.9)), color-stop(75%, rgba(255, 255, 255, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* line 418, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+  color: #333;
+}
+
+/* line 425, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_scroll {
+  clear: both;
+}
+
+/* line 428, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
+  *margin-top: -1px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 432, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td {
+  vertical-align: middle;
+}
+
+/* line 435, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th > div.dataTables_sizing,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td > div.dataTables_sizing {
+  height: 0;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* line 442, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: 1px solid #111;
+}
+
+/* line 445, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper.no-footer div.dataTables_scrollHead table,
+.dataTables_wrapper.no-footer div.dataTables_scrollBody table {
+  border-bottom: none;
+}
+
+/* line 449, ../../../../scss/_/datatables/_datatables.scss */
+.dataTables_wrapper:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 458, ../../../../scss/_/datatables/_datatables.scss */
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_paginate {
+    float: none;
+    text-align: center;
+  }
+
+  /* line 463, ../../../../scss/_/datatables/_datatables.scss */
+  .dataTables_wrapper .dataTables_paginate {
+    margin-top: 0.5em;
+  }
+}
+@media screen and (max-width: 640px) {
+  /* line 468, ../../../../scss/_/datatables/_datatables.scss */
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: center;
+  }
+
+  /* line 473, ../../../../scss/_/datatables/_datatables.scss */
+  .dataTables_wrapper .dataTables_filter {
+    margin-top: 0.5em;
+  }
+}
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-handle {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  z-index: 102;
+  box-sizing: border-box;
+  border: 1px solid #316ad1;
+  background: linear-gradient(to bottom, #abcffb 0%, #4989de 100%);
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-select {
+  position: absolute;
+  z-index: 1001;
+  background-color: #4989de;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.5) 10px);
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-select.top, div.dt-autofill-select.bottom {
+  height: 3px;
+  margin-top: -1px;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-select.left, div.dt-autofill-select.right {
+  width: 3px;
+  margin-left: -1px;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #555;
+  border: 2px solid #444;
+  z-index: 11;
+  box-sizing: border-box;
+  padding: 1.5em 2em;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list ul {
+  display: table;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list ul li {
+  display: table-row;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list ul li:last-child div.dt-autofill-question, div.dt-autofill-list ul li:last-child div.dt-autofill-button {
+  border-bottom: none;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list ul li:hover {
+  background-color: #f6f6f6;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list div.dt-autofill-question {
+  display: table-cell;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list div.dt-autofill-question input[type=number] {
+  padding: 6px;
+  width: 30px;
+  margin: -2px 0;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list div.dt-autofill-button {
+  display: table-cell;
+  padding: 0.5em 0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-list div.dt-autofill-button button {
+  color: white;
+  margin: 0;
+  padding: 6px 12px;
+  text-align: center;
+  border: 1px solid #2e6da4;
+  background-color: #337ab7;
+  border-radius: 4px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* line 479, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-autofill-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  background: radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 10;
+}
+
+/* line 482, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  margin-top: -100px;
+  margin-left: -200px;
+  background-color: white;
+  border: 2px solid #111;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  text-align: center;
+  z-index: 21;
+}
+
+/* line 496, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-info h2 {
+  padding: 0.5em;
+  margin: 0;
+  font-weight: normal;
+  border-bottom: 1px solid #ddd;
+  background-color: #f3f3f3;
+}
+
+/* line 503, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-info > div {
+  padding: 1em;
+}
+
+/* line 507, ../../../../scss/_/datatables/_datatables.scss */
+button.dt-button,
+div.dt-button,
+a.dt-button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: 0.333em;
+  padding: 0.5em 1em;
+  border: 1px solid #999;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.88em;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #e9e9e9;
+  /* Fallback */
+  background-image: -webkit-linear-gradient(top, white 0%, #e9e9e9 100%);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, white 0%, #e9e9e9 100%);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, white 0%, #e9e9e9 100%);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, white 0%, #e9e9e9 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e9e9e9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='white', EndColorStr='#e9e9e9');
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 541, ../../../../scss/_/datatables/_datatables.scss */
+button.dt-button.disabled,
+div.dt-button.disabled,
+a.dt-button.disabled {
+  color: #999;
+  border: 1px solid #d0d0d0;
+  cursor: default;
+  background-color: #f9f9f9;
+  /* Fallback */
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#f9f9f9');
+}
+
+/* line 560, ../../../../scss/_/datatables/_datatables.scss */
+button.dt-button:active:not(.disabled), button.dt-button.active:not(.disabled),
+div.dt-button:active:not(.disabled),
+div.dt-button.active:not(.disabled),
+a.dt-button:active:not(.disabled),
+a.dt-button.active:not(.disabled) {
+  background-color: #e2e2e2;
+  /* Fallback */
+  background-image: -webkit-linear-gradient(top, #f3f3f3 0%, #e2e2e2 100%);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #f3f3f3 0%, #e2e2e2 100%);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #f3f3f3 0%, #e2e2e2 100%);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #f3f3f3 0%, #e2e2e2 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #f3f3f3 0%, #e2e2e2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f3f3f3', EndColorStr='#e2e2e2');
+  box-shadow: inset 1px 1px 3px #999999;
+}
+
+/* line 579, ../../../../scss/_/datatables/_datatables.scss */
+button.dt-button:active:not(.disabled):hover:not(.disabled), button.dt-button.active:not(.disabled):hover:not(.disabled),
+div.dt-button:active:not(.disabled):hover:not(.disabled),
+div.dt-button.active:not(.disabled):hover:not(.disabled),
+a.dt-button:active:not(.disabled):hover:not(.disabled),
+a.dt-button.active:not(.disabled):hover:not(.disabled) {
+  box-shadow: inset 1px 1px 3px #999999;
+  background-color: #cccccc;
+  /* Fallback */
+  background-image: -webkit-linear-gradient(top, #eaeaea 0%, #cccccc 100%);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #eaeaea 0%, #cccccc 100%);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #eaeaea 0%, #cccccc 100%);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #eaeaea 0%, #cccccc 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #eaeaea 0%, #cccccc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#eaeaea', EndColorStr='#cccccc');
+}
+
+/* line 598, ../../../../scss/_/datatables/_datatables.scss */
+button.dt-button:hover,
+div.dt-button:hover,
+a.dt-button:hover {
+  text-decoration: none;
+}
+
+/* line 603, ../../../../scss/_/datatables/_datatables.scss */
+button.dt-button:hover:not(.disabled),
+div.dt-button:hover:not(.disabled),
+a.dt-button:hover:not(.disabled) {
+  border: 1px solid #666;
+  background-color: #e0e0e0;
+  /* Fallback */
+  background-image: -webkit-linear-gradient(top, #f9f9f9 0%, #e0e0e0 100%);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #f9f9f9 0%, #e0e0e0 100%);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #f9f9f9 0%, #e0e0e0 100%);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #f9f9f9 0%, #e0e0e0 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #f9f9f9 0%, #e0e0e0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f9f9f9', EndColorStr='#e0e0e0');
+}
+
+/* line 620, ../../../../scss/_/datatables/_datatables.scss */
+button.dt-button:focus:not(.disabled),
+div.dt-button:focus:not(.disabled),
+a.dt-button:focus:not(.disabled) {
+  border: 1px solid #426c9e;
+  text-shadow: 0 1px 0 #c4def1;
+  outline: none;
+  background-color: #79ace9;
+  /* Fallback */
+  background-image: -webkit-linear-gradient(top, #bddef4 0%, #79ace9 100%);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #bddef4 0%, #79ace9 100%);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #bddef4 0%, #79ace9 100%);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #bddef4 0%, #79ace9 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #bddef4 0%, #79ace9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#bddef4', EndColorStr='#79ace9');
+}
+
+/* line 640, ../../../../scss/_/datatables/_datatables.scss */
+.dt-button embed {
+  outline: none;
+}
+
+/* line 644, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-buttons {
+  position: relative;
+  float: left;
+}
+
+/* line 648, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-buttons.buttons-right {
+  float: right;
+}
+
+/* line 652, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  margin-top: 3px;
+  padding: 8px 8px 4px 8px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: white;
+  overflow: hidden;
+  z-index: 2002;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2002;
+  -webkit-column-gap: 8px;
+  -moz-column-gap: 8px;
+  -ms-column-gap: 8px;
+  -o-column-gap: 8px;
+  column-gap: 8px;
+}
+
+/* line 673, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection button.dt-button,
+div.dt-button-collection div.dt-button,
+div.dt-button-collection a.dt-button {
+  position: relative;
+  left: 0;
+  right: 0;
+  display: block;
+  float: none;
+  margin-bottom: 4px;
+  margin-right: 0;
+}
+
+/* line 684, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection button.dt-button:active:not(.disabled), div.dt-button-collection button.dt-button.active:not(.disabled),
+div.dt-button-collection div.dt-button:active:not(.disabled),
+div.dt-button-collection div.dt-button.active:not(.disabled),
+div.dt-button-collection a.dt-button:active:not(.disabled),
+div.dt-button-collection a.dt-button.active:not(.disabled) {
+  background-color: #dadada;
+  /* Fallback */
+  background-image: -webkit-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, #f0f0f0 0%, #dadada 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, #f0f0f0 0%, #dadada 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f0f0f0', EndColorStr='#dadada');
+  box-shadow: inset 1px 1px 3px #666;
+}
+
+/* line 703, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection.fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -75px;
+  border-radius: 0;
+}
+
+/* line 710, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection.fixed.two-column {
+  margin-left: -150px;
+}
+
+/* line 713, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection.fixed.three-column {
+  margin-left: -225px;
+}
+
+/* line 716, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection.fixed.four-column {
+  margin-left: -300px;
+}
+
+/* line 719, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection > * {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* line 723, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection.two-column {
+  width: 300px;
+  padding-bottom: 1px;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
+}
+
+/* line 732, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection.three-column {
+  width: 450px;
+  padding-bottom: 1px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  -ms-column-count: 3;
+  -o-column-count: 3;
+  column-count: 3;
+}
+
+/* line 741, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-collection.four-column {
+  width: 600px;
+  padding-bottom: 1px;
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  -ms-column-count: 4;
+  -o-column-count: 4;
+  column-count: 4;
+}
+
+/* line 751, ../../../../scss/_/datatables/_datatables.scss */
+div.dt-button-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* Fallback */
+  background: -ms-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  /* IE10 Consumer Preview */
+  background: -moz-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  /* Firefox */
+  background: -o-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  /* Opera */
+  background: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, rgba(0, 0, 0, 0.3)), color-stop(1, rgba(0, 0, 0, 0.7)));
+  /* Webkit (Safari/Chrome 10) */
+  background: -webkit-radial-gradient(center, ellipse farthest-corner, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  /* Webkit (Chrome 11+) */
+  background: radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+  /* W3C Markup, IE10 Release Preview */
+  z-index: 2001;
+}
+
+@media screen and (max-width: 640px) {
+  /* line 775, ../../../../scss/_/datatables/_datatables.scss */
+  div.dt-buttons {
+    float: none !important;
+    text-align: center;
+  }
+}
+/* line 782, ../../../../scss/_/datatables/_datatables.scss */
+table.DTFC_Cloned thead,
+table.DTFC_Cloned tfoot {
+  background-color: white;
+}
+
+/* line 787, ../../../../scss/_/datatables/_datatables.scss */
+div.DTFC_Blocker {
+  background-color: white;
+}
+
+/* line 791, ../../../../scss/_/datatables/_datatables.scss */
+div.DTFC_LeftWrapper table.dataTable,
+div.DTFC_RightWrapper table.dataTable {
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+/* line 796, ../../../../scss/_/datatables/_datatables.scss */
+div.DTFC_LeftWrapper table.dataTable.no-footer,
+div.DTFC_RightWrapper table.dataTable.no-footer {
+  border-bottom: none;
+}
+
+/* line 802, ../../../../scss/_/datatables/_datatables.scss */
+table.fixedHeader-floating {
+  position: fixed !important;
+  background-color: white;
+}
+
+/* line 807, ../../../../scss/_/datatables/_datatables.scss */
+table.fixedHeader-floating.no-footer {
+  border-bottom-width: 0;
+}
+
+/* line 811, ../../../../scss/_/datatables/_datatables.scss */
+table.fixedHeader-locked {
+  position: absolute !important;
+  background-color: white;
+}
+
+@media print {
+  /* line 817, ../../../../scss/_/datatables/_datatables.scss */
+  table.fixedHeader-floating {
+    display: none;
+  }
+}
+/* line 823, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable th.focus,
+table.dataTable td.focus {
+  outline: 3px solid #3366FF;
+  outline-offset: -1px;
+}
+
+/* line 830, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty {
+  cursor: default !important;
+}
+
+/* line 835, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty:before {
+  display: none !important;
+}
+
+/* line 840, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+/* line 846, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+  top: 8px;
+  left: 4px;
+  height: 16px;
+  width: 16px;
+  display: block;
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  box-shadow: 0 0 3px #444;
+  box-sizing: content-box;
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  text-indent: 4px;
+  line-height: 16px;
+  content: '+';
+  background-color: #31b131;
+}
+
+/* line 866, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+  content: '-';
+  background-color: #d33333;
+}
+
+/* line 871, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed > tbody > tr.child td:before {
+  display: none;
+}
+
+/* line 874, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td:first-child,
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th:first-child {
+  padding-left: 27px;
+}
+
+/* line 878, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > td:first-child:before,
+table.dataTable.dtr-inline.collapsed.compact > tbody > tr > th:first-child:before {
+  top: 5px;
+  left: 4px;
+  height: 14px;
+  width: 14px;
+  border-radius: 14px;
+  line-height: 14px;
+  text-indent: 3px;
+}
+
+/* line 888, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-column > tbody > tr > td.control,
+table.dataTable.dtr-column > tbody > tr > th.control {
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 893, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-column > tbody > tr > td.control:before,
+table.dataTable.dtr-column > tbody > tr > th.control:before {
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  width: 16px;
+  margin-top: -10px;
+  margin-left: -10px;
+  display: block;
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+  border-radius: 16px;
+  box-shadow: 0 0 3px #444;
+  box-sizing: content-box;
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  text-indent: 4px;
+  line-height: 16px;
+  content: '+';
+  background-color: #31b131;
+}
+
+/* line 915, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.dtr-column > tbody > tr.parent td.control:before,
+table.dataTable.dtr-column > tbody > tr.parent th.control:before {
+  content: '-';
+  background-color: #d33333;
+}
+
+/* line 920, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable > tbody > tr.child {
+  padding: 0.5em 1em;
+}
+
+/* line 923, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable > tbody > tr.child:hover {
+  background: transparent !important;
+}
+
+/* line 926, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable > tbody > tr.child ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 932, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable > tbody > tr.child ul li {
+  border-bottom: 1px solid #efefef;
+  padding: 0.5em 0;
+}
+
+/* line 936, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable > tbody > tr.child ul li:first-child {
+  padding-top: 0;
+}
+
+/* line 939, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable > tbody > tr.child ul li:last-child {
+  border-bottom: none;
+}
+
+/* line 942, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable > tbody > tr.child span.dtr-title {
+  display: inline-block;
+  min-width: 75px;
+  font-weight: bold;
+}
+
+/* line 948, ../../../../scss/_/datatables/_datatables.scss */
+div.dtr-modal {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  padding: 10em 1em;
+}
+
+/* line 958, ../../../../scss/_/datatables/_datatables.scss */
+div.dtr-modal div.dtr-modal-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  z-index: 102;
+  overflow: auto;
+  background-color: #f5f5f7;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* line 975, ../../../../scss/_/datatables/_datatables.scss */
+div.dtr-modal div.dtr-modal-content {
+  position: relative;
+  padding: 1em;
+}
+
+/* line 979, ../../../../scss/_/datatables/_datatables.scss */
+div.dtr-modal div.dtr-modal-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #eaeaea;
+  background-color: #f9f9f9;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 12;
+}
+
+/* line 992, ../../../../scss/_/datatables/_datatables.scss */
+div.dtr-modal div.dtr-modal-close:hover {
+  background-color: #eaeaea;
+}
+
+/* line 995, ../../../../scss/_/datatables/_datatables.scss */
+div.dtr-modal div.dtr-modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 767px) {
+  /* line 1006, ../../../../scss/_/datatables/_datatables.scss */
+  div.dtr-modal div.dtr-modal-display {
+    width: 95%;
+  }
+}
+/* line 1012, ../../../../scss/_/datatables/_datatables.scss */
+table.dt-rowReorder-float {
+  position: absolute !important;
+  opacity: 0.8;
+  table-layout: static;
+  outline: 2px solid #888;
+  outline-offset: -2px;
+  z-index: 2001;
+}
+
+/* line 1021, ../../../../scss/_/datatables/_datatables.scss */
+tr.dt-rowReorder-moving {
+  outline: 2px solid #555;
+  outline-offset: -2px;
+}
+
+/* line 1026, ../../../../scss/_/datatables/_datatables.scss */
+body.dt-rowReorder-noOverflow {
+  overflow-x: hidden;
+}
+
+/* line 1030, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable td.reorder {
+  text-align: center;
+  cursor: move;
+}
+
+/* line 1036, ../../../../scss/_/datatables/_datatables.scss */
+div.DTS {
+  display: block !important;
+}
+
+/* line 1039, ../../../../scss/_/datatables/_datatables.scss */
+div.DTS tbody th,
+div.DTS tbody td {
+  white-space: nowrap;
+}
+
+/* line 1043, ../../../../scss/_/datatables/_datatables.scss */
+div.DTS div.DTS_Loading {
+  z-index: 1;
+}
+
+/* line 1046, ../../../../scss/_/datatables/_datatables.scss */
+div.DTS div.dataTables_scrollBody {
+  background: repeating-linear-gradient(45deg, #edeeff, #edeeff 10px, white 10px, white 20px);
+}
+
+/* line 1049, ../../../../scss/_/datatables/_datatables.scss */
+div.DTS div.dataTables_scrollBody table {
+  z-index: 2;
+}
+
+/* line 1052, ../../../../scss/_/datatables/_datatables.scss */
+div.DTS div.dataTables_paginate,
+div.DTS div.dataTables_length {
+  display: none;
+}
+
+/* line 1058, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tbody > tr.selected,
+table.dataTable tbody > tr > .selected {
+  background-color: #B0BED9;
+}
+
+/* line 1062, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.stripe tbody > tr.odd.selected,
+table.dataTable.stripe tbody > tr.odd > .selected, table.dataTable.display tbody > tr.odd.selected,
+table.dataTable.display tbody > tr.odd > .selected {
+  background-color: #acbad4;
+}
+
+/* line 1067, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.hover tbody > tr.selected:hover,
+table.dataTable.hover tbody > tr > .selected:hover, table.dataTable.display tbody > tr.selected:hover,
+table.dataTable.display tbody > tr > .selected:hover {
+  background-color: #aab7d1;
+}
+
+/* line 1072, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.order-column tbody > tr.selected > .sorting_1,
+table.dataTable.order-column tbody > tr.selected > .sorting_2,
+table.dataTable.order-column tbody > tr.selected > .sorting_3,
+table.dataTable.order-column tbody > tr > .selected, table.dataTable.display tbody > tr.selected > .sorting_1,
+table.dataTable.display tbody > tr.selected > .sorting_2,
+table.dataTable.display tbody > tr.selected > .sorting_3,
+table.dataTable.display tbody > tr > .selected {
+  background-color: #acbad5;
+}
+
+/* line 1081, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.odd.selected > .sorting_1, table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_1 {
+  background-color: #a6b4cd;
+}
+
+/* line 1084, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.odd.selected > .sorting_2, table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_2 {
+  background-color: #a8b5cf;
+}
+
+/* line 1087, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.odd.selected > .sorting_3, table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_3 {
+  background-color: #a9b7d1;
+}
+
+/* line 1090, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.even.selected > .sorting_1, table.dataTable.order-column.stripe tbody > tr.even.selected > .sorting_1 {
+  background-color: #acbad5;
+}
+
+/* line 1093, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.even.selected > .sorting_2, table.dataTable.order-column.stripe tbody > tr.even.selected > .sorting_2 {
+  background-color: #aebcd6;
+}
+
+/* line 1096, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.even.selected > .sorting_3, table.dataTable.order-column.stripe tbody > tr.even.selected > .sorting_3 {
+  background-color: #afbdd8;
+}
+
+/* line 1099, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.odd > .selected, table.dataTable.order-column.stripe tbody > tr.odd > .selected {
+  background-color: #a6b4cd;
+}
+
+/* line 1102, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.even > .selected, table.dataTable.order-column.stripe tbody > tr.even > .selected {
+  background-color: #acbad5;
+}
+
+/* line 1105, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.selected:hover > .sorting_1, table.dataTable.order-column.hover tbody > tr.selected:hover > .sorting_1 {
+  background-color: #a2aec7;
+}
+
+/* line 1108, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.selected:hover > .sorting_2, table.dataTable.order-column.hover tbody > tr.selected:hover > .sorting_2 {
+  background-color: #a3b0c9;
+}
+
+/* line 1111, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr.selected:hover > .sorting_3, table.dataTable.order-column.hover tbody > tr.selected:hover > .sorting_3 {
+  background-color: #a5b2cb;
+}
+
+/* line 1114, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable.display tbody > tr:hover > .selected,
+table.dataTable.display tbody > tr > .selected:hover, table.dataTable.order-column.hover tbody > tr:hover > .selected,
+table.dataTable.order-column.hover tbody > tr > .selected:hover {
+  background-color: #a2aec7;
+}
+
+/* line 1119, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable td.select-checkbox {
+  position: relative;
+}
+
+/* line 1122, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable td.select-checkbox:before, table.dataTable td.select-checkbox:after {
+  display: block;
+  position: absolute;
+  top: 1.2em;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+}
+
+/* line 1131, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable td.select-checkbox:before {
+  content: ' ';
+  margin-top: -6px;
+  margin-left: -6px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+/* line 1138, ../../../../scss/_/datatables/_datatables.scss */
+table.dataTable tr.selected td.select-checkbox:after {
+  content: '\2714';
+  margin-top: -11px;
+  margin-left: -4px;
+  text-align: center;
+  text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;
+}
+
+/* line 1146, ../../../../scss/_/datatables/_datatables.scss */
+div.dataTables_wrapper span.select-info,
+div.dataTables_wrapper span.select-item {
+  margin-left: 0.5em;
+}
+
+@media screen and (max-width: 640px) {
+  /* line 1152, ../../../../scss/_/datatables/_datatables.scss */
+  div.dataTables_wrapper span.select-info,
+  div.dataTables_wrapper span.select-item {
+    margin-left: 0;
+    display: block;
+  }
+}
+/* line 3, ../../../../scss/_/themes/_theme-base.scss */
+.login-background {
+  background: url(../../../img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 12, ../../../../scss/_/themes/_theme-base.scss */
+.bg-app {
+  background-color: #DAE4DF;
+}
+
+/* line 17, ../../../../scss/_/themes/_theme-base.scss */
+.login-box {
+  background-color: white;
+}
+/* line 19, ../../../../scss/_/themes/_theme-base.scss */
+.login-box .login-title {
+  color: black;
+  text-align: center;
+}
+/* line 23, ../../../../scss/_/themes/_theme-base.scss */
+.login-box p {
+  color: #38222A;
+}
+/* line 26, ../../../../scss/_/themes/_theme-base.scss */
+.login-box .input-group-label {
+  background-color: white;
+}
+/* line 28, ../../../../scss/_/themes/_theme-base.scss */
+.login-box .input-group-label span {
+  color: #1E1F29;
+}
+
+/* line 34, ../../../../scss/_/themes/_theme-base.scss */
+.password-dimenticata {
+  color: white;
+}
+
+/* line 39, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu {
+  /* Small only */
+  /* Medium only */
+  /* Large and up */
+  min-height: 100%;
+  background-color: #262729;
+}
+@media screen and (max-width: 39.9375em) {
+  /* line 39, ../../../../scss/_/themes/_theme-base.scss */
+  .leftmenu {
+    min-height: auto;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  /* line 39, ../../../../scss/_/themes/_theme-base.scss */
+  .leftmenu {
+    min-height: auto;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 64em) {
+  /* line 39, ../../../../scss/_/themes/_theme-base.scss */
+  .leftmenu {
+    width: 250px;
+  }
+}
+/* line 56, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu {
+  margin: 0;
+}
+/* line 58, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 {
+  background-color: #3f4043;
+}
+/* line 60, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 a.accordion-item {
+  color: white;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-top: -3px;
+  padding-left: 30px;
+  padding: 14px 0 18px 30px;
+}
+/* line 67, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 a.accordion-item i.icona-menu {
+  margin-left: -5px;
+  margin-right: 8px;
+  margin-top: -2px;
+  color: white;
+}
+/* line 73, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 a.accordion-item:active, .leftmenu .vertical.menu .li-accordion-item-1 a.accordion-item:focus {
+  background-color: #212224;
+}
+/* line 77, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 .li-accordion-item-2 {
+  padding-left: 20px;
+}
+/* line 79, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 .li-accordion-item-2 a {
+  color: white;
+  font-size: 0.7em;
+}
+/* line 82, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 .li-accordion-item-2 a i.icona-menu {
+  margin-left: -10px;
+  margin-right: 12px;
+  color: white;
+}
+/* line 88, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 .li-accordion-item-2:hover {
+  background-color: #4b4d51;
+}
+/* line 91, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .li-accordion-item-1 .li-accordion-item-2:active, .leftmenu .vertical.menu .li-accordion-item-1 .li-accordion-item-2:focus {
+  background-color: #212224;
+}
+/* line 96, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .accordion-item {
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: #262729;
+}
+/* line 101, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .accordion-item:hover {
+  background-color: #323436;
+}
+/* line 104, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .accordion-item::after {
+  border-top-color: white;
+}
+/* line 108, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .vertical.menu .nested {
+  background-color: #323436;
+}
+/* line 112, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .title-bar {
+  background-color: #262729;
+  color: white;
+}
+/* line 115, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu .title-bar .title-bar-title {
+  line-height: 10px;
+  padding-bottom: 3px;
+}
+
+/* line 121, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu-toggle {
+  background-color: #f78c1c;
+  color: white;
+}
+/* line 125, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu-toggle:hover {
+  background-color: #f78c1c;
+}
+/* line 126, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu-toggle:active {
+  background-color: #f78c1c;
+}
+/* line 127, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu-toggle:focus {
+  background-color: #f9a54d;
+}
+
+/* line 130, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu-title-container {
+  padding: 0 10px 0 10px;
+}
+
+/* line 134, ../../../../scss/_/themes/_theme-base.scss */
+.leftmenu-title {
+  margin-top: 10px;
+  color: white;
+  font-family: "Lobster";
+}
+
+/* line 142, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box {
+  margin-top: 20px;
+}
+/* line 144, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box .dashboard-box-content {
+  background: white;
+  padding: 20px;
+}
+/* line 149, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box .dashboard-title {
+  background: #262729;
+  padding: 5px 20px 5px 20px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+/* line 155, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box .dashboard-title h1, .dashboard-box .dashboard-title h2, .dashboard-box .dashboard-title h3, .dashboard-box .dashboard-title h4, .dashboard-box .dashboard-title h5, .dashboard-box .dashboard-title h6 {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+/* line 164, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni {
+  /* Small only */
+  /* Medium only */
+  background-color: white;
+}
+@media screen and (max-width: 39.9375em) {
+  /* line 164, ../../../../scss/_/themes/_theme-base.scss */
+  .dashboard-box-opzioni {
+    min-height: auto;
+  }
+}
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  /* line 164, ../../../../scss/_/themes/_theme-base.scss */
+  .dashboard-box-opzioni {
+    min-height: auto;
+  }
+}
+/* line 174, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu {
+  margin: 0;
+}
+/* line 176, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 {
+  background-color: white;
+}
+/* line 178, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 a.accordion-item {
+  color: #1E1F29;
+  font-size: 0.9em;
+}
+/* line 181, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 a.accordion-item i.icona-menu {
+  margin-left: -5px;
+  margin-right: 8px;
+  margin-top: -3px;
+}
+/* line 186, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 a.accordion-item:active, .dashboard-box-opzioni .vertical.menu .li-accordion-item-1 a.accordion-item:focus {
+  background-color: #fafafa;
+}
+/* line 190, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 .li-accordion-item-2 {
+  padding-left: 10px;
+}
+/* line 192, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 .li-accordion-item-2 a {
+  color: #1E1F29;
+  font-size: 0.8em;
+}
+/* line 195, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 .li-accordion-item-2 a i.icona-menu {
+  margin-left: -10px;
+  margin-right: 12px;
+}
+/* line 200, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 .li-accordion-item-2:hover {
+  background-color: white;
+}
+/* line 203, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .li-accordion-item-1 .li-accordion-item-2:active, .dashboard-box-opzioni .vertical.menu .li-accordion-item-1 .li-accordion-item-2:focus {
+  background-color: white;
+}
+/* line 209, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .accordion-item {
+  padding: 15px;
+  color: #1E1F29;
+  background-color: white;
+}
+/* line 213, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .accordion-item:hover {
+  background-color: white;
+}
+/* line 216, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .accordion-item::after {
+  border-top-color: #1E1F29;
+}
+/* line 220, ../../../../scss/_/themes/_theme-base.scss */
+.dashboard-box-opzioni .vertical.menu .nested {
+  background-color: white;
+}
+
+/* line 228, ../../../../scss/_/themes/_theme-base.scss */
+input[type=text] {
+  background: white;
+  border-color: #cacaca;
+}
+
+/* line 232, ../../../../scss/_/themes/_theme-base.scss */
+input[type=text]:focus {
+  background: white;
+}
+
+/* line 235, ../../../../scss/_/themes/_theme-base.scss */
+input[type=file], input[type=number] {
+  color: #6B6B6B;
+}
+
+/* line 238, ../../../../scss/_/themes/_theme-base.scss */
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* line 246, ../../../../scss/_/themes/_theme-base.scss */
+.input-group-field {
+  background: white;
+  border-color: #cacaca;
+}
+/* line 249, ../../../../scss/_/themes/_theme-base.scss */
+.input-group-field:focus {
+  background: white;
+}
+
+/* line 253, ../../../../scss/_/themes/_theme-base.scss */
+.input-group-label {
+  width: auto;
+  height: auto;
+  background: white;
+  color: #1E1F29;
+  border-color: #cacaca;
+}
+/* line 259, ../../../../scss/_/themes/_theme-base.scss */
+.input-group-label i, .input-group-label span {
+  color: #1E1F29;
+}
+
+/* line 263, ../../../../scss/_/themes/_theme-base.scss */
+input::-webkit-input-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 264, ../../../../scss/_/themes/_theme-base.scss */
+input:-moz-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 265, ../../../../scss/_/themes/_theme-base.scss */
+input::-moz-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 266, ../../../../scss/_/themes/_theme-base.scss */
+input:-ms-input-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 268, ../../../../scss/_/themes/_theme-base.scss */
+textarea::-webkit-input-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 269, ../../../../scss/_/themes/_theme-base.scss */
+textarea:-moz-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 270, ../../../../scss/_/themes/_theme-base.scss */
+textarea::-moz-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 271, ../../../../scss/_/themes/_theme-base.scss */
+textarea:-ms-input-placeholder {
+  color: #6B6B6B;
+}
+
+/* line 274, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark input[type=text] {
+  background: #474444;
+  border-color: #3D3B3B;
+}
+/* line 278, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark input
+[type=text]:focus {
+  background: #474444;
+}
+/* line 282, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark input[type=file] {
+  color: #6B6B6B;
+}
+/* line 285, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+/* line 293, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark .input-group-field {
+  background: #474444;
+  border-color: #3D3B3B;
+}
+/* line 296, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark .input-group-field:focus {
+  background: #474444;
+}
+/* line 300, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark .input-group-label {
+  background: #474444;
+  color: white;
+  border-color: #3D3B3B;
+}
+/* line 304, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark .input-group-label i, .input-dark .input-group-label span {
+  color: white;
+}
+/* line 308, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark input::-webkit-input-placeholder {
+  color: white;
+}
+/* line 309, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark input:-moz-placeholder {
+  color: white;
+}
+/* line 310, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark input::-moz-placeholder {
+  color: white;
+}
+/* line 311, ../../../../scss/_/themes/_theme-base.scss */
+.input-dark input:-ms-input-placeholder {
+  color: white;
+}
+
+/* line 317, ../../../../scss/_/themes/_theme-base.scss */
+.bg-footer {
+  background: #262729;
+}
+
+/* line 2, ../../../../scss/_/_material-navbar.scss */
+.bg-navbar {
+  background-color: #FFFFFF;
+}
+
+/* line 5, ../../../../scss/_/_material-navbar.scss */
+.material-navbar-mobile {
+  font-family: "Open Sans";
+  color: black;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+/* line 11, ../../../../scss/_/_material-navbar.scss */
+.material-navbar {
+  font-family: "Open Sans";
+  color: black;
+  height: 50px;
+  width: 100%;
+  padding: 0 20px 0 20px;
+  background-color: #FFFFFF;
+}
+/* line 19, ../../../../scss/_/_material-navbar.scss */
+.material-navbar a:not(.button) {
+  color: black;
+}
+/* line 23, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .material-navbar-item {
+  float: left;
+  height: 100%;
+  margin: 0 8px 0 8px;
+}
+/* line 29, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .material-navbar-right-section {
+  float: right;
+  height: 100%;
+}
+/* line 34, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .material-navbar-text-container {
+  padding: 10px 0 10px 0;
+}
+/* line 40, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .button {
+  margin-bottom: 0;
+  height: 100%;
+  padding-top: 15px;
+}
+/* line 44, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .button.large {
+  padding-top: 12px;
+}
+/* line 47, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .button.small {
+  padding-top: 17px;
+}
+/* line 50, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .button.tiny {
+  padding-top: 19px;
+}
+/* line 55, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .material-navbar-image {
+  background-color: #FFFFFF;
+  height: 50px;
+  margin-top: 0px;
+}
+/* line 62, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .dropdown.menu {
+  background-color: #FFFFFF;
+}
+/* line 64, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .dropdown.menu > li > a {
+  height: 50px;
+  padding-right: 16px;
+  padding-top: 15px;
+  float: left;
+  background-color: #FFFFFF;
+}
+/* line 70, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .dropdown.menu > li > a::after {
+  border-top-color: black;
+  content: none;
+}
+/* line 76, ../../../../scss/_/_material-navbar.scss */
+.material-navbar .dropdown.menu ul.menu {
+  background-color: #FFFFFF;
+  border-top: solid 3px #DBDBDB;
+  border-color: #DBDBDB;
+}
+
+/* line 89, ../../../../scss/_/_material-navbar.scss */
+.notification-toggle {
+  background-color: #FFFFFF;
+  padding: 8px 8px 8px 8px !important;
+}
+/* line 92, ../../../../scss/_/_material-navbar.scss */
+.notification-toggle .notification-circle {
+  display: block;
+  text-align: center;
+  line-height: 2.3em;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  border: solid 3px #92CD18;
+  color: #81867F;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+/* line 103, ../../../../scss/_/_material-navbar.scss */
+.notification-toggle .notification-circle.new {
+  color: #FFFFFF;
+  background-color: #92CD18;
+}

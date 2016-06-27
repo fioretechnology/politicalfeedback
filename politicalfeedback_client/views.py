@@ -3,26 +3,28 @@ from django.template import Context
 from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 from apps.accounts.forms import LoginForm
+from django.contrib.auth.models import User
+from apps.accounts.models import Comune, Profilo
+from django.contrib.sites.shortcuts import get_current_site
+from django.shortcuts import render
+from django.http import HttpResponseRedirect, HttpResponse
 
 
 def home(request):
-    form = LoginForm()
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
 
-        if form.is_valid():
-            username = request.POST['username']
-            password = request.POST['password']
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    # Redirect to a success page.
-                    return HttpResponseRedirect('/accounts/dashboard')
-                else:
-                   return HttpResponseRedirect('/')
-            else:
-                return HttpResponseRedirect('/accounts/errorelogin')
-    
+	# domini personalizzati
+	current_site = get_current_site(request)
+	if current_site.domain == 'www.cinquestellemarcon.org' or current_site.domain == 'cinquestellemarcon.org':
+		return HttpResponseRedirect('/gruppo/3857/')
 
-    return render_to_response('index.html',{'form': form }, context_instance=RequestContext(request))
+	profili_ids = Profilo.objects.values_list('citta_id')
+
+	comuni = Comune.objects.filter(id__in= profili_ids).distinct()
+
+	return render(request, 'index.html', {'comuni': comuni })
+
+def gruppo(request, id):
+
+	comune = Comune.objects.get(pk = id)
+
+	return render(request, 'gruppo.html', {'comune': comune })

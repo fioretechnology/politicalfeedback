@@ -1,0 +1,102 @@
+{% load static %}
+{% load imagekit %}
+
+<div class="title-bar material-navbar-mobile" data-responsive-toggle="material-navbar" data-hide-for="medium">
+    <button class="" type="button" data-toggle>
+        <i class="fa fa-bars fa-fw"></i>
+        <div class="title-bar-title">Account</div>
+    </button>
+</div>
+
+<div class="top-bar no-pad bg-navbar" id="material-navbar">
+
+    <div class="material-navbar no-padding-left">
+
+    	<a class="button material-navbar-item no-margin leftmenu-toggle show-for-large hide-for-small">
+    		<i class="fa fa-bars"></i>
+    	</a>
+
+        <div class="material-navbar-item">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li>
+                    <a class="notification-toggle">
+                        <span class="notification-circle">
+                    		6
+                        </span>
+                	</a>
+                    <ul class="menu notification-menu">
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-user text-green pull-left" style="margin-right:10px;"></i> <div>Profilo</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+    	<div class="material-navbar-right-section">
+    		<ul class="dropdown menu material-navbar-item" data-dropdown-menu>
+    			<li>
+
+                    {% if user.is_authenticated %}
+	                    <a href="#">
+	                        <span>Ciao, {{ request.user.first_name | capfirst }} </span>
+	        			</a>
+
+	                    {% if not request.user.profilo.userpic %}
+	                        <img alt="" class="material-navbar-image" src="{% static 'img/user-no-pic.png' %}"/>
+	                    {% else %}
+	                        {% generateimage 'accounts:thumbnail300' source=request.user.profilo.userpic as im %}
+	                        <img class="material-navbar-image" src="{{ im.url }}" />
+	                    {% endif %}
+
+        			{% else %}
+	                    <a href="#">
+	                        <span>Account </span>
+	        			</a>
+                    {% endif %}
+    			    <ul class="menu">
+                        {% if user.is_authenticated %}
+						<li>
+        					<a href="/accounts/dashboard/">
+        					    <i class="icon icon-monitor pull-left" style="margin-right:10px;"></i> <div>Pannello</div>
+        					</a>
+        				</li>
+        				<li>
+        					<a href="/accounts/profile/">
+        					    <i class="icon icon-user text-green pull-left" style="margin-right:10px;"></i> <div>Profilo</div>
+        					</a>
+        				</li>
+        				<li>
+        					<a href="/accounts/logout/">
+        					    <i class="icon icon-chevron-left text-red pull-left" style="margin-right:10px;"></i> <div>Logout</div>
+        					</a>
+        				</li>
+        				{% else %}
+        				<li>
+        					<a href="/accounts/accedi/">
+        					    <i class="icon icon-chevron-right text-green pull-left" style="margin-right:10px;"></i> <div>Accedi {{ request.user.first_name | capfirst }}</div>
+        					</a>
+        				</li>
+        				<li>
+        					<a href="/accounts/registra/">
+        					    <i class="icon icon-document-edit text-orange pull-left" style="margin-right:10px;"></i> <div>Registrati</div>
+        				    </a>
+        				</li>
+        				{% endif %}
+    			    </ul>
+    			</li>
+    		</ul>
+    	</div>
+
+    </div>
+
+</div>
+
+
+{% block postscripts %}
+{% endblock %}

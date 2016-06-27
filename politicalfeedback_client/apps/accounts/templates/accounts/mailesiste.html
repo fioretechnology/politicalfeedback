@@ -1,14 +1,25 @@
-{% extends "base.html" %}
+{% extends "base_pre_app.html" %}
 {% load i18n %}
 
-{% block testata %}
-	{% include "_/testata_sito.html" %}
-{% endblock %}
 
 {% block content %}
-<div class="row">
-	<div class="small-12 columns panel" >
-		<h4>{% trans "Ci risulta un utente gi&agrave; registrato con questa mail." %}</h4>
+
+
+
+<div class="row login-box">
+
+	<br>
+	<div class="small-12 small-centered columns">
+		<h1 class="text-center text-black login-title"><b>Mail non disponibile</b></h3>
+	</div>
+	<br>
+
+	<div class="large-12 columns password-field">
+		<p>Questa mail risulta gi&agrave; associata ad un account</p>
+	</div>
+
+	<div class="small-12 columns no-pad">
+		<a class="button expanded large bg-main no-margin" href="/accounts/registra"><strong>Torna indietro</strong></a>
 	</div>
 </div>
 {% endblock %}

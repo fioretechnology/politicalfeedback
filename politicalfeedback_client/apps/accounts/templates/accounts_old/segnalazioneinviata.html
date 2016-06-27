@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block breadcrumbs %}
+<ul class="breadcrumbs">
+  <li><a href="/">Home</a></li>
+  <li class="unavailable"><a href="#">Fatture</a></li>
+  <li class="current"><a href="/fatture/bonifici">Lista Bonifici</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+la tua segnalazione è stata inviata. a breve il sistema completo
+</div>
+
+{% endblock %}
+
+

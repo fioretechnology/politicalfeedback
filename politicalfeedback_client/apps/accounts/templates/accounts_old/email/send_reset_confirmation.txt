@@ -1,0 +1,28 @@
+{% load i18n %}
+
+{% block contenuto %}
+{% blocktrans %}
+    
+== Ripristino della password ==
+
+Ciao {{ nome }} {{ cognome }},
+
+è stato richiesto il ripristino della password per il tuo utente nel sito {{domain}}.
+
+Per procedere clicca sul seguente collegamento:
+
+http://{{domain}}/accounts/resetpassword/{{ confirmation_code }}/{{ id }}/
+
+
+Grazie,
+Lo Staff di {{domain}}
+
+-------------------
+
+Nel caso avessi effettuato la richiesta per errore o non fossi stato tu ad effettuarla, non considerare questo messaggio.
+
+Nota: questa è un'e-mail generata automaticamente e non avremo la possibilità di leggere eventuali e-mail di risposta. Non rispondere a questo messaggio.
+
+{% endblocktrans %}
+{% endblock %}
+

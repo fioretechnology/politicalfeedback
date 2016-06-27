@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block precontainer %}<div id="wrap-home">{% endblock %}
+{% block postcontainer %}</div>{% endblock %}
+
+
+{% block testata %}
+	{% include "_/testata_sito.html" %}
+{% endblock %}
+
+{% block leftmenu %}
+  {% include "_/app_leftmenu.html" %}
+{% endblock leftmenu %}
+
+{% block content %}
+<div class="row expanded">
+    <div class="large-12 columns">
+        <div class="dashboard-box sezione-opzioni" id="spedizioni">
+            <div class="dashboard-box-content">
+                <h1 class="lobster text-center">Home</h1><br>
+                <div class="row expanded">
+                    <div class="large-12 columns">
+
+    					comune di {{ comune.comune }}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+{% block extrahead %}{% endblock %}
+
+{% block extraprescripts %}{% endblock extraprescripts %}

@@ -1,21 +1,54 @@
-{% extends "base.html" %}
+{% extends "baseapp.html" %}
 {% load i18n %}
 {% load staticfiles %}
 {% load humanize %}
 
 {% block breadcrumbs %}
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="/accounts/dashboard"><span class="entypo-home"></span></a></li>
   <li class="unavailable"><a href="#">Fatture</a></li>
   <li class="current"><a href="/fatture/bonifici">Lista Bonifici</a></li>
 </ul>
 {% endblock %}
 
 {% block content %}
-<div class="row">
-la tua segnalazione è stata inviata. a breve il sistema completo
+<div class="row" style="margin-top:-20px">
+
+
+	<div class="large-12 columns">
+		<div class="box">
+			<div class="box-header bg-transparent">
+				<!-- tools box -->
+				<div class="pull-right box-tools">
+
+					<span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
+					</span>
+					<span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
+					</span>
+				</div>
+				<h3 class="box-title"><i class="icon-graph-pie"></i>
+					<span>Pagamenti</span>
+				</h3>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body " style="display: block;">
+
+
+
+
+
+<div class="row text-center">
+<h4>Grazie, la tua segnalazione è stata inviata</h4>
+
+<br>
+Appena possibile riceverai una risposta dallo staff<br><br><br>
+
+<a href="/account/dashboard" class="button tiny success">Torna alla Dashboard</a>
 </div>
 
+
+</div>
+</div>
+</div>
+</div>
 {% endblock %}
-
-

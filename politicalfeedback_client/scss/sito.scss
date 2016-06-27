@@ -1,0 +1,68 @@
+// Compass (per filter e mixin)
+@import "compass";
+
+// Importazione Foundation
+@import "foundation-sites/scss/foundation";
+//@include foundation-everything;
+
+// Set di Colori
+@import "_/colori";
+
+// Importazione Componenti Aggiuntivi
+//@import "../components/bower_components/hover/scss/hover.scss";
+
+
+
+// Utility Classes ---------------------------------------------
+
+.lobster{
+	font-family: "Lobster";
+}
+
+// Elimina qualsiasi padding (anche ereditato) dall'elemento
+.no-pad{
+	padding:0!important;
+}
+// Elimina qualsiasi margin (anche ereditato) dell'elemento
+.no-margin{
+	margin: 0!important;
+}
+// Applica a una row per allargarla al 100% della pagina
+.fullwidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+
+.bg-main{
+	background-color: $main;
+	&:hover{
+		background-color: shade($main, 10%);
+	}
+}
+.bg-main-dark{
+	background-color: $main-dark;
+	&:hover{
+		background-color: shade($main-dark, 10%);
+	}
+}
+.bg-main-darker{
+	background-color: $main-darker;
+	&:hover{
+		background-color: shade($main-darker, 10%);
+	}
+}
+.bg-main-light{
+	background-color: $main-light;
+	&:hover{
+		background-color: shade($main-light, 10%);
+	}
+}
+.bg-main-lighter{
+	background-color: $main-lighter;
+	&:hover{
+		background-color: shade($main-lighter, 10%);
+	}
+}

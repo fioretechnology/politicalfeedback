@@ -8,23 +8,23 @@
 {% block content %}
 <div class="row">
 	<div class="small-12 columns panel" >
-		<h2>{% trans "Attivazione account" %}</h2>
-		<p>{% trans "Il Tuo account è presente nel sistema ma non è stato ancora confermato. Inserisci di seguito la tua mail e procedi con l'invio." %}</p>
-		<p>{% trans "Riceverai una mail contenente il link da cliccare per procedere all'attivazione del tuo accesso" %}</p>
+		<h2>Attivazione account</h2>
+		<p>Il Tuo account è presente nel sistema ma non è stato ancora confermato. Inserisci di seguito la tua mail e procedi con l'invio.</p>
+		<p>Riceverai una mail contenente il link da cliccare per procedere all'attivazione del tuo accesso.</p>
 		<form role="form" action="/accounts/rimandaattivazione/" method="post" data-abide>
 		{% csrf_token %}
 			<div class="row">
 			    <div class="large-10 columns">
-			    	<label>{% trans "Email" %} <small>richiesto</small>
+			    	<label>Email <small>richiesto</small>
 			        	{{ form.email }}
 			      	</label>
-			      	<small class="error">{% trans "Inserisci una email valida." %}</small>
+			      	<small class="error">Inserisci una email valida.</small>
 			    </div>
 			</div>
 
 			<div class="row">
 				<div class="large-12 columns">
-				<button  class="right" type="submit"><strong>{% trans "Reinvia la mail per confermare l'account" %}</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
+				<button  class="right" type="submit"><strong>Reinvia la mail per confermare l'account</strong> &nbsp;<i class="fa fa-arrow-right"></i></button>
 				</div>
 			</div>
 

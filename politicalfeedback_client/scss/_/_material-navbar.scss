@@ -1,0 +1,111 @@
+
+.bg-navbar{
+    background-color: $mn-background;
+}
+.material-navbar-mobile{
+    font-family: $mn-font-family;
+    color: $mn-font-color;
+    width:100%;
+    background-color: $mn-background;
+}
+.material-navbar{
+    font-family: $mn-font-family;
+    color: $mn-font-color;
+    height: $mn-height;
+    width:100%;
+    padding: 0 20px 0 20px;
+    background-color: $mn-background;
+
+    a:not(.button){
+        color: $mn-link-color;
+    }
+
+    .material-navbar-item{
+        float:left;
+        height: 100%;
+        margin: 0 8px 0 8px;
+    }
+
+    .material-navbar-right-section{
+        float: right;
+        height: 100%;
+    }
+
+    .material-navbar-text-container{
+        padding: 10px 0 10px 0;
+    }
+
+
+    // Regolazioni per i Button
+    .button{
+        margin-bottom:0;
+        height:100%;
+        padding-top: 15px;
+        &.large{
+            padding-top: 12px;
+        }
+        &.small{
+            padding-top: 17px;
+        }
+        &.tiny{
+            padding-top: 19px;
+        }
+    }
+
+    .material-navbar-image{
+        background-color: $mn-background;
+        height: $mn-image-height;
+        margin-top: $mn-image-margin;
+    }
+
+    // Regolazioni per il Menu Dropdown
+    .dropdown.menu{
+        background-color: $mn-background;
+        >li>a{
+            height: $mn-height;
+            padding-right: 16px;
+            padding-top: 15px;
+            float: left;
+            background-color: $mn-background;
+            &::after{
+                border-top-color: $mn-link-color;
+                content: none;
+            }
+
+        }
+        ul.menu{
+            background-color: $mn-background;
+            border-top: solid 3px $mn-dropdown-border-color;
+            border-color: $mn-dropdown-border-color;
+        }
+
+    }
+
+}
+
+
+// Altri componenti
+
+.notification-toggle{
+    background-color: $mn-background;
+    padding: 8px 8px 8px 8px !important;
+    .notification-circle{
+        display: block;
+        text-align: center;
+        line-height: 2.3em;
+        width: ($mn-height - 16px);
+        height: ($mn-height - 16px);
+        border-radius: 9999px;
+        border: solid 3px $mn-notification-border-color;
+        color: $mn-notification-color;
+        font-weight: bold;
+        font-size: 0.8em;
+        &.new{
+            color: $mn-notification-color-new;
+            background-color: $mn-notification-border-color;
+        }
+    }
+}
+.notification-menu{
+    
+}

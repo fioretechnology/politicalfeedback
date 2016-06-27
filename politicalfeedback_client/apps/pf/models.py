@@ -5,12 +5,13 @@ from apps.accounts.models import *
 from datetime import date, timedelta
 from ckeditor.fields import RichTextField
 from django.template.defaultfilters import slugify
+from reversion import revisions as reversion
 
-class Categorie(models.Model):
+class Categoria(models.Model):
 
     comune = models.ForeignKey(Comune)
 
-    parent = models.ForeignKey('self', verbose_name="categoria padre", null=True, blank=True)
+    parent = models.ForeignKey('self', verbose_name="categoriapadre", null=True, blank=True)
 
     titolo = models.CharField("titolo", max_length=75)
     descrizione = RichTextField(blank=True)
@@ -52,22 +53,41 @@ TIPI_DOCUMENTI = (
         ('Altro', 'Altro'),
     )
 
+PROTEZIONE = (
+        (0, 'Pubblico'),
+        (1, 'Pubblico - (Allegati nascosti)'),
+        (2, 'Visibile a utenti registrati'),
+        (3, 'Visibile a utenti registrati - (Allegati nascosti)'),
+        (4, 'Visibile ad attivisti'),
+        (5, 'Visibile ad attivisti - (Allegati nascosti)'),
+        (6, 'Visibile a consiglieri e collaboratori (gruppo)'),
+        (7, 'Visibile a consiglieri e collaboratori (provincia)'),
+        (8, 'Visibile a consiglieri e collaboratori (globale)'),
+    )
+
+
 class Documento(models.Model):
     categoria = models.ForeignKey(Categoria)
-    utente = models.ForeignKey(User)
+    comune = models.ForeignKey(Comune)
+    autore = models.ForeignKey(User)
     data = models.DateField(auto_now_add=True)
-    user = models.ForeignKey(User)
-    oggetto = models.TextField()
+    data_documento = models.DateField()
+    oggetto = models.CharField(max_length=240)
     descrizione = RichTextField()
     consiglio = models.ForeignKey(Consiglio,blank=True,null=True)
     tipo = models.CharField(max_length=60, choices = TIPI_DOCUMENTI, default = 'Altro')
-    pubblica =  models.BooleanField(default=False)
+    lettura = models.IntegerField(choices = PROTEZIONE, default = 6)
+    scrittura = models.IntegerField(choices = PROTEZIONE, default = 6)
 
     def __unicode__(self):
         return self.oggetto
 
     def __str__(self):
         return self.oggetto
+
+reversion.register(Documento)
+
+
 
 
 class odg(models.Model):
@@ -78,13 +98,3 @@ class odg(models.Model):
     favorevoli = models.IntegerField(blank=True,null=True)
     contrari = models.IntegerField(blank=True,null=True)
     astenuti = models.IntegerField(blank=True,null=True)
-
-
-
-
-
-
-
-
-
-

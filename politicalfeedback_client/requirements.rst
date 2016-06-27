@@ -9,4 +9,5 @@ whoosh
 python-memcached
 yuicompressor
 django-ckeditor
+django-reversion
 

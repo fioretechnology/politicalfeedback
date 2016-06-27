@@ -1,7 +1,0 @@
-{% load i18n %}
-{% if user.is_authenticated %}
-	<p class="navbar-text navbar-right">{% trans "Ciao" %} <strong>{{ user.first_name }}</strong>! ({% trans "Non sei" %} {{ user.first_name }}? <a href="/accounts/logout">{% trans "Esci" %}</a>)</p>
-{% else %}
-	<p class="navbar-text navbar-right">{% trans "Benvenuto!" %} <a href="/accounts/login" class="navbar-link">{% trans "Accedi" %}</a> o <a href="/accounts/registra" class="navbar-link">{% trans "Registrati" %}</a>.</p>
-{% endif %}
-			

@@ -1,0 +1,30 @@
+{% extends "email/struttura.txt" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+
+{% block contenuto %}
+{% blocktrans %}
+
+== Conferma di registrazione ==
+
+Ciao {{ nome }},
+
+ti sei registrato recentemente su {{ domain }}. 
+
+Per favore conferma la registrazione cliccando sul seguente link:
+
+http://{{domain}}/accounts/conferma/{{ confirmation_code }}/{{ id }}/
+
+
+Grazie,
+Lo Staff di {{domain}}
+
+-------------------
+
+Nel caso avessi effettuato la registrazione per errore o non fossi stato tu ad effettuarla, non considerare questo messaggio.
+
+Nota: questa è un'e-mail generata automaticamente e non avremo la possibilità di leggere eventuali e-mail di risposta. Non rispondere a questo messaggio.
+
+{% endblocktrans %}
+{% endblock %}

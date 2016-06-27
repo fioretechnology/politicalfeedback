@@ -1,11 +1,11 @@
-{% extends "base.html" %}
+{% extends "baseapp.html" %}
 {% load i18n %}
 {% load staticfiles %}
-{% load url from future %}
+ 
 
 {% block breadcrumbs %}
 <ul class="breadcrumbs">
-  <li><a href="/">Home</a></li>
+  <li><a href="/accounts/dashboard"><span class="entypo-home"></span></a></li>
   <li class="unavailable"><a href="#">Accounts</a></li>
   <li class="current">Registra Segnalazione</li>
 </ul>
@@ -13,6 +13,37 @@
 
 
 {% block content %}
+
+<form action="/accounts/registrasegnalazione/{% if id %}{{ id }}/{% endif %}" method="post" data-abide>
+		{% csrf_token %}
+
+
+
+<div class="row" style="margin-top:-20px">
+
+
+	<div class="large-12 columns">
+		<div class="box">
+			<div class="box-header bg-transparent">
+				<!-- tools box -->
+				<div class="pull-right box-tools">
+
+					<span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
+					</span>
+					<span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
+					</span>
+				</div>
+				<h3 class="box-title"><i class="icon-graph-pie"></i>
+					<span>Pagamenti</span>
+				</h3>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body " style="display: block;">
+
+
+
+
+
 <div id="main" class="row">
 <div class="small-11 small-centered columns" >
 
@@ -24,10 +55,7 @@
 	    </div>
 	{% endif %}
 
-	<form action="/accounts/registrasegnalazione/{% if id %}{{ id }}/{% endif %}" method="post" data-abide>
-	<fieldset>
-	    <legend>Segnalazione allo staff di PulizieFacile.com</legend>
-		{% csrf_token %}
+	
 		{% for hidden in form.hidden_fields %}
 		    {{ hidden }}
 		{% endfor %}
@@ -103,7 +131,7 @@
 
 		    	<div class="row">
 		    	    <div class="large-8 columns">
-		    	    	<label>{% trans "URL della pagina" %}
+		    	    	<label>URL della pagina <small>Es: http://www.puliziefacile.com/fatture/registrafattura/</small>
 		    	        	{{ form.link }}
 		    	      	</label>
 		    	      	<small class="error">{% trans "L'URL esatto dove riscontri il problema" %}</small>
@@ -128,17 +156,27 @@
 		</div>
 
 		
-		<div class="row">
-			<div class="large-12 columns"><button  class="right" type="submit">Invia</button></div>
-		</div>
-		</fieldset>
-	</form>
+		
+	
 
 
 	
 
 </div>
 </div> <!-- #main -->
+
+
+</div>
+</div>
+</div>
+
+<div class="row text-center">
+			<div class="large-12 columns"><button class="button success" type="submit">Invia</button></div>
+		</div>
+
+</div>
+</form>
+
 {% endblock %}
 
 {% block extrahead %}

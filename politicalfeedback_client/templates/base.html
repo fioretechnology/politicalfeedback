@@ -1,128 +1,59 @@
 {% load static %}
 {% load compress %}
+{% load require %}
 
 <!DOCTYPE html>
-<html lang="it" class="no-js">
+<html lang="it">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="{% block description %}{% endblock %}">
 		<meta name="keywords" content="{% block keywords %}{% endblock %}">
-		<meta name="author" content="Copyright (c) {% now "Y" %} FioreTechnology.com">
+		<meta name="author" content="Copyright &copy; 2015-{% now "Y" %} by Carlo Zanatto  - GPLv3 License">
 		<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 
 		<title>{% block title %}{{ seo_end }} PoliticalFeedback{% endblock %} - Solo uno strumento, non una gerarchia!</title>
-		
+
 		{% compress css %}
-		<link rel="stylesheet" href="{% static 'css/foundation.css' %}">
-		<link rel="stylesheet" href="{% static 'css/style/app.css' %}">
-		<link rel="stylesheet" href="{% static 'css/dripicon.css' %}">
-		<link rel="stylesheet" href="{% static 'css/typicons.css' %}" />
-		<link rel="stylesheet" href="{% static 'css/slicknav.css' %}" />
-		<link rel="stylesheet" href="{% static 'css/theme-yellow.css' %}" />
-
-		
-		<link href="{% static 'js/pace/themes/orange/pace-theme-flash.css' %}" rel="stylesheet" />
 		{% endcompress %}
+		<link rel="stylesheet" href="{% static 'foundation-sites/dist/foundation.css' %}">
+		<link rel="stylesheet" href="{% static 'css/app.css' %}">
+		<link rel="stylesheet" href="{% static 'css/_/themes/movimento.css' %}">
+		<link rel="stylesheet" href="{% static 'css/dripicons/dripicons.css' %}">
+		<link rel="stylesheet" href="{% static 'css/typicons.css' %}" />
 
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 		{% compress js %}
-		<script type="text/javascript" src='{% static 'modernizr/modernizr.js' %}'></script>
-		<script src="{% static 'js/pace/pace.js' %}"></script>
-		<script src="{% static 'modernizr/modernizr.js' %}"></script>
+
 		{% endcompress %}
-    	
 
 		{% block extrahead %}{% endblock %}
 
-
+		{% block require %}{% require_module 'app' %}{% endblock %}
 	</head>
 
-	<body>
+	<body class="bg-app">
 
-		<!-- preloader -->
-		<div id="preloader">
-		    <div id="status">&nbsp;</div>
-		</div>
-		<!-- End of preloader -->
-
-		<div class="off-canvas-wrap" data-offcanvas>
-		    <!-- right sidebar wrapper -->
-		    <div class="inner-wrap">
-
-
-		    	{% block leftmenu %}
-		    		{% include "_/leftmenu.html" %}
-		    	{% endblock leftmenu %}
-
-
-		        <div class="wrap-fluid" id="paper-bg">
-		            
-		        	{% block topnav %}
-		    			{% include "_/topnav.html" %}
-		    		{% endblock topnav %}
-
-
-		            <!-- Container Begin -->
-					{% block breadcrumbs %}
-		    			{% include "_/breadcrumbs.html" %}
-		    		{% endblock breadcrumbs %}
+		<div class="app-container">
+			<div class="row expanded no-pad no-margin container" data-equalizer data-equalize-on="large" id="content-eq">
+				<div class="leftmenu  no-pad" id="leftmenu" data-equalizer-watch>
+					{% block leftmenu %}
+						{% include "_/app_leftmenu.html" %}
+					{% endblock leftmenu %}
+				</div>
+				<div class="columns small-12 large-expand app-content" data-equalizer-watch>
+					{% block topnav %}
+						{% include "_/app_topnav.html" %}
+					{% endblock topnav %}
 
 					{% block content %}{% endblock %}
 
-					<footer>
-					    <div id="footer">Progetto sotto licenza GNU GPLv2 - by Carlo Zanatto</div>
-					</footer>
-
-
-		            <!-- End of Container Begin -->
-
-
-		        </div>
-		        <!-- End wrap-fluid -->
-
-
-
-		        {% block rightmenu %}
-		    		{% include "_/rightmenu.html" %}
-		    	{% endblock rightmenu %}
-
-		        
-		    </div>
-		    <!-- end paper bg -->
-
+					<p class="text-center text-gray" style="margin-top:10px;">Copyright &copy; 2015-{% now "Y" %} by Carlo Zanatto - <a href="http://www.gnu.org/licenses/" target="_blank" class="text-gray">GPLv3 License</a></p>
+				</div>
+			</div>
 		</div>
-		<!-- end of off-canvas-wrap -->
-
-		<!-- end of inner-wrap -->
-
-
-
-        <script type="text/javascript" src='{% static 'jquery/dist/jquery.min.js' %}'></script>
-        <script type="text/javascript" src="{% static 'js/waypoints.min.js' %}"></script>
-	    <script type='text/javascript' src='{% static 'js/preloader-script.js' %}'></script>
-        <script type="text/javascript" src='{% static 'foundation/js/foundation.min.js' %}'></script>
-        <script type='text/javascript' src="{% static 'foundation/js/foundation/foundation.dropdown.js' %}"></script>
-	    
-	    <script type='text/javascript' src='{% static 'js/slimscroll/jquery.slimscroll.js' %}'></script>
-	    <script type='text/javascript' src='{% static 'slicknav/jquery.slicknav.js' %}'></script>
-	    <script type='text/javascript' src='{% static 'js/sliding-menu.js' %}'></script>
-	    <script type='text/javascript' src='{% static 'js/scriptbreaker-multiple-accordion-1.js' %}'></script>
-	    <script type="text/javascript" src="{% static 'js/number/jquery.counterup.min.js' %}"></script>
-	    <script type="text/javascript" src="{% static 'js/circle-progress/jquery.circliful.js' %}"></script>
-	    <script type='text/javascript' src='{% static 'js/app.js' %}'></script>
-	    
-		{% block extraprescripts %}{% endblock %}
-
-
-		<script>
-      		$(document).foundation();
-    	</script>
-
-		{% block extrapostscripts %}{% endblock %}
 
 	</body>
 </html>
