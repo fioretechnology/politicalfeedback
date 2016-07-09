@@ -25,11 +25,11 @@ class RegistraForm(forms.Form):
 	password.widget.attrs['required'] = 'required'
 	password.widget.attrs['placeholder'] = 'Password'
 	password.widget.attrs['class'] = 'input-group-field'
-	indirizzo = forms.CharField(max_length=120,required=True)
+	indirizzo = forms.CharField(max_length=120,required=False)
 	indirizzo.widget.attrs['placeholder'] = 'indirizzo'
 	indirizzo.widget.attrs['class'] = 'input-group-field'
-	civico = forms.CharField(max_length=120,required=True)
-	civico.widget.attrs['placeholder'] = 'numeri civici'
+	civico = forms.CharField(max_length=120,required=False)
+	civico.widget.attrs['placeholder'] = 'numero civico'
 	civico.widget.attrs['class'] = 'input-group-field'
 	provincia = forms.ModelChoiceField(provincie,required=True)
 	provincia.widget.attrs['required'] = 'required'
@@ -42,6 +42,8 @@ class RegistraForm(forms.Form):
 	cap.widget.attrs['pattern'] = 'integer'
 	cap.widget.attrs['class'] = 'input-group-field'
 	avatar = forms.ImageField(required=False);
+	avatar.widget.attrs['class'] = 'hide'
+	tipo_utente = forms.IntegerField(required=True)
 
 
 
@@ -64,13 +66,16 @@ class UtenteForm(forms.Form):
 	cellulare = forms.CharField(max_length=250, required=False)
 	fax = forms.CharField(max_length=250, required=False)
 	cf = forms.CharField(max_length=100, required=True)
-	indirizzo = forms.CharField(max_length=120,required=True)
-	civico = forms.CharField(max_length=120,required=True)
+	indirizzo = forms.CharField(max_length=120,required=False)
+	civico = forms.CharField(max_length=120,required=False)
 	provincia = forms.ModelChoiceField(provincie,required=True)
 	citta = forms.ModelChoiceField(comuni,required=True)
 	cap = forms.CharField(max_length=120,required=False)
 	cap.widget.attrs['pattern'] = 'integer'
 	avatar = forms.ImageField(required=False)
+	avatar.widget.attrs['class'] = 'hide'
+	tipo_utente = forms.IntegerField(required=True)
+
 
 
 class LoginForm(forms.Form):

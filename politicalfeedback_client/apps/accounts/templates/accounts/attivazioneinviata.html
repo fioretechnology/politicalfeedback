@@ -1,14 +1,11 @@
-{% extends "base.html" %}
+{% extends "base_pre_app.html" %}
 {% load i18n %}
 
-{% block testata %}
-	{% include "_/testata_sito.html" %}
-{% endblock %}
+{% block page_title %}Attivazione inviata{% endblock %}
 
 {% block content %}
-<div class="row">
-	<div class="small-12 columns panel" >
-		<h4>Il link per attivare l'account ti è stato inviato via mail.</h4>
-	</div>
+<div class="large-8 medium-8 small-centered text-center columns">
+		<h3>Il link per attivare l'account ti è stato inviato via mail.</h3>
+		<h4>Clicca per confermare e potrai accedere!</h4>
 </div>
 {% endblock %}

@@ -23,6 +23,12 @@ define(["jquery",'datatables.net','datatables.responsive'], function($) {
 		$("div #" + $a.data("id")).toggle();
 	});
 
+	$('#id_provincia').change(function(){
+		$("#id_citta").load("/accounts/elencocitta/"+$('#id_provincia').val()+"/");
+		$("#id_citta").removeClass('hide');
+		$(".row_citta").removeClass('hide');
+	});
+
 	$(document).ready(function() {
 		$('#datatable').DataTable( {
 	        "dom": '<lf<t>ip>',

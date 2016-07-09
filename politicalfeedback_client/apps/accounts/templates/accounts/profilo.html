@@ -29,7 +29,7 @@
 				<div class="no-pad" id="opzioni">
 					<ul class="vertical menu" data-accordion-menu>
 						<li class="li-accordion-item-1"><a href="javascript:;" data-id="datipersonali" class="accordion-item opzione"><i class="fa fa-user fa-fw icona-menu"></i> Dati Personali</a></li>
-						<li class="li-accordion-item-1"><a href="javascript:;" data-id="spedizioni" class="accordion-item opzione"><i class="fa fa-truck fa-fw icona-menu"></i> Spedizioni</a></li>
+						<li class="li-accordion-item-1"><a href="javascript:;" data-id="utenti" class="accordion-item opzione"><i class="fa fa-truck fa-fw icona-menu"></i> Utenti</a></li>
 						<li class="li-accordion-item-1"><a href="javascript:;" data-it="pagamento" class="accordion-item opzione"><i class="fa fa-credit-card fa-fw icona-menu"></i> Metodi pagamento</a></li>
 					</ul>
 				</div>
@@ -64,11 +64,11 @@
 	          				{% if not request.user.profilo.userpic %}
 	          					<div><i>Manca l'immagine di profilo</i></div>
 	          				{% else %}
-								{% generateimage 'accounts:thumbnail300' source=request.user.profilo.userpic as im %}
+								{% generateimage 'accounts:thumbnail300' source=request.user.profilo.avatar as im %}
 	          					<div><img width="100%" src="{{ im.url }}" /></div>
 	          				{% endif %}
-	          				{{ formutente.userpic }}
-	          				<label class="button expanded small bg-main" for="id_userpic"><b><i class="fa fa-upload fa-lg fa-fw pull-left"></i>Modifica</b></label>
+	          				{{ formutente.avatar }}
+	          				<label class="button expanded small bg-main" for="id_avatar"><b><i class="fa fa-upload fa-lg fa-fw pull-left"></i>Modifica</b></label>
 							<br>
 	          			</div>
 						<div class="large-12 medium-8 columns">
@@ -76,6 +76,22 @@
 								<b>E-Mail:</b>&nbsp; {{ request.user.email }}
 								<br><br>
 							</div>
+							{% if formutente.tipo_utente.value == 1 %}
+								Sei ATTIVISTA per i membri del gruppo
+							{% elif formutente.tipo_utente.value == 2 %}
+								Sei CONSIGLIERE o ELETTO per i membri del gruppo
+							{% else %}
+							<div class="xlarge-6 large-12 medium-12 columns">
+								<label>Cambia il tuo stato attuale <small>richiesto</small>
+								<select id="id_tipo_utente">
+									<option value="3" {% if formutente.tipo_utente.value == 3 %}selected{% endif %}>Semplice cittadino (vuoi tenerti informato e fare proposte)</option>
+									<option value="0" {% if formutente.tipo_utente.value == 0 %}selected{% endif %}>Simpatizzante (Vuoi diventare attivista e partecipare ai lavori)</option>
+								</select>
+								</label>
+							</div>
+
+							{% endif %}
+
 							<div class="xlarge-6 large-12 medium-12 columns">
 								<label>Nome <small>richiesto</small>
 									{{ formutente.first_name }}
@@ -86,6 +102,28 @@
 									{{ formutente.last_name }}
 								</label>
 							</div>
+							<div class="xlarge-6 large-12 medium-12 columns">
+								<label>Provincia <small>richiesto</small>
+									{{ formutente.provincia }}
+								</label>
+							</div>
+							<div class="xlarge-6 large-12 medium-12 columns">
+								<label>Città <small>richiesto</small>
+									{{ formutente.citta }}
+								</label>
+							</div>
+							<div class="xlarge-6 large-12 medium-12 columns">
+								<label>CAP <small>richiesto</small>
+									{{ formutente.cap }}
+								</label>
+							</div>
+							<div class="xlarge-6 large-12 medium-12 columns">
+								<label>Telefono
+									{{ formutente.telefono }}
+								</label>
+							</div>
+
+
 						</div>
 
 					</div>
@@ -96,7 +134,7 @@
 
 		<form action="/accounts/profile/" id="form_spedizioni" method="post" enctype="multipart/form-data" data-abide>
 			{% csrf_token %}
-			<div class="dashboard-box sezione-opzioni" id="spedizioni">
+			<div class="dashboard-box sezione-opzioni" id="utenti">
 				<div class="dashboard-title">
 					<h3>Spedizioni</h3>
 				</div>

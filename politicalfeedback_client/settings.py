@@ -5,7 +5,6 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.abspath(__file__ + '/..'))
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
 	('zarloc', 'carlo@fioretechnology.com'),
@@ -104,25 +103,6 @@ STATICFILES_STORAGE = (
 SECRET_KEY = '$)a7n&o80u!6y5t-+jrdgeshhrtjrwjhwwdsfjpxc!ar&p#!)n1a'
 
 
-
-
-TEMPLATE_LOADERS = (
-	'django.template.loaders.filesystem.Loader',
-	'django.template.loaders.app_directories.Loader',
-	'django.template.loaders.eggs.Loader',
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-	"django.contrib.auth.context_processors.auth",
-	"django.core.context_processors.debug",
-	"django.core.context_processors.i18n",
-	"django.core.context_processors.media",
-	"django.core.context_processors.static",
-	"django.core.context_processors.tz",
-	"django.contrib.messages.context_processors.messages",
-	"django.core.context_processors.request",
-)
-
 MIDDLEWARE_CLASSES = (
 	'django.middleware.cache.UpdateCacheMiddleware',
 	'django.middleware.gzip.GZipMiddleware',
@@ -162,6 +142,7 @@ BOWER_PATH = APP_ROOT + '/../bin/bower'
 BOWER_INSTALLED_APPS = (
 	'jquery',
 	'foundation-sites',
+	'foundation-datepicker',
 	'requirejs',
 	'datatables.net',
 	'datatables.net-dt',
@@ -185,7 +166,6 @@ TEMPLATES = [
 	{
 		'BACKEND': 'django.template.backends.django.DjangoTemplates',
 		'DIRS': [APP_ROOT + '/templates',],
-		'APP_DIRS': True,
 		'OPTIONS': {
 			'context_processors': [
 				# Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
@@ -198,6 +178,11 @@ TEMPLATES = [
 				'django.template.context_processors.tz',
 				'django.contrib.messages.context_processors.messages',
 			],
+			'loaders': [
+				'django.template.loaders.filesystem.Loader',
+				'django.template.loaders.app_directories.Loader',
+				'django.template.loaders.eggs.Loader',
+			]
 		},
 	},
 ]

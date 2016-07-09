@@ -14,6 +14,6 @@ urlpatterns = [
     url(r'^gruppo/(?P<id>\d+)/$', views.gruppo ),
 
     url(r'^$', views.home , name='home'),
-    (r'^ckeditor/', include( 'ckeditor_uploader.urls' )),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
 	]

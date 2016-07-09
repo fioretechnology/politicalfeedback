@@ -31,5 +31,7 @@ urlpatterns = [
 	url(r'^listasegnalazioni/$', views.listasegnalazioni),
 	url(r'^elencocitta/(?P<provincia_id>\d+)/$',views.elencocitta),
 	url(r'^logout/$', views.logout_view),
+	url(r'^member/(?P<id>\d+)/$',views.member),
+	url(r'^valuta/(?P<id>\d+)/(?P<valutazione>\d+)/$',views.valuta),
 
 ]

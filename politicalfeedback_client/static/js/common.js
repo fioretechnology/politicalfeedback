@@ -8,12 +8,22 @@ requirejs.config({
         "foundation-datepicker" : '../foundation-datepicker/js/foundation-datepicker',
         "datatables.responsive" : '../datatables.net-responsive/js/dataTables.responsive',
         "datatables.net" : '../datatables.net/js/jquery.dataTables',
+		"ckeditor" : "../ckeditor/ckeditor/ckeditor",
+		"ckinit" : "../ckeditor/ckeditor-init"
     },
     shim: {
-        "foundation" : {
-            deps: ['jquery','modernizr'],
-            exports:"Foundation"
-        }
+		"foundation" : {
+			deps : ['jquery']
+		},
+		"foundation-datepicker" : {
+			deps : ['jquery','foundation']
+		},
+		"ckeditor" : {
+			deps : ['jquery']
+		},
+		"ckinit" : {
+			deps : ['ckeditor']
+		}
         //"datatables.responsive" : ['datatables'],
     }
 });

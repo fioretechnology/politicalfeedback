@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load humanize %}
+{% load imagekit %}
+
+{% block content %}
+
+<div class="row expanded">
+	<div class="large-12 columns">
+		<div class="dashboard-box sezione-opzioni" id="spedizioni">
+			<div class="dashboard-box-content">
+				<h2 class="lobster text-center">{{  utente.first_name }} {{  utente.last_name }}</h2><br>
+				<div class="row expanded">
+					<div class="large-12 columns">
+
+						<h4>Questa persona è stata valutata da {{ n }} persone e il suo stato attuale è <b>
+							{% if utente.profilo.tipo_utente == 0 %} Simpatizzante
+							{% elif utente.profilo.tipo_utente == 1 %} Attivista
+							{% elif utente.profilo.tipo_utente == 2 %} Consigliere o carica elettiva
+							{% elif utente.profilo.tipo_utente == 3 %} Cittadino
+							{% elif utente.profilo.tipo_utente == 4 %} Una persona ostile al tuo gruppo
+							{% endif %}
+						</b></h4>
+
+						<ul>
+						{% for i in v %}
+							<li>
+							per {{ i.conteggio }} persone è un
+							<b>
+							{% if i.valutazione == 0 %} simpatizzante
+							{% elif i.valutazione == 1 %} attivista
+							{% elif i.valutazione == 2 %} consigliere o carica elettiva
+							{% elif i.valutazione == 3 %} cittadino
+							{% elif i.valutazione == 4 %} una persona ostile al suo gruppo
+							{% endif %}
+							</b>
+							</li>
+						{% endfor %}
+					</ul>
+						{% if s.valutazione != utente.profilo.tipo_utente  and n > 3 %}
+						<p>al prossimo login sarà
+						<b>
+							{% if s.valutazione == 0 %} simpatizzante
+							{% elif s.valutazione == 1 %} attivista
+							{% elif s.valutazione == 2 %} consigliere o carica elettiva
+							{% elif s.valutazione == 3 %} cittadino
+							{% elif s.valutazione == 4 %} una persona ostile al suo gruppo
+							{% endif %}
+						</b>
+						</p>
+						{% endif %}
+
+						{% if valutazione != None %}
+							Tu ritieni che questa persona sia <b>
+							{% if valutazione == 0 %} simpatizzante
+							{% elif valutazione == 1 %} attivista
+							{% elif valutazione == 2 %} consigliere o carica elettiva
+							{% elif valutazione == 3 %} cittadino
+							{% elif valutazione == 4 %} una persona ostile al tuo gruppo
+							{% else %}
+							nessuna valutazione
+							{% endif %}
+							</b>
+							<div>
+								<p><small>Puoi se vuoi cambiare valutazione cliccando qui di seguito il nuovo stato</small></p>
+								<a href="/accounts/valuta/{{ utente.id }}/3/" class="button bg-orange"> Cittadino </a>
+								<a href="/accounts/valuta/{{ utente.id }}/0/" class="button bg-orange"> Simpatizzante </a>
+								<a href="/accounts/valuta/{{ utente.id }}/1/" class="button bg-orange"> Attivista </a>
+								<a href="/accounts/valuta/{{ utente.id }}/2/" class="button bg-orange"> Consigliere o carica elettiva </a>
+								<a href="/accounts/valuta/{{ utente.id }}/4/" class="button bg-orange"> Cittadino ostile al gruppo</a>
+							</div>
+						{% else %}
+							<p>Non hai ancora dato la tua opinione su questa persona</p>
+							<a href="/accounts/valuta/{{ utente.id }}/3/" class="button bg-orange"> Cittadino </a>
+							<a href="/accounts/valuta/{{ utente.id }}/0/" class="button bg-orange"> Simpatizzante </a>
+							<a href="/accounts/valuta/{{ utente.id }}/1/" class="button bg-orange"> Attivista </a>
+							<a href="/accounts/valuta/{{ utente.id }}/2/" class="button bg-orange"> Consigliere o carica elettiva </a>
+							<a href="/accounts/valuta/{{ utente.id }}/4/" class="button bg-orange"> Cittadino ostile al gruppo</a>
+						{% endif %}
+
+						<small>Per cambiare lo stato di una persona è necessario che vi siano almeno 3 valutazioni e che il suo stato sia confermato dal 66%. Si possono valutare anche persone di altri gruppi se si è attivisti.</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

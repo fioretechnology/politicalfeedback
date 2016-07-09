@@ -1,17 +1,13 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load staticfiles %}
+{% load static %}
+{% load require %}
 
-{% block breadcrumbs %}
-<ul class="breadcrumbs">
-  <li><a href="/accounts/dashboard"><span class="entypo-home"></span></a></li>
-  <li class="unavailable"><a href="#">Pannello</a></li>
-  <li class="current">Registra Categoria</li>
-</ul>
-{% endblock %}
+{% block require %}{% require_module 'regcategoria' %}{% endblock %}
 
 
 {% block content %}
+
 <div class="row expanded">
     <div class="large-12 columns">
         <div class="dashboard-box sezione-opzioni" id="spedizioni">
@@ -39,40 +35,22 @@
 
 							<div class="row">
 	                            <div class="large-3 columns">
-	                                <label>{% trans "Data del documento" %}
-	                                    {{ form.data_documento }}
+	                                <label>{% trans "figlio di" %}
+	                                    {{ form.parent }}
 	                                </label>
-	                                <small class="error">Inserisci la data del documento</small>
+	                                <small class="error">Inserisci la categoria di cui fa parte</small>
 	                            </div>
 	                            <div class="large-3 columns">
-	                                <label>{% trans "Tipo" %}
-	                                    {{ form.tipo }}
+	                                <label>{% trans "Titolo" %}
+	                                    {{ form.titolo }}
 	                                </label>
-	                                <small class="error">Inserisci tipo di documento</small>
-	                            </div>
-	                            <div class="large-3 columns">
-	                                <label>{% trans "Chi può leggere?" %}
-	                                    {{ form.lettura }}
-	                                </label>
-	                                <small class="error">Inserisci la protezione in lettura</small>
-	                            </div>
-	                            <div class="large-3 columns">
-	                                <label>{% trans "C?hi può modificare" %}
-	                                    {{ form.scrittura }}
-	                                </label>
-	                                <small class="error">Inserisci la protezione in scrittura</small>
+	                                <small class="error">Inserisci titolo della categoria</small>
 	                            </div>
 							    <div class="large-12 columns">
-							    	<label>{% trans "Oggetto" %}
-							        	{{ form.oggetto }}
-							      	</label>
-							      	<small class="error">Inserisci oggetto della mozione'</small>
-							    </div>
-							    <div class="large-12 columns">
-							    	<label>{% trans "Testo" %}
+							    	<label>{% trans "Descrizione" %}
 							        	{{ form.descrizione }}
 							      	</label>
-							      	<small class="error">Inserisci descrizione della mozione'</small>
+							      	<small class="error">Inserisci descrizione della categoria'</small>
 							    </div>
 
 
@@ -81,7 +59,7 @@
 
 
 							<div class="row">
-								<div class="large-12 columns"><button  class="right" type="submit">Salva</button></div>
+								<div class="large-12 columns"><input  type="submit"  class="button right" value="Salva"/></div>
 							</div>
 
 						</form>
@@ -93,17 +71,4 @@
 		</div>
 	</div>
 </div>
-{% endblock %}
-
-{% block extrahead %}
-<link href="{% static 'foundation-datepicker/stylesheets/foundation-datepicker.css' %}" rel="stylesheet">
-{% endblock %}
-
-{% block extraprescripts %}
-<script type="text/javascript" src='{% static 'foundation-datepicker/js/foundation-datepicker.js' %}'></script>
-
-<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
-<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
-
-
 {% endblock %}

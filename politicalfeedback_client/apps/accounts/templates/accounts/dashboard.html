@@ -18,7 +18,10 @@
         <div class="dashboard-box sezione-opzioni" id="spedizioni">
             <div class="dashboard-box-content">
                 <h1 class="lobster text-center">Pannello</h1><br>
-                <div class="row expanded">
+
+				<p>{{ user.first_name }} {{ user.last_name }} - {% if user.profilo.tipo_utente == 0 %}Simpatizzante{% elif user.profilo.tipo_utente == 3 %}Cittadino{% elif user.profilo.tipo_utente == 1 %}Attivista{% elif user.profilo.tipo_utente == 2 %}Eletto{% elif user.profilo.tipo_utente == 4 %}Ostile{% endif %}</p>
+				<p>ti hanno votato {{ user.valutazione_set.count }} attivisti
+				<div class="row expanded">
                     <div class="large-12 columns">
 
 
@@ -33,6 +36,47 @@
 		</div>
 	</div>
 </div>
+</div>
+
+<div class="dashboard-box sezione-opzioni" id="utenti">
+	<div class="dashboard-title">
+		<h3>Il tuo gruppo</h3>
+	</div>
+	<div class="dashboard-box-content">
+
+		<div class="row">
+			<div class="columns">
+				<p>Qui puoi vedere tutti i cittadini che seguono i lavori di questo gruppo. Puoi selezionare, se lo conosci, il cambio di stato di un utente.</p>
+				<table id="datatable" class="display responsive nowrap row-border" width="100%">
+
+					<thead>
+						<tr>
+							<th>Utente</th>
+							<th>Stato attuale</th>
+							<th>Valutazioni</th>
+							<th>email</th>
+							<th>Telefono</th>
+							<th>Valuta</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for u in gruppo %}
+						<tr>
+							<td>{{ u.first_name }} {{ u.last_name }}</td>
+							<td>{% if u.profilo.tipo_utente == 0 %}Simpatizzante{% elif u.profilo.tipo_utente == 3 %}Cittadino{% elif u.profilo.tipo_utente == 1 %}Attivista{% elif u.profilo.tipo_utente == 2 %}Eletto{% elif u.profilo.tipo_utente == 4 %}Ostile{% endif %}</td>
+							<td>{{ u.valutazione_set.count }}</td>
+							<td>{{ u.email }}</td>
+							<td>{{ u.profilo.telefono }}</td>
+							<td><a class="button bg-orange" href="/accounts/member/{{ u.id }}/" >visualizza e valuta</a></td>
+						</tr>
+						{% endfor %}
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
 </div>
 
 {% endblock %}

@@ -14,10 +14,13 @@ import random
 import string
 import datetime
 from django.template.loader import get_template
-from apps.accounts.models import Profilo, Segnalazione, Comune
+from apps.accounts.models import *
 from django.db import transaction
 from django.views.decorators.cache import never_cache
 from django.db.models import Q, Sum
+from django.contrib.sites.shortcuts import get_current_site
+from django.shortcuts import get_object_or_404
+from django.db.models import Count, Max
 
 @never_cache
 def accedi(request):
@@ -34,6 +37,18 @@ def accedi(request):
 			if user is not None:
 				if user.is_active:
 					login(request, user)
+
+					# cambio lo stato a seconda delle valutazioni
+					n = user.valutazione_set.all().count()
+					v = user.valutazione_set.values('valutazione').annotate(conteggio=Count('valutazione')).order_by('conteggio')
+					if n >= 2:
+						for j in v:
+							x = 100*j['conteggio']/n
+							if x >= 66:
+								user.profilo.tipo_utente = j['valutazione']
+								user.profilo.save()
+
+
 					# Redirect to a success page.
 					return HttpResponseRedirect('/accounts/dashboard/')
 				else:
@@ -70,7 +85,7 @@ def registra(request):
 			cap = form.cleaned_data['cap']
 
 			if User.objects.filter(email=email).count() > 0:
-				return HttpResponseRedirect('/accounts/mailesiste')
+				return HttpResponseRedirect('/accounts/mailesiste/')
 			else:
 				user = User.objects.create_user(email, email, password)
 				user.first_name = first_name
@@ -90,7 +105,7 @@ def registra(request):
 				if form.cleaned_data['avatar']:
 					p.avatar = form.cleaned_data['avatar']
 				p.save()
-				send_registration_confirmation(user)
+				send_registration_confirmation(user, get_current_site(request))
 
 				return render(request, 'accounts/registrato.html', {'email': user.email})
 	else:
@@ -105,7 +120,7 @@ def rimandaattivazione(request):
 		if form.is_valid():
 			email = form.cleaned_data['email']
 			user = User.objects.get(email=email)
-			send_registration_confirmation(user)
+			send_registration_confirmation(user, get_current_site(request))
 			return render(request, 'accounts/attivazioneinviata.html')
 	else:
 		return render(request, 'accounts/attivazioneinviata.html')
@@ -121,10 +136,10 @@ def recuperauser(request):
 		if form.is_valid():
 			email = form.cleaned_data['email']
 			user = User.objects.get(email=email)
-			send_username(user)
-			return HttpResponseRedirect('/accounts/inviatoutente')
+			send_username(user, get_current_site(request))
+			return HttpResponseRedirect('/accounts/inviatoutente/')
 
-	return HttpResponseRedirect('/accounts/login')
+	return HttpResponseRedirect('/accounts/login/')
 
 def recuperapassword(request):
 	if request.method == 'POST':
@@ -136,10 +151,10 @@ def recuperapassword(request):
 			p = user.profilo
 			p.confirmation_code = confirmation_code
 			p.save()
-			send_reset_confirmation(user)
-			return HttpResponseRedirect('/accounts/inviatoutente')
+			send_reset_confirmation(user, get_current_site(request))
+			return HttpResponseRedirect('/accounts/inviatoutente/')
 
-	return HttpResponseRedirect('/accounts/login')
+	return HttpResponseRedirect('/accounts/login/')
 
 
 def resetpassword(request, confirmation_code, idutente):
@@ -224,7 +239,7 @@ def dati(request):
 					p = user.profilo
 					p.confirmation_code = confirmation_code
 					p.save()
-					send_registration_confirmation(user)
+					send_registration_confirmation(user, get_current_site(request))
 
 					return HttpResponseRedirect('/accounts/benvenuto')
 		else:
@@ -232,14 +247,16 @@ def dati(request):
 
 	return render(request, 'accounts/dati.html', {'form': form,})
 
-def invia_mail(utente, template, to, subject, from_email=''):
+def invia_mail(utente, template, to, subject,dominio, from_email=''):
 	from django.core.mail import EmailMultiAlternatives
 	from django.template.loader import get_template
 	from django.template import Context
 	from email.MIMEImage import MIMEImage
 	from django.conf import settings
 
-	d     = Context({ 'nome': utente.first_name, 'cognome': utente.last_name , 'domain': settings.DOMAIN, 'id': utente.id, 'confirmation_code': utente.profilo.confirmation_code })
+	dominio = str(dominio).replace("www.", "")
+
+	d     = Context({ 'nome': utente.first_name, 'cognome': utente.last_name , 'domain': dominio, 'id': utente.id, 'confirmation_code': utente.profilo.confirmation_code })
 	plaintext    = get_template('accounts/email/'+template+'.txt')
 	htmly        = get_template('accounts/email/'+template+'.html')
 	html_content = htmly.render(d)
@@ -261,17 +278,17 @@ def invia_mail(utente, template, to, subject, from_email=''):
 	return msg.send()
 
 
-def send_registration_confirmation(user):
+def send_registration_confirmation(user, dominio):
 	title   = _("Conferma account")
-	invia_mail(user,'send_registration_confirmation',user.email, title, 'no-reply@'+settings.DOMAIN)
+	invia_mail(user,'send_registration_confirmation',user.email, title,dominio, settings.EMAIL_CLIENTE)
 
-def send_reset_confirmation(user):
+def send_reset_confirmation(user, dominio):
 	title   = _("Reimposta la password")
-	invia_mail(user,'send_reset_confirmation',user.email, title, 'no-reply@'+settings.DOMAIN)
+	invia_mail(user,'send_reset_confirmation',user.email, title, dominio, settings.EMAIL_CLIENTE)
 
-def send_username(user):
+def send_username(user, dominio):
 	title = _("Il tuo nome utente")
-	invia_mail(user,'send_username',user.email, title, 'no-reply@'+settings.DOMAIN)
+	invia_mail(user,'send_username',user.email, title, dominio, settings.EMAIL_CLIENTE)
 
 
 def conferma(request, confirmation_code, idusername):
@@ -341,6 +358,7 @@ def profile(request):
 			p.cap = formutente.cleaned_data['cap']
 			p.telefono = formutente.cleaned_data['telefono']
 			p.fax = formutente.cleaned_data['fax']
+			p.tipo_utente = formutente.cleaned_data['tipo_utente']
 			if formutente.cleaned_data['avatar']:
 				p.avatar = formutente.cleaned_data['avatar']
 			p.save()
@@ -357,8 +375,7 @@ def profile(request):
 			'cap': request.user.profilo.cap,
 			'telefono': request.user.profilo.telefono,
 			'fax': request.user.profilo.fax,
-
-
+			'tipo_utente': request.user.profilo.tipo_utente
 		}
 		formutente = UtenteForm(initial=dati)
 
@@ -368,7 +385,8 @@ def profile(request):
 @login_required
 @never_cache
 def dashboard(request):
-	return render(request, 'accounts/dashboard.html')
+	gruppo = User.objects.filter(profilo__citta=request.user.profilo.citta).all().exclude(id=request.user.id)
+	return render(request, 'accounts/dashboard.html', {'gruppo': gruppo})
 
 
 def attivazione(request):
@@ -439,3 +457,33 @@ def listasegnalazioni(request):
 def elencocitta(request, provincia_id):
 	citta = Comune.objects.filter(provincia__pk = provincia_id).order_by('comune')
 	return render(request, 'accounts/elencocitta.html',{'citta': citta,})
+
+
+@login_required
+@never_cache
+def member(request, id):
+	utente = get_object_or_404(User, pk = id)
+	valutazione = utente.valutazione_set.filter(votante=request.user).first()
+
+	if valutazione:
+		val = valutazione.valutazione
+	else:
+		val = False
+
+	n_val = utente.valutazione_set.all().count()
+
+	n = utente.valutazione_set.all().count()
+	v = utente.valutazione_set.values('valutazione').annotate(conteggio=Count('valutazione')).order_by('conteggio')
+	s = v.first()
+
+	return render(request, 'accounts/member.html', {'utente': utente, 'valutazione': val, 'n': n_val, 'v': v, 's':s})
+
+@login_required
+@never_cache
+def valuta(request, id, valutazione):
+	utente = get_object_or_404(User, pk = id)
+	val, created = Valutazione.objects.get_or_create(user=utente,votante= request.user)
+	val.valutazione = valutazione
+	val.save()
+
+	return HttpResponseRedirect('/accounts/member/'+ str(id) + '/')

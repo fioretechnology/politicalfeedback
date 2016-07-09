@@ -2,14 +2,9 @@
 {% load i18n %}
 {% load staticfiles %}
 {% load humanize %}
+{% load require %}
 
-{% block breadcrumbs %}
-<ul class="breadcrumbs">
-  <li><a href="/accounts/dashboard"><span class="entypo-home"></span></a></li>
-  <li class="unavailable"><a href="#">Programmazione</a></li>
-  <li class="current"><a href="/anagrfiche/listaschede">Lista Schede</a></li>
-</ul>
-{% endblock %}
+{% block require %}{% require_module 'listacategorie' %}{% endblock %}
 
 {% block content %}
 <div class="row" style="margin-top:-20px">
@@ -26,7 +21,7 @@
                     </span>
                 </div>
                 <h3 class="box-title"><i class="icon-graph-pie"></i>
-                    <span>Lista documenti</span>
+                    <span>Lista categorie</span>
                 </h3>
             </div>
             <!-- /.box-header -->
@@ -40,50 +35,19 @@
 				<div class="row">
 					<div class="large-12 columns">
 							<table id="listaschede" class="display hover" cellspacing="0" width="100%">
-							<thead><tr><th>Cliente</th><th>Amministratore</th><th>Insoluti</th><th>Imp. mensile</th><th></th></tr></thead>
+							<thead><tr><th>Categoria</th><th>Descrizione</th><th></th></tr></thead>
 							<tbody>
 							{% for c in lista %}
 
 							<tr>
-								<td><h5> {% if c.cliente.tipo == 1 %}Cond. {% endif %} {{ c.cliente.ragione_sociale }}</h5>
-								{{ c.cliente.indirizzo }} {{ c.cliente.civico }}<br />{{ c.cliente.cap }} - {{ c.cliente.citta.comune }} ({{ c.cliente.provincia.provincia }})<br />
-
-								{% for t in c.cliente.tempo_medio %}
-									{% if forloop.last %}
-										<small>Costo medio mensile:<strong>{{ t|floatformat:2|intcomma }} €</strong></small><br />
-									{% else %}
-										<small><strong><i class="fa fa-clock-o"></i> {{ t }}</strong></small><br />
-									{% endif %}
-								{% endfor %}
-								{{ c.cliente.costo_medio }}
+								<td><h5>{{ c.titolo }}
 								</td>
-								<td>
-								{% if c.amministratore %}
-								<h6> {{ c.amministratore.ragione_sociale }}</h6>
-								<strong>{{ c.amministratore.nome }} {{ c.amministratore.cognome }}</strong>
-								<br />{{ c.amministratore.indirizzo }} {{ c.amministratore.civico }}<br />{{ c.amministratore.cap }}  {{ c.amministratore.citta.comune }} ({{ c.amministratore.provincia.provincia }})<br />
-								<phone>{{ c.amministratore.telefono }}</phone>
-								{% endif %}
-								</td>
-								<td>
-									{% for f in c.insoluti %}
-									{{ f.numero_fattura }}/{{ f.data_fattura|date:"y"}}
-									{% endfor %}
+								<td>{{ c.descrizione }}</h6>
 
-									{% if c.insoluti.count > 0 %}
-									<div class="progress alert">
-				  						<span class="meter" style="width: {{c.insoluti.count}}0%"></span>
-									</div>
-
-
-									<a href="/fatture/condins/{{ c.id }}/" class="button tiny info"><strong><i class="fa fa-file-pdf-o"></i> pdf</strong></a>
-									{% endif %}
-								</td>
-								<td><strong>{{ c.imponibile|floatformat:2|intcomma }} €</strong></td>
 								<td>
 									<ul class="button-group">
-									<li><a href="/programmazione/registrascheda/{{ c.id }}/" class="button [ small ]"><i class="fa fa-pencil"></i></a></li>
-									<li><a href="#" class="button [ small alert ] cestina" data-reveal-id="elimina" eid="{{ c.id }}"><i class="fa fa-trash"></i></a></li>
+									<li><a href="/programmazione/registracategoria/{{ c.id }}/" class="button"><i class="fa fa-pencil"></i></a></li>
+									<li><a href="#" class="button alert cestina" data-reveal-id="elimina" eid="{{ c.id }}"><i class="fa fa-trash"></i></a></li>
 									</ul>
 								</td>
 							</tr>
@@ -96,9 +60,9 @@
 
 
 				<div id="elimina" class="reveal-modal" data-reveal>
-				  <h2>Sicuro che vuoi eliminare questa scheda?</h2>
-				  <p class="lead">Con questa azione eliminerai definitivamente la scheda dalla programmazione.</p>
-				  <a href="#" id="btnelimina" class="button [ small alert ]"><i class="fa fa-trash"></i> Elimina</a>
+				  <h2>Sicuro che vuoi eliminare questa categoria?</h2>
+				  <p class="lead">Con questa azione eliminerai definitivamente la categoria.</p>
+				  <a href="#" id="btnelimina" class="button "><i class="fa fa-trash"></i> Elimina</a>
 				  <a class="close-reveal-modal">&#215;</a>
 				</div>
 
@@ -119,45 +83,4 @@
 
 {% block extrahead %}
 <link href="{% static 'css/dataTables.foundation.css' %}" rel='stylesheet' type='text/css'>
-{% endblock %}
-
-{% block extrapostscripts %}
-<script type="text/javascript" language="javascript" src="{% static 'datatables/media/js/jquery.dataTables.min.js' %}"></script>
-<script type="text/javascript" src='{% static 'js/dataTables.foundation.js' %}'></script>
-<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				$('#listaschede').dataTable({
-					responsive: true,
-					language: {
-							    "sEmptyTable":     "Nessun dato presente nella tabella",
-							    "sInfo":           "Vista da _START_ a _END_ di _TOTAL_ elementi",
-							    "sInfoEmpty":      "Vista da 0 a 0 di 0 elementi",
-							    "sInfoFiltered":   "(filtrati da _MAX_ elementi totali)",
-							    "sInfoPostFix":    "",
-							    "sInfoThousands":  ",",
-							    "sLengthMenu":     "Visualizza _MENU_ elementi",
-							    "sLoadingRecords": "Caricamento...",
-							    "sProcessing":     "Elaborazione...",
-							    "sSearch":         "Cerca:",
-							    "sZeroRecords":    "La ricerca non ha portato alcun risultato.",
-							    "oPaginate": {
-							        "sFirst":      "Inizio",
-							        "sPrevious":   "Precedente",
-							        "sNext":       "Successivo",
-							        "sLast":       "Fine"
-							    },
-							    "oAria": {
-							        "sSortAscending":  ": attiva per ordinare la colonna in ordine crescente",
-							        "sSortDescending": ": attiva per ordinare la colonna in ordine decrescente"
-							    }
-							}
-				});
-			} );
-
-			$(".cestina").click(function(){
-				$("#btnelimina").attr("href", "/programmazione/eliminascheda/" + $(this).attr("eid") + "/");
-			})
-
-
-		</script>
 {% endblock %}

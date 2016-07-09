@@ -32,14 +32,22 @@
 		<div class="small-12 small-centered columns">
 			<br>
 			<h1 class="text-center login-title"><b>Registrati</b></h1>
+			<h4 class="text-center login-title">I tuoi dati non saranno pubblici e visibili solo agli attivisti del Comune.</h4>
+			<h5 class="text-center login-title">Se non ci sono attivisti in questo comune e scegli lo stato di <b>"simpatizzante"</b> potrai vedere e sarai visto dai simpatizzanti registrati e potrai contattarli per costituire un gruppo nuovo. Se ci sono attivisti vedrai solo loro.</h5>
 			<br>
 		</div>
-		<div class="large-6 small-12 columns">
+		<div class="small-4 columns">
+			<select id="id_tipo_utente" name="tipo_utente">
+				<option value="3" selected>Semplice cittadino (ti vuoi informare su quello che succede)</option>
+				<option value="0">Simpatizzante (Vuoi diventare attivista e partecipare ai lavori)</option>
+			</select>
+		</div>
+		<div class="large-4 small-12 columns">
 			<label>
 				{{ form.first_name }}
 			</label>
 		</div>
-		<div class="large-6 small-12 columns">
+		<div class="large-4 small-12 columns">
 			<label>
 				{{ form.last_name }}
 			</label>
@@ -79,23 +87,6 @@
 				<div class="input-group">
 			  		<span class="input-group-label"><span class="icon icon-phone fa-lg"></span></span>
 			  		{{ form.telefono }}
-				</div>
-			</label>
-		</div>
-
-		<div class="large-6 small-12 columns">
-			<label>
-				<div class="input-group">
-			  		<span class="input-group-label"><span class="icon icon-location fa-lg"></span></span>
-			  		{{ form.indirizzo }}
-				</div>
-			</label>
-		</div>
-		<div class="large-6 small-12 columns">
-			<label>
-				<div class="input-group">
-			  		<span class="input-group-label"><span class="icon icon-location fa-lg"></span></span>
-			  		{{ form.civico }}
 				</div>
 			</label>
 		</div>

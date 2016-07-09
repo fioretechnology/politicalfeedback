@@ -8,7 +8,7 @@ class Provincia(models.Model):
     codice = models.IntegerField()
     provincia = models.TextField()
     sigla = models.CharField(max_length=4,null=True)
-    
+
     def __unicode__(self):
         return self.provincia
 
@@ -20,7 +20,7 @@ class Comune(models.Model):
     provincia = models.ForeignKey(Provincia)
     codice = models.IntegerField(null=True)
     comune = models.TextField()
-    
+
     def __unicode__(self):
         return self.comune
 
@@ -33,6 +33,8 @@ TIPO_UTENTE = (
         (0, 'Simpatizzante'),
         (1, 'Attivista'),
         (2, 'Consigliere o incarico amministrativo'),
+		(3, 'Cittadino'),
+		(4, 'Cittadino - ostile al gruppo'),
     )
 
 
@@ -50,18 +52,24 @@ class Profilo(models.Model):
     tipo_utente = models.IntegerField(choices = TIPO_UTENTE, default = 0)
     avatar = models.ImageField(upload_to = 'loghi/',null=True)
 
-    indirizzo = models.CharField(max_length=220)
-    civico = models.CharField(max_length=15,null=True)
+    indirizzo = models.CharField(max_length=220,blank=True,null=True)
+    civico = models.CharField(max_length=15,blank=True,null=True)
     cap = models.CharField(max_length=10,blank=True,null=True)
     citta = models.ForeignKey(Comune)
     provincia = models.ForeignKey(Provincia)
-    
-    
+
+
     def __unicode__(self):
         return self.user.first_name
 
     def __str__(self):
         return self.user.first_name
+
+class Valutazione(models.Model):
+	user = models.ForeignKey(User)
+	valutazione = models.IntegerField(choices = TIPO_UTENTE, default=0)
+	votante = models.ForeignKey(User, related_name="votante")
+
 
 
 
@@ -109,6 +117,3 @@ class Segnalazione(models.Model):
     modulo = models.IntegerField(choices=MODULO,blank=True,null=True)
     faq = models.NullBooleanField(default=False)
     visto = models.BooleanField(default=False)
-
-
-
